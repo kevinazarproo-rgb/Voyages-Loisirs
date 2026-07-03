@@ -112,16 +112,16 @@ img { display: block; max-width: 100%; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(250, 246, 240, .3);
+  background: rgba(22, 33, 31, .55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  padding: 24px 0;
+  padding: 18px 0;
   transition: background .4s ease, box-shadow .4s ease, padding .4s ease;
 }
 .header.is-scrolled {
-  background: rgba(250, 246, 240, .94);
-  box-shadow: 0 4px 20px rgba(28, 43, 45, .06);
-  padding: 14px 0;
+  background: rgba(22, 33, 31, .96);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, .22);
+  padding: 12px 0;
 }
 
 .header__inner {
@@ -141,21 +141,21 @@ img { display: block; max-width: 100%; }
   line-height: 1;
 }
 .logo__img {
-  height: 54px;
+  height: 64px;
   width: auto;
   transition: height .4s ease;
 }
-.header.is-scrolled .logo__img { height: 44px; }
+.header.is-scrolled .logo__img { height: 52px; }
 
 .nav { display: flex; align-items: center; gap: 38px; }
 .nav a {
   text-decoration: none;
   font-size: 15px;
   font-weight: 500;
-  color: var(--ink);
+  color: rgba(250, 246, 240, .88);
   transition: color .3s ease;
 }
-.nav a:hover { color: var(--accent); }
+.nav a:hover { color: var(--gold); }
 
 .header__actions { display: flex; align-items: center; gap: 24px; }
 
@@ -170,9 +170,13 @@ img { display: block; max-width: 100%; }
   font-size: 10px;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-  color: var(--text-3);
+  color: rgba(250, 246, 240, .6);
 }
-.header__phone-number { font-size: 17px; font-weight: 700; color: var(--ink); }
+.header__phone-number { font-size: 17px; font-weight: 700; color: var(--bg); }
+
+/* Bouton Réserver : terracotta sur le header foncé */
+.header .btn--dark { background: var(--accent); color: var(--bg); }
+.header .btn--dark:hover { background: var(--accent-dark); }
 
 /* ---------- Hero ---------- */
 
