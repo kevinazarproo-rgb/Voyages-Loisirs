@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
+<style>
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:#FAF6F0;color:#1C2B2D;font-family:"DM Sans",system-ui,sans-serif;font-size:18px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  ::selection{background:#C0754D;color:#FAF6F0}
+  a{color:inherit}
+  img{display:block;max-width:100%}
+</style>
+</helmet>
+
+<div style="overflow-x:hidden">
+
+<!-- ============ HEADER ============ -->
+<header style="position:fixed;top:0;left:0;right:0;z-index:100;background:{{ headerBg }};backdrop-filter:blur(10px);transition:background .4s ease,box-shadow .4s ease,padding .4s ease;box-shadow:{{ headerShadow }};padding:{{ headerPad }} 0">
+  <div style="max-width:1280px;margin:0 auto;padding:0 40px;display:flex;align-items:center;justify-content:space-between;gap:24px">
+    <a href="#top" style="text-decoration:none;display:flex;flex-direction:column;line-height:1">
+      <span style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;letter-spacing:.5px;color:#1C2B2D">Voyages Loisirs</span>
+      <span style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#C0754D;margin-top:3px;font-weight:600">Circuits accompagnés</span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:34px">
+      <a href="#top" style="text-decoration:none;font-size:15px;font-weight:500;color:#1C2B2D">Accueil</a>
+      <a href="#destinations" style="text-decoration:none;font-size:15px;font-weight:500;color:#1C2B2D">Destinations</a>
+      <a href="#experiences" style="text-decoration:none;font-size:15px;font-weight:500;color:#1C2B2D">Expériences</a>
+      <a href="#avis" style="text-decoration:none;font-size:15px;font-weight:500;color:#1C2B2D">Avis</a>
+      <a href="#contact" style="text-decoration:none;font-size:15px;font-weight:500;color:#1C2B2D">Contact</a>
+    </nav>
+    <div style="display:flex;align-items:center;gap:22px">
+      <a href="tel:+33144556677" style="text-decoration:none;display:flex;flex-direction:column;line-height:1.1;text-align:right">
+        <span style="font-size:11px;letter-spacing:1px;text-transform:uppercase;color:#7d8a86">Conseillers</span>
+        <span style="font-size:17px;font-weight:700;color:#1C2B2D">01 44 55 66 77</span>
+      </a>
+      <a href="#destinations" style="text-decoration:none;background:#1C2B2D;color:#FAF6F0;padding:14px 26px;border-radius:6px;font-size:15px;font-weight:600;letter-spacing:.3px" style-hover="background:#C0754D">Réserver</a>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section id="top" style="position:relative;min-height:100vh;display:flex;align-items:center;padding:150px 40px 80px;overflow:hidden">
+  <div style="position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80');background-size:cover;background-position:center 40%"></div>
+  <div style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(28,43,45,.82) 0%,rgba(28,43,45,.55) 45%,rgba(28,43,45,.25) 100%)"></div>
+  <div style="position:absolute;inset:0;opacity:.06;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>')"></div>
+  <div style="position:relative;max-width:1280px;margin:0 auto;width:100%">
+    <div data-reveal style="max-width:760px">
+      <p style="display:inline-flex;align-items:center;gap:10px;color:#EBD9C4;font-size:15px;font-weight:600;letter-spacing:2px;text-transform:uppercase;margin:0 0 28px;padding:10px 18px;border:1px solid rgba(235,217,196,.4);border-radius:100px;background:rgba(28,43,45,.25)">Voyages accompagnés · Payez en 4×, 6× ou 10× sans frais</p>
+      <h1 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(48px,7vw,86px);line-height:1.02;color:#FAF6F0;margin:0 0 26px;letter-spacing:-.5px;text-wrap:balance">Le monde vous attend,<br><span style="font-style:italic;color:#E8C9A8">partez</span> le vivre</h1>
+      <p style="font-size:20px;line-height:1.6;color:rgba(250,246,240,.9);max-width:560px;margin:0 0 40px">Six destinations soigneusement choisies chaque année. Un accompagnateur francophone du départ au retour. Vous n'avez à vous occuper de rien.</p>
+      <div style="display:flex;flex-wrap:wrap;gap:16px;margin-bottom:64px">
+        <a href="#destinations" style="text-decoration:none;background:#C0754D;color:#FAF6F0;padding:19px 38px;border-radius:8px;font-size:17px;font-weight:600;box-shadow:0 10px 30px rgba(192,117,77,.35)" style-hover="background:#a9603a">Découvrir nos destinations</a>
+        <a href="tel:+33144556677" style="text-decoration:none;background:rgba(250,246,240,.12);border:1px solid rgba(250,246,240,.4);color:#FAF6F0;padding:19px 38px;border-radius:8px;font-size:17px;font-weight:600;backdrop-filter:blur(4px)" style-hover="background:rgba(250,246,240,.2)">Être rappelé</a>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;gap:48px">
+        <div><div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:600;color:#FAF6F0;line-height:1">6</div><div style="font-size:15px;color:rgba(250,246,240,.75);margin-top:2px">destinations par an</div></div>
+        <div style="width:1px;background:rgba(250,246,240,.25)"></div>
+        <div><div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:600;color:#FAF6F0;line-height:1">10×</div><div style="font-size:15px;color:rgba(250,246,240,.75);margin-top:2px">sans frais</div></div>
+        <div style="width:1px;background:rgba(250,246,240,.25)"></div>
+        <div><div style="font-family:'Cormorant Garamond',serif;font-size:46px;font-weight:600;color:#FAF6F0;line-height:1">4.9<span style="font-size:24px;color:#E8C9A8">/5</span></div><div style="font-size:15px;color:rgba(250,246,240,.75);margin-top:2px">note voyageurs</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SEARCH / FILTER BAR ============ -->
+<section style="max-width:1180px;margin:-52px auto 0;padding:0 40px;position:relative;z-index:20">
+  <div data-reveal style="background:#FFFDFA;border:1px solid rgba(28,43,45,.08);border-radius:14px;box-shadow:0 24px 60px rgba(28,43,45,.15);padding:14px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr auto;gap:6px;align-items:stretch">
+    <label style="display:flex;flex-direction:column;gap:5px;padding:14px 20px;border-radius:9px" style-hover="background:#FAF6F0">
+      <span style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C0754D">Voyageurs</span>
+      <select style="border:0;background:transparent;font-family:inherit;font-size:16px;font-weight:500;color:#1C2B2D;cursor:pointer;outline:none">
+        <option>2 voyageurs</option><option>1 voyageur</option><option>3 voyageurs</option><option>4 voyageurs et +</option>
+      </select>
+    </label>
+    <label style="display:flex;flex-direction:column;gap:5px;padding:14px 20px;border-radius:9px;border-left:1px solid rgba(28,43,45,.08)" style-hover="background:#FAF6F0">
+      <span style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C0754D">Budget</span>
+      <select style="border:0;background:transparent;font-family:inherit;font-size:16px;font-weight:500;color:#1C2B2D;cursor:pointer;outline:none">
+        <option>Peu importe</option><option>Jusqu'à 1 500 €</option><option>1 500 – 2 500 €</option><option>2 500 € et +</option>
+      </select>
+    </label>
+    <label style="display:flex;flex-direction:column;gap:5px;padding:14px 20px;border-radius:9px;border-left:1px solid rgba(28,43,45,.08)" style-hover="background:#FAF6F0">
+      <span style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C0754D">Destination</span>
+      <select style="border:0;background:transparent;font-family:inherit;font-size:16px;font-weight:500;color:#1C2B2D;cursor:pointer;outline:none">
+        <option>Toutes</option><option>Marrakech</option><option>Tokyo</option><option>Santorin</option><option>Bali</option><option>Kenya</option><option>Maldives</option>
+      </select>
+    </label>
+    <label style="display:flex;flex-direction:column;gap:5px;padding:14px 20px;border-radius:9px;border-left:1px solid rgba(28,43,45,.08)" style-hover="background:#FAF6F0">
+      <span style="font-size:12px;font-weight:700;letter-spacing:1.2px;text-transform:uppercase;color:#C0754D">Date de départ</span>
+      <select style="border:0;background:transparent;font-family:inherit;font-size:16px;font-weight:500;color:#1C2B2D;cursor:pointer;outline:none">
+        <option>Toute l'année</option><option>Janv. – Févr.</option><option>Mars – Avril</option><option>Mai – Juin</option><option>Juil. – Août</option><option>Sept. – Oct.</option><option>Nov. – Déc.</option>
+      </select>
+    </label>
+    <button style="border:0;background:#1C2B2D;color:#FAF6F0;font-family:inherit;font-size:16px;font-weight:600;padding:0 34px;border-radius:9px;cursor:pointer;display:flex;align-items:center;gap:10px" style-hover="background:#C0754D">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><circle cx="11" cy="11" r="7"></circle><path d="m21 21-4.3-4.3"></path></svg>
+      Rechercher
+    </button>
+  </div>
+</section>
+
+<!-- ============ DESTINATIONS ============ -->
+<section id="destinations" style="max-width:1280px;margin:0 auto;padding:120px 40px 40px">
+  <div data-reveal style="display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-bottom:52px">
+    <div style="max-width:640px">
+      <p style="font-size:14px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#C0754D;margin:0 0 16px">La sélection 2026</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(38px,4.6vw,58px);line-height:1.05;margin:0 0 18px;letter-spacing:-.5px">Nos 6 destinations <span style="font-style:italic;color:#C0754D">de l'année</span></h2>
+      <p style="font-size:18px;color:#55625f;margin:0;max-width:520px">Une seule sélection par an, une par période de deux mois. Quand c'est complet, c'est complet.</p>
+    </div>
+    <div style="text-align:right">
+      <div style="font-family:'Cormorant Garamond',serif;font-size:60px;font-weight:600;color:#C0754D;line-height:1">06</div>
+      <div style="font-size:14px;letter-spacing:1.5px;text-transform:uppercase;color:#7d8a86">départs garantis</div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+
+    <!-- Marrakech -->
+    <a href="#" data-reveal style="text-decoration:none;color:inherit;background:#FFFDFA;border-radius:14px;overflow:hidden;border:1px solid rgba(28,43,45,.07);box-shadow:0 2px 10px rgba(28,43,45,.05);transition:transform .5s ease,box-shadow .5s ease;display:block" style-hover="transform:translateY(-6px);box-shadow:0 26px 50px rgba(28,43,45,.16)">
+      <div style="position:relative;aspect-ratio:4/3;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=800&q=80" alt="Marrakech" style="width:100%;height:100%;object-fit:cover;filter:saturate(1.02)">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,43,45,0) 55%,rgba(28,43,45,.35) 100%)"></div>
+        <span style="position:absolute;top:16px;left:16px;background:#C0754D;color:#FAF6F0;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:7px 13px;border-radius:100px">Dernières places</span>
+      </div>
+      <div style="padding:24px 26px 28px">
+        <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#C0754D;margin-bottom:8px">Janvier – Février</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;margin:0 0 6px;line-height:1">Marrakech</h3>
+        <p style="font-size:16px;color:#55625f;margin:0 0 20px;line-height:1.5">Médina, palmeraies et douceur de l'hiver marocain.</p>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(28,43,45,.08);padding-top:18px">
+          <div><span style="font-size:14px;color:#7d8a86">à partir de</span><br><span style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600">1 290 €</span></div>
+          <span style="font-size:15px;font-weight:600;color:#C0754D">Voir le circuit →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Tokyo -->
+    <a href="#" data-reveal style="text-decoration:none;color:inherit;background:#FFFDFA;border-radius:14px;overflow:hidden;border:1px solid rgba(28,43,45,.07);box-shadow:0 2px 10px rgba(28,43,45,.05);transition:transform .5s ease,box-shadow .5s ease;display:block" style-hover="transform:translateY(-6px);box-shadow:0 26px 50px rgba(28,43,45,.16)">
+      <div style="position:relative;aspect-ratio:4/3;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Tokyo" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,43,45,0) 55%,rgba(28,43,45,.35) 100%)"></div>
+        <span style="position:absolute;top:16px;left:16px;background:rgba(255,253,250,.92);color:#1C2B2D;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:7px 13px;border-radius:100px">Places disponibles</span>
+      </div>
+      <div style="padding:24px 26px 28px">
+        <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#C0754D;margin-bottom:8px">Mars – Avril</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;margin:0 0 6px;line-height:1">Tokyo</h3>
+        <p style="font-size:16px;color:#55625f;margin:0 0 20px;line-height:1.5">Les cerisiers en fleurs et l'art de vivre japonais.</p>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(28,43,45,.08);padding-top:18px">
+          <div><span style="font-size:14px;color:#7d8a86">à partir de</span><br><span style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600">2 490 €</span></div>
+          <span style="font-size:15px;font-weight:600;color:#C0754D">Voir le circuit →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Santorin -->
+    <a href="#" data-reveal style="text-decoration:none;color:inherit;background:#FFFDFA;border-radius:14px;overflow:hidden;border:1px solid rgba(28,43,45,.07);box-shadow:0 2px 10px rgba(28,43,45,.05);transition:transform .5s ease,box-shadow .5s ease;display:block" style-hover="transform:translateY(-6px);box-shadow:0 26px 50px rgba(28,43,45,.16)">
+      <div style="position:relative;aspect-ratio:4/3;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="Santorin" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,43,45,0) 55%,rgba(28,43,45,.35) 100%)"></div>
+        <span style="position:absolute;top:16px;left:16px;background:#C0754D;color:#FAF6F0;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:7px 13px;border-radius:100px">Bientôt complet</span>
+      </div>
+      <div style="padding:24px 26px 28px">
+        <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#C0754D;margin-bottom:8px">Mai – Juin</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;margin:0 0 6px;line-height:1">Santorin</h3>
+        <p style="font-size:16px;color:#55625f;margin:0 0 20px;line-height:1.5">Couchers de soleil sur la Caldeira et villages blancs.</p>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(28,43,45,.08);padding-top:18px">
+          <div><span style="font-size:14px;color:#7d8a86">à partir de</span><br><span style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600">1 690 €</span></div>
+          <span style="font-size:15px;font-weight:600;color:#C0754D">Voir le circuit →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Bali -->
+    <a href="#" data-reveal style="text-decoration:none;color:inherit;background:#FFFDFA;border-radius:14px;overflow:hidden;border:1px solid rgba(28,43,45,.07);box-shadow:0 2px 10px rgba(28,43,45,.05);transition:transform .5s ease,box-shadow .5s ease;display:block" style-hover="transform:translateY(-6px);box-shadow:0 26px 50px rgba(28,43,45,.16)">
+      <div style="position:relative;aspect-ratio:4/3;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,43,45,0) 55%,rgba(28,43,45,.35) 100%)"></div>
+        <span style="position:absolute;top:16px;left:16px;background:rgba(255,253,250,.92);color:#1C2B2D;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:7px 13px;border-radius:100px">Places disponibles</span>
+      </div>
+      <div style="padding:24px 26px 28px">
+        <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#C0754D;margin-bottom:8px">Juillet – Août</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;margin:0 0 6px;line-height:1">Bali</h3>
+        <p style="font-size:16px;color:#55625f;margin:0 0 20px;line-height:1.5">Rizières en terrasses, temples et hospitalité balinaise.</p>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(28,43,45,.08);padding-top:18px">
+          <div><span style="font-size:14px;color:#7d8a86">à partir de</span><br><span style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600">2 190 €</span></div>
+          <span style="font-size:15px;font-weight:600;color:#C0754D">Voir le circuit →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Kenya -->
+    <a href="#" data-reveal style="text-decoration:none;color:inherit;background:#FFFDFA;border-radius:14px;overflow:hidden;border:1px solid rgba(28,43,45,.07);box-shadow:0 2px 10px rgba(28,43,45,.05);transition:transform .5s ease,box-shadow .5s ease;display:block" style-hover="transform:translateY(-6px);box-shadow:0 26px 50px rgba(28,43,45,.16)">
+      <div style="position:relative;aspect-ratio:4/3;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80" alt="Safari Kenya" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,43,45,0) 55%,rgba(28,43,45,.35) 100%)"></div>
+        <span style="position:absolute;top:16px;left:16px;background:#C0754D;color:#FAF6F0;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:7px 13px;border-radius:100px">Dernières places</span>
+      </div>
+      <div style="padding:24px 26px 28px">
+        <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#C0754D;margin-bottom:8px">Septembre – Octobre</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;margin:0 0 6px;line-height:1">Safari Kenya</h3>
+        <p style="font-size:16px;color:#55625f;margin:0 0 20px;line-height:1.5">La grande faune du Masaï Mara au rythme de la savane.</p>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(28,43,45,.08);padding-top:18px">
+          <div><span style="font-size:14px;color:#7d8a86">à partir de</span><br><span style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600">2 890 €</span></div>
+          <span style="font-size:15px;font-weight:600;color:#C0754D">Voir le circuit →</span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Maldives -->
+    <a href="#" data-reveal style="text-decoration:none;color:inherit;background:#FFFDFA;border-radius:14px;overflow:hidden;border:1px solid rgba(28,43,45,.07);box-shadow:0 2px 10px rgba(28,43,45,.05);transition:transform .5s ease,box-shadow .5s ease;display:block" style-hover="transform:translateY(-6px);box-shadow:0 26px 50px rgba(28,43,45,.16)">
+      <div style="position:relative;aspect-ratio:4/3;overflow:hidden">
+        <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Maldives" style="width:100%;height:100%;object-fit:cover">
+        <div style="position:absolute;inset:0;background:linear-gradient(180deg,rgba(28,43,45,0) 55%,rgba(28,43,45,.35) 100%)"></div>
+        <span style="position:absolute;top:16px;left:16px;background:rgba(255,253,250,.92);color:#1C2B2D;font-size:12px;font-weight:700;letter-spacing:.8px;text-transform:uppercase;padding:7px 13px;border-radius:100px">Places disponibles</span>
+      </div>
+      <div style="padding:24px 26px 28px">
+        <div style="font-size:13px;font-weight:600;letter-spacing:1.5px;text-transform:uppercase;color:#C0754D;margin-bottom:8px">Novembre – Décembre</div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:32px;margin:0 0 6px;line-height:1">Maldives</h3>
+        <p style="font-size:16px;color:#55625f;margin:0 0 20px;line-height:1.5">Lagons turquoise et repos absolu au bord de l'eau.</p>
+        <div style="display:flex;align-items:baseline;justify-content:space-between;border-top:1px solid rgba(28,43,45,.08);padding-top:18px">
+          <div><span style="font-size:14px;color:#7d8a86">à partir de</span><br><span style="font-family:'Cormorant Garamond',serif;font-size:30px;font-weight:600">2 690 €</span></div>
+          <span style="font-size:15px;font-weight:600;color:#C0754D">Voir le circuit →</span>
+        </div>
+      </div>
+    </a>
+
+  </div>
+</section>
+
+<!-- ============ REASSURANCE (4 arguments) ============ -->
+<section id="experiences" style="background:#1C2B2D;color:#FAF6F0;margin-top:110px;padding:110px 40px">
+  <div style="max-width:1280px;margin:0 auto">
+    <div data-reveal style="text-align:center;max-width:660px;margin:0 auto 64px">
+      <p style="font-size:14px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#E8C9A8;margin:0 0 16px">L'esprit tranquille</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(38px,4.6vw,56px);line-height:1.06;margin:0;letter-spacing:-.5px">Voyager sans <span style="font-style:italic;color:#E8C9A8">la moindre</span> inquiétude</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:34px">
+      <div data-reveal style="text-align:left">
+        <div style="width:56px;height:56px;border-radius:12px;background:rgba(232,201,168,.14);display:flex;align-items:center;justify-content:center;margin-bottom:22px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;margin:0 0 10px">Accompagné de bout en bout</h3>
+        <p style="font-size:16px;color:rgba(250,246,240,.72);margin:0;line-height:1.6">Un accompagnateur francophone à vos côtés, du départ jusqu'au retour à la maison.</p>
+      </div>
+      <div data-reveal style="text-align:left">
+        <div style="width:56px;height:56px;border-radius:12px;background:rgba(232,201,168,.14);display:flex;align-items:center;justify-content:center;margin-bottom:22px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;margin:0 0 10px">Un rythme tranquille</h3>
+        <p style="font-size:16px;color:rgba(250,246,240,.72);margin:0;line-height:1.6">Des journées pensées sans course ni précipitation. On prend le temps de tout savourer.</p>
+      </div>
+      <div data-reveal style="text-align:left">
+        <div style="width:56px;height:56px;border-radius:12px;background:rgba(232,201,168,.14);display:flex;align-items:center;justify-content:center;margin-bottom:22px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;margin:0 0 10px">4×, 6× ou 10× sans frais</h3>
+        <p style="font-size:16px;color:rgba(250,246,240,.72);margin:0;line-height:1.6">Étalez le règlement de votre voyage à votre rythme, sans aucun frais supplémentaire.</p>
+      </div>
+      <div data-reveal style="text-align:left">
+        <div style="width:56px;height:56px;border-radius:12px;background:rgba(232,201,168,.14);display:flex;align-items:center;justify-content:center;margin-bottom:22px">
+          <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+        </div>
+        <h3 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:25px;margin:0 0 10px">Des conseillers à l'écoute</h3>
+        <p style="font-size:16px;color:rgba(250,246,240,.72);margin:0;line-height:1.6">Une vraie personne au téléphone pour répondre à toutes vos questions, avant et pendant.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ IMAGE + TEXT BLOCK ============ -->
+<section style="max-width:1280px;margin:0 auto;padding:120px 40px">
+  <div data-reveal style="display:grid;grid-template-columns:1.05fr .95fr;gap:0;background:#FFFDFA;border-radius:18px;overflow:hidden;border:1px solid rgba(28,43,45,.07);box-shadow:0 20px 50px rgba(28,43,45,.08)">
+    <div style="position:relative;min-height:520px">
+      <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80" alt="Voyage organisé" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover">
+    </div>
+    <div style="padding:70px 66px;display:flex;flex-direction:column;justify-content:center">
+      <p style="font-size:14px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#C0754D;margin:0 0 18px">Clé en main</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,3.6vw,48px);line-height:1.08;margin:0 0 22px;letter-spacing:-.5px">Tout est déjà <span style="font-style:italic;color:#C0754D">organisé</span> pour vous</h2>
+      <p style="font-size:18px;color:#55625f;margin:0 0 32px;line-height:1.65">Vols, hébergements soigneusement sélectionnés, transferts et activités : nous nous occupons de chaque détail. Vous n'avez plus qu'à faire votre valise et profiter.</p>
+      <div style="display:flex;flex-direction:column;gap:16px">
+        <div style="display:flex;align-items:center;gap:14px;font-size:17px;font-weight:500"><span style="flex:none;width:26px;height:26px;border-radius:50%;background:#C0754D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px">✓</span> Vols au départ de Paris inclus</div>
+        <div style="display:flex;align-items:center;gap:14px;font-size:17px;font-weight:500"><span style="flex:none;width:26px;height:26px;border-radius:50%;background:#C0754D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px">✓</span> Hôtels de charme, confort garanti</div>
+        <div style="display:flex;align-items:center;gap:14px;font-size:17px;font-weight:500"><span style="flex:none;width:26px;height:26px;border-radius:50%;background:#C0754D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px">✓</span> Excursions et repas typiques prévus</div>
+        <div style="display:flex;align-items:center;gap:14px;font-size:17px;font-weight:500"><span style="flex:none;width:26px;height:26px;border-radius:50%;background:#C0754D;color:#fff;display:flex;align-items:center;justify-content:center;font-size:14px">✓</span> Assistance 24h/24 pendant le séjour</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section id="avis" style="background:#F3EBDF;padding:110px 40px">
+  <div style="max-width:1280px;margin:0 auto">
+    <div data-reveal style="text-align:center;max-width:620px;margin:0 auto 60px">
+      <p style="font-size:14px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#C0754D;margin:0 0 16px">Ils sont partis avec nous</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(38px,4.6vw,56px);line-height:1.06;margin:0;letter-spacing:-.5px">Des souvenirs <span style="font-style:italic;color:#C0754D">pour la vie</span></h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:28px">
+      <div data-reveal style="background:#FFFDFA;border-radius:14px;padding:38px 34px;border:1px solid rgba(28,43,45,.06);box-shadow:0 4px 16px rgba(28,43,45,.05)">
+        <div style="color:#C0754D;font-size:20px;letter-spacing:3px;margin-bottom:20px">★★★★★</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:23px;line-height:1.4;font-style:italic;margin:0 0 28px;color:#1C2B2D">« Tout était parfait, du premier appel jusqu'au retour. On s'est laissés porter, sans aucun souci. Santorin restera un souvenir merveilleux. »</p>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:48px;height:48px;border-radius:50%;background:#C0754D;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600">JM</div>
+          <div><div style="font-weight:600;font-size:16px">Jacqueline M.</div><div style="font-size:14px;color:#7d8a86">Santorin · Mai 2025</div></div>
+        </div>
+      </div>
+      <div data-reveal style="background:#FFFDFA;border-radius:14px;padding:38px 34px;border:1px solid rgba(28,43,45,.06);box-shadow:0 4px 16px rgba(28,43,45,.05)">
+        <div style="color:#C0754D;font-size:20px;letter-spacing:3px;margin-bottom:20px">★★★★★</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:23px;line-height:1.4;font-style:italic;margin:0 0 28px;color:#1C2B2D">« Le safari au Kenya était un rêve d'enfance. Un rythme adapté, un accompagnateur formidable et attentionné. Nous recommandons les yeux fermés. »</p>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:48px;height:48px;border-radius:50%;background:#C0754D;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600">MF</div>
+          <div><div style="font-weight:600;font-size:16px">Michel & Françoise</div><div style="font-size:14px;color:#7d8a86">Safari Kenya · Oct. 2025</div></div>
+        </div>
+      </div>
+      <div data-reveal style="background:#FFFDFA;border-radius:14px;padding:38px 34px;border:1px solid rgba(28,43,45,.06);box-shadow:0 4px 16px rgba(28,43,45,.05)">
+        <div style="color:#C0754D;font-size:20px;letter-spacing:3px;margin-bottom:20px">★★★★★</div>
+        <p style="font-family:'Cormorant Garamond',serif;font-size:23px;line-height:1.4;font-style:italic;margin:0 0 28px;color:#1C2B2D">« J'appréhendais de voyager seule à mon âge. J'ai été rassurée dès le départ et parfaitement entourée. Marrakech était éblouissant. Merci à toute l'équipe. »</p>
+        <div style="display:flex;align-items:center;gap:14px">
+          <div style="width:48px;height:48px;border-radius:50%;background:#C0754D;color:#fff;display:flex;align-items:center;justify-content:center;font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:600">CR</div>
+          <div><div style="font-weight:600;font-size:16px">Colette R.</div><div style="font-size:14px;color:#7d8a86">Marrakech · Févr. 2025</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PAYMENT REASSURANCE ============ -->
+<section style="max-width:1280px;margin:0 auto;padding:110px 40px">
+  <div data-reveal style="background:#1C2B2D;border-radius:20px;padding:70px 60px;text-align:center;position:relative;overflow:hidden">
+    <div style="position:absolute;inset:0;opacity:.05;background-image:url('data:image/svg+xml;utf8,<svg xmlns=%22http://www.w3.org/2000/svg%22 width=%22120%22 height=%22120%22><filter id=%22n%22><feTurbulence type=%22fractalNoise%22 baseFrequency=%220.9%22 numOctaves=%222%22/></filter><rect width=%22100%25%22 height=%22100%25%22 filter=%22url(%23n)%22/></svg>')"></div>
+    <div style="position:relative">
+      <p style="font-size:14px;font-weight:700;letter-spacing:2.5px;text-transform:uppercase;color:#E8C9A8;margin:0 0 16px">Paiement en toute sérénité</p>
+      <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(36px,4.4vw,54px);line-height:1.05;margin:0 0 20px;color:#FAF6F0">Payez en 4×, 6× ou 10× — <span style="font-style:italic;color:#E8C9A8">sans frais</span></h2>
+      <p style="font-size:18px;color:rgba(250,246,240,.75);max-width:560px;margin:0 auto 42px">Réservez aujourd'hui, réglez à votre rythme. Aucun frais caché, aucune mauvaise surprise.</p>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:38px">
+        <span style="background:rgba(250,246,240,.1);border:1px solid rgba(250,246,240,.18);color:#FAF6F0;padding:12px 26px;border-radius:8px;font-weight:600;font-size:16px">Visa</span>
+        <span style="background:rgba(250,246,240,.1);border:1px solid rgba(250,246,240,.18);color:#FAF6F0;padding:12px 26px;border-radius:8px;font-weight:600;font-size:16px">Mastercard</span>
+        <span style="background:rgba(250,246,240,.1);border:1px solid rgba(250,246,240,.18);color:#FAF6F0;padding:12px 26px;border-radius:8px;font-weight:600;font-size:16px">American Express</span>
+        <span style="background:rgba(250,246,240,.1);border:1px solid rgba(250,246,240,.18);color:#FAF6F0;padding:12px 26px;border-radius:8px;font-weight:600;font-size:16px">PayPal</span>
+        <span style="background:rgba(250,246,240,.1);border:1px solid rgba(250,246,240,.18);color:#FAF6F0;padding:12px 26px;border-radius:8px;font-weight:600;font-size:16px">Apple Pay</span>
+      </div>
+      <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:32px;color:rgba(250,246,240,.7);font-size:15px">
+        <span style="display:inline-flex;align-items:center;gap:9px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg> Paiement crypté SSL</span>
+        <span style="display:inline-flex;align-items:center;gap:9px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg> Voyage garanti & assuré</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ NEWSLETTER ============ -->
+<section style="max-width:960px;margin:0 auto;padding:0 40px 120px;text-align:center">
+  <div data-reveal>
+    <h2 style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:clamp(34px,4vw,50px);line-height:1.08;margin:0 0 16px;letter-spacing:-.5px">Les meilleures offres, <span style="font-style:italic;color:#C0754D">avant tout le monde</span></h2>
+    <p style="font-size:18px;color:#55625f;margin:0 auto 34px;max-width:520px">Recevez en avant-première l'ouverture des réservations et nos départs exceptionnels.</p>
+    <form onSubmit="{{ onSubscribe }}" style="display:flex;gap:10px;max-width:520px;margin:0 auto;flex-wrap:wrap">
+      <input type="email" required placeholder="Votre adresse e-mail" style="flex:1;min-width:220px;border:1px solid rgba(28,43,45,.18);background:#FFFDFA;border-radius:9px;padding:18px 22px;font-family:inherit;font-size:17px;color:#1C2B2D;outline:none">
+      <button type="submit" style="border:0;background:#C0754D;color:#FAF6F0;font-family:inherit;font-size:17px;font-weight:600;padding:0 32px;border-radius:9px;cursor:pointer" style-hover="background:#a9603a">{{ subscribeLabel }}</button>
+    </form>
+    <p style="font-size:13px;color:#94a09c;margin:16px 0 0">Pas de spam. Désinscription en un clic.</p>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer id="contact" style="background:#16211F;color:rgba(250,246,240,.75);padding:80px 40px 40px">
+  <div style="max-width:1280px;margin:0 auto">
+    <div style="display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:48px;padding-bottom:56px;border-bottom:1px solid rgba(250,246,240,.12)">
+      <div>
+        <div style="font-family:'Cormorant Garamond',serif;font-weight:600;font-size:26px;color:#FAF6F0;margin-bottom:6px">Voyages Loisirs</div>
+        <div style="font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#C0754D;font-weight:600;margin-bottom:22px">Circuits accompagnés</div>
+        <p style="font-size:16px;line-height:1.6;margin:0 0 22px;max-width:300px">Six destinations d'exception chaque année, pour voyager l'esprit léger.</p>
+        <div style="display:flex;gap:12px">
+          <a href="#" aria-label="Facebook" style="width:40px;height:40px;border-radius:8px;border:1px solid rgba(250,246,240,.18);display:flex;align-items:center;justify-content:center;text-decoration:none" style-hover="background:rgba(250,246,240,.1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FAF6F0"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+          <a href="#" aria-label="Instagram" style="width:40px;height:40px;border-radius:8px;border:1px solid rgba(250,246,240,.18);display:flex;align-items:center;justify-content:center;text-decoration:none" style-hover="background:rgba(250,246,240,.1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#FAF6F0" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"></rect><circle cx="12" cy="12" r="4"></circle><circle cx="17.5" cy="6.5" r="1" fill="#FAF6F0" stroke="none"></circle></svg></a>
+          <a href="#" aria-label="YouTube" style="width:40px;height:40px;border-radius:8px;border:1px solid rgba(250,246,240,.18);display:flex;align-items:center;justify-content:center;text-decoration:none" style-hover="background:rgba(250,246,240,.1)"><svg width="18" height="18" viewBox="0 0 24 24" fill="#FAF6F0"><path d="M22 8s-.2-1.4-.8-2c-.8-.8-1.7-.8-2.1-.9C16.3 5 12 5 12 5s-4.3 0-7.1.2c-.4 0-1.3 0-2.1.9C2.2 6.6 2 8 2 8s-.2 1.6-.2 3.3v1.5C1.8 14.4 2 16 2 16s.2 1.4.8 2c.8.8 1.8.8 2.3.9C6.7 19 12 19 12 19s4.3 0 7.1-.2c.4 0 1.3 0 2.1-.9.6-.6.8-2 .8-2s.2-1.6.2-3.3v-1.5C22.2 9.6 22 8 22 8zM10 15V9l5 3z"></path></svg></a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#E8C9A8;font-weight:700;margin-bottom:20px">Découvrir</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:16px">
+          <a href="#destinations" style="text-decoration:none">Nos 6 destinations</a>
+          <a href="#experiences" style="text-decoration:none">Nos circuits accompagnés</a>
+          <a href="#" style="text-decoration:none">Voyages sur mesure</a>
+          <a href="#" style="text-decoration:none">Cartes cadeaux</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#E8C9A8;font-weight:700;margin-bottom:20px">L'agence</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:16px">
+          <a href="#" style="text-decoration:none">Qui sommes-nous</a>
+          <a href="#avis" style="text-decoration:none">Avis voyageurs</a>
+          <a href="#" style="text-decoration:none">Nos garanties</a>
+          <a href="#" style="text-decoration:none">Conditions générales</a>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:13px;letter-spacing:1.5px;text-transform:uppercase;color:#E8C9A8;font-weight:700;margin-bottom:20px">Contact</div>
+        <div style="display:flex;flex-direction:column;gap:13px;font-size:16px">
+          <a href="tel:+33144556677" style="text-decoration:none;color:#FAF6F0;font-weight:600;font-size:19px">01 44 55 66 77</a>
+          <span>Du lundi au samedi, 9h – 19h</span>
+          <span style="margin-top:6px">18 rue du Voyage<br>75008 Paris, France</span>
+          <a href="mailto:bonjour@voyages-loisirs.fr" style="text-decoration:none">bonjour@voyages-loisirs.fr</a>
+        </div>
+      </div>
+    </div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;padding-top:28px;font-size:14px;color:rgba(250,246,240,.5)">
+      <span>© 2026 Voyages Loisirs · IM075240012 · Voyages garantis APST</span>
+      <div style="display:flex;gap:24px">
+        <a href="#" style="text-decoration:none">Mentions légales</a>
+        <a href="#" style="text-decoration:none">Confidentialité</a>
+        <a href="#" style="text-decoration:none">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script>
+class Component extends DCLogic {
+  state = { scrolled: false, subscribed: false };
+
+  componentDidMount() {
+    // Header shrink/darken on scroll
+    this._onScroll = () => {
+      const s = window.scrollY > 40;
+      if (s !== this.state.scrolled) this.setState({ scrolled: s });
+    };
+    window.addEventListener('scroll', this._onScroll, { passive: true });
+
+    // Progressive-enhancement scroll reveal (content is visible by default;
+    // we only hide-then-reveal when IntersectionObserver is available)
+    if ('IntersectionObserver' in window) {
+      const els = Array.from(this.el ? this.el.querySelectorAll('[data-reveal]') : document.querySelectorAll('[data-reveal]'));
+      els.forEach((el, i) => {
+        el.style.opacity = '0';
+        el.style.transform = 'translateY(26px)';
+        el.style.transition = 'opacity .8s cubic-bezier(.22,.61,.36,1), transform .8s cubic-bezier(.22,.61,.36,1)';
+      });
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.style.opacity = '1';
+            e.target.style.transform = 'none';
+            io.unobserve(e.target);
+          }
+        });
+      }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+      els.forEach((el) => io.observe(el));
+      this._io = io;
+    }
+  }
+
+  componentWillUnmount() {
+    if (this._onScroll) window.removeEventListener('scroll', this._onScroll);
+    if (this._io) this._io.disconnect();
+  }
+
+  renderVals() {
+    const scrolled = this.state.scrolled;
+    return {
+      headerBg: scrolled ? 'rgba(250,246,240,.92)' : 'rgba(250,246,240,.35)',
+      headerShadow: scrolled ? '0 6px 24px rgba(28,43,45,.08)' : 'none',
+      headerPad: scrolled ? '14px' : '22px',
+      subscribeLabel: this.state.subscribed ? 'Merci ✓' : "S'inscrire",
+      onSubscribe: (e) => { e.preventDefault(); this.setState({ subscribed: true }); },
+    };
+  }
+}
+</script>
+</body>
+</html>
