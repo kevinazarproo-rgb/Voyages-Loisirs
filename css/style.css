@@ -6,20 +6,20 @@
    ========================================================================== */
 
 :root {
-  --bg: #FAF6F0;
-  --surface: #FFFDFA;
-  --sand: #EAF1F3;
-  --ink: #0C3A4A;          /* bleu canard foncé — sections sombres, header */
-  --ink-footer: #072C39;   /* plus foncé — footer */
-  --accent: #C5541C;       /* orange du logo — boutons, prix, actions */
-  --accent-dark: #A5470F;
-  --teal: #0C7A9C;         /* bleu canard du logo — surtitres, panneau recherche */
-  --teal-dark: #0A6580;
-  --gold: #E8C9A8;         /* accent chaud sur fond sombre */
-  --gold-light: #EBD9C4;
-  --text-2: #4b5a60;
-  --text-3: #7a8890;
-  --text-4: #94a0a6;
+  --bg: #FFFFFF;           /* blanc */
+  --surface: #FFFFFF;
+  --sand: #EEF2F8;         /* bleu très clair — section témoignage */
+  --ink: #1B3A6B;          /* bleu marine — sections sombres, header, titres */
+  --ink-footer: #14294B;   /* marine plus foncé — footer */
+  --accent: #1B3A6B;       /* bleu marine — boutons, prix, liens */
+  --accent-dark: #14294B;
+  --teal: #1B3A6B;         /* marine — surtitres, panneau recherche */
+  --teal-dark: #14294B;
+  --gold: #AEC0DE;         /* bleu clair — accents sur fond marine */
+  --gold-light: #C7D3E8;
+  --text-2: #4a5568;
+  --text-3: #7b8494;
+  --text-4: #9aa2b1;
   --serif: "Cormorant Garamond", serif;
   --sans: "DM Sans", system-ui, sans-serif;
   --grain: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="120" height="120"><filter id="n"><feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2"/></filter><rect width="100%25" height="100%25" filter="url(%23n)"/></svg>');
@@ -90,11 +90,11 @@ img { display: block; max-width: 100%; }
 .btn--dark { background: var(--ink); color: var(--bg); }
 .btn--dark:hover { background: var(--accent); }
 .btn--accent {
-  background: var(--accent);
-  color: var(--bg);
-  box-shadow: 0 8px 26px rgba(192, 117, 77, .28);
+  background: #fff;
+  color: var(--ink);
+  box-shadow: 0 8px 26px rgba(20, 41, 75, .28);
 }
-.btn--accent:hover { background: var(--accent-dark); }
+.btn--accent:hover { background: #e9eef6; }
 .btn--lg { padding: 20px 44px; border-radius: 8px; font-size: 16px; }
 
 /* Apparition au scroll (activée par JS uniquement) */
@@ -114,14 +114,14 @@ img { display: block; max-width: 100%; }
   position: fixed;
   top: 0; left: 0; right: 0;
   z-index: 100;
-  background: rgba(12, 58, 74, .5);
+  background: rgba(27, 58, 107, .55);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
   padding: 18px 0;
   transition: background .4s ease, box-shadow .4s ease, padding .4s ease;
 }
 .header.is-scrolled {
-  background: rgba(12, 58, 74, .96);
+  background: rgba(27, 58, 107, .97);
   box-shadow: 0 4px 20px rgba(0, 0, 0, .22);
   padding: 12px 0;
 }
@@ -176,9 +176,9 @@ img { display: block; max-width: 100%; }
 }
 .header__phone-number { font-size: 17px; font-weight: 700; color: var(--bg); }
 
-/* Bouton Réserver : terracotta sur le header foncé */
-.header .btn--dark { background: var(--accent); color: var(--bg); }
-.header .btn--dark:hover { background: var(--accent-dark); }
+/* Bouton Réserver : blanc sur le header marine */
+.header .btn--dark { background: #fff; color: var(--ink); }
+.header .btn--dark:hover { background: #e9eef6; }
 
 /* ---------- Hero ---------- */
 
@@ -198,7 +198,7 @@ img { display: block; max-width: 100%; }
 }
 .hero__overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(100deg, rgba(9,45,57,.82) 0%, rgba(9,45,57,.5) 45%, rgba(9,45,57,.2) 100%);
+  background: linear-gradient(100deg, rgba(15,30,55,.82) 0%, rgba(15,30,55,.5) 45%, rgba(15,30,55,.2) 100%);
 }
 .hero__grain {
   position: absolute; inset: 0;
@@ -347,8 +347,8 @@ img { display: block; max-width: 100%; }
 }
 .search__submit {
   border: 0;
-  background: var(--accent);
-  color: var(--bg);
+  background: #fff;
+  color: var(--ink);
   font-family: inherit;
   font-size: 16px;
   font-weight: 600;
@@ -361,7 +361,7 @@ img { display: block; max-width: 100%; }
   gap: 10px;
   transition: background .3s ease;
 }
-.search__submit:hover { background: var(--accent-dark); }
+.search__submit:hover { background: #e9eef6; }
 
 /* ---------- Destinations ---------- */
 
@@ -495,7 +495,7 @@ img { display: block; max-width: 100%; }
 .reassurance__icon {
   width: 58px; height: 58px;
   border-radius: 50%;
-  background: rgba(232, 201, 168, .12);
+  background: rgba(255, 255, 255, .1);
   display: flex;
   align-items: center;
   justify-content: center;
