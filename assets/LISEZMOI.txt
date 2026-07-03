@@ -1,0 +1,6 @@
+Ce dossier contient les images du site (logo, photos...).
+
+Pour ajouter un fichier ici depuis GitHub :
+1. Cliquez sur "Add file" puis "Upload files"
+2. Glissez votre fichier (ex: logo.png)
+3. Cliquez sur "Commit changes"
