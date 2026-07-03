@@ -1,0 +1,41 @@
+name: Déploiement du site (GitHub Pages)
+
+# Se déclenche à chaque envoi sur la branche principale.
+# Une fois GitHub Pages réglé sur "GitHub Actions", le site
+# se met à jour tout seul, sans aucune action manuelle.
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Évite les déploiements simultanés qui se marchent dessus
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupération du code
+        uses: actions/checkout@v4
+
+      - name: Configuration de Pages
+        uses: actions/configure-pages@v5
+
+      - name: Préparation des fichiers du site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: .
+
+      - name: Publication
+        id: deployment
+        uses: actions/deploy-pages@v4
