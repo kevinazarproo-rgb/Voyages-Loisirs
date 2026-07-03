@@ -29,6 +29,19 @@
     });
   }
 
+  // --- Onglets de la barre de recherche (visuel ; à brancher sur les vrais formulaires) ---
+  var tabs = document.querySelectorAll('.search__tab');
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      tabs.forEach(function (t) {
+        t.classList.remove('is-active');
+        t.setAttribute('aria-selected', 'false');
+      });
+      tab.classList.add('is-active');
+      tab.setAttribute('aria-selected', 'true');
+    });
+  });
+
   // --- Newsletter : confirmation locale (à brancher sur un vrai service d'emailing) ---
   var form = document.getElementById('newsletter-form');
   if (form) {
