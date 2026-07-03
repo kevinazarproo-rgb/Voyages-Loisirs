@@ -40,17 +40,20 @@
 
   <!-- ============ HERO ============ -->
   <section id="top" class="hero">
-    <div class="hero__bg"></div>
+    <img class="hero__img"
+         src="https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=2000&q=80"
+         data-fallback="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=2000&q=80"
+         alt="" aria-hidden="true">
     <div class="hero__overlay"></div>
     <div class="hero__grain"></div>
     <div class="hero__container">
       <div class="hero__content" data-reveal>
-        <p class="hero__pill">Voyages accompagnés · Payez en 4×, 6× ou 10× sans frais</p>
+        <p class="hero__eyebrow">Circuits accompagnés · Haut de gamme</p>
         <h1 class="hero__title">Le monde vous attend,<br><em>partez</em> le vivre</h1>
-        <p class="hero__subtitle">Six destinations soigneusement choisies chaque année. Un accompagnateur francophone du départ au retour. Vous n'avez à vous occuper de rien.</p>
+        <p class="hero__subtitle">Six destinations d'exception chaque année, entièrement organisées. Vous n'avez qu'à profiter.</p>
         <div class="hero__ctas">
           <a href="#destinations" class="btn btn--accent btn--lg">Découvrir nos destinations</a>
-          <a href="tel:+33144556677" class="btn btn--ghost btn--lg">Être rappelé</a>
+          <a href="tel:+33144556677" class="hero__link">Être rappelé →</a>
         </div>
       </div>
     </div>
@@ -61,19 +64,19 @@
     <div class="search__panel" data-reveal>
       <div class="search__tabs" role="tablist" aria-label="Type de voyage">
         <button type="button" class="search__tab is-active" role="tab" aria-selected="true">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"></rect><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
           Circuits accompagnés
         </button>
         <button type="button" class="search__tab" role="tab" aria-selected="false">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           Voyage sur mesure
         </button>
         <button type="button" class="search__tab" role="tab" aria-selected="false">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2z"></path></svg>
           Vols + Hôtels
         </button>
         <button type="button" class="search__tab" role="tab" aria-selected="false">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 4v16"></path><path d="M2 8h18a2 2 0 0 1 2 2v10"></path><path d="M2 17h20"></path><path d="M6 8v9"></path></svg>
           Hébergements
         </button>
       </div>
@@ -133,7 +136,6 @@
           Rechercher
         </button>
       </form>
-      <p class="search__terms">En cliquant sur « Rechercher », j'accepte les <a href="#">Conditions d'utilisation</a></p>
     </div>
   </section>
 
@@ -143,7 +145,7 @@
       <div class="destinations__intro">
         <p class="eyebrow">La sélection 2026</p>
         <h2 class="section-title">Nos 6 destinations <em>de l'année</em></h2>
-        <p class="section-lead">Une seule sélection par an, une par période de deux mois. Quand c'est complet, c'est complet.</p>
+        <p class="section-lead">Une seule sélection par an. Quand c'est complet, c'est complet.</p>
       </div>
       <div class="destinations__count">
         <div class="destinations__count-number">06</div>
@@ -156,96 +158,81 @@
       <a href="#" class="card" data-reveal>
         <div class="card__media">
           <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=800&q=80" alt="Marrakech" loading="lazy">
-          <span class="card__badge card__badge--accent">Dernières places</span>
+          <span class="card__badge">Dernières places</span>
         </div>
         <div class="card__body">
-          <div class="card__period">Janvier – Février</div>
-          <h3 class="card__title">Marrakech</h3>
-          <p class="card__desc">Médina, palmeraies et douceur de l'hiver marocain.</p>
-          <div class="card__footer">
-            <div class="card__price"><span>à partir de</span><br><strong>1 290 €</strong></div>
-            <span class="card__link">Voir le circuit →</span>
+          <div>
+            <h3 class="card__title">Marrakech</h3>
+            <div class="card__period">Janvier – Février</div>
           </div>
+          <div class="card__price"><span>dès</span> <strong>1 290 €</strong></div>
         </div>
       </a>
 
       <a href="#" class="card" data-reveal>
         <div class="card__media">
           <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Tokyo" loading="lazy">
-          <span class="card__badge">Places disponibles</span>
         </div>
         <div class="card__body">
-          <div class="card__period">Mars – Avril</div>
-          <h3 class="card__title">Tokyo</h3>
-          <p class="card__desc">Les cerisiers en fleurs et l'art de vivre japonais.</p>
-          <div class="card__footer">
-            <div class="card__price"><span>à partir de</span><br><strong>2 490 €</strong></div>
-            <span class="card__link">Voir le circuit →</span>
+          <div>
+            <h3 class="card__title">Tokyo</h3>
+            <div class="card__period">Mars – Avril</div>
           </div>
+          <div class="card__price"><span>dès</span> <strong>2 490 €</strong></div>
         </div>
       </a>
 
       <a href="#" class="card" data-reveal>
         <div class="card__media">
           <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="Santorin" loading="lazy">
-          <span class="card__badge card__badge--accent">Bientôt complet</span>
+          <span class="card__badge">Bientôt complet</span>
         </div>
         <div class="card__body">
-          <div class="card__period">Mai – Juin</div>
-          <h3 class="card__title">Santorin</h3>
-          <p class="card__desc">Couchers de soleil sur la Caldeira et villages blancs.</p>
-          <div class="card__footer">
-            <div class="card__price"><span>à partir de</span><br><strong>1 690 €</strong></div>
-            <span class="card__link">Voir le circuit →</span>
+          <div>
+            <h3 class="card__title">Santorin</h3>
+            <div class="card__period">Mai – Juin</div>
           </div>
+          <div class="card__price"><span>dès</span> <strong>1 690 €</strong></div>
         </div>
       </a>
 
       <a href="#" class="card" data-reveal>
         <div class="card__media">
           <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali" loading="lazy">
-          <span class="card__badge">Places disponibles</span>
         </div>
         <div class="card__body">
-          <div class="card__period">Juillet – Août</div>
-          <h3 class="card__title">Bali</h3>
-          <p class="card__desc">Rizières en terrasses, temples et hospitalité balinaise.</p>
-          <div class="card__footer">
-            <div class="card__price"><span>à partir de</span><br><strong>2 190 €</strong></div>
-            <span class="card__link">Voir le circuit →</span>
+          <div>
+            <h3 class="card__title">Bali</h3>
+            <div class="card__period">Juillet – Août</div>
           </div>
+          <div class="card__price"><span>dès</span> <strong>2 190 €</strong></div>
         </div>
       </a>
 
       <a href="#" class="card" data-reveal>
         <div class="card__media">
           <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80" alt="Safari Kenya" loading="lazy">
-          <span class="card__badge card__badge--accent">Dernières places</span>
+          <span class="card__badge">Dernières places</span>
         </div>
         <div class="card__body">
-          <div class="card__period">Septembre – Octobre</div>
-          <h3 class="card__title">Safari Kenya</h3>
-          <p class="card__desc">La grande faune du Masaï Mara au rythme de la savane.</p>
-          <div class="card__footer">
-            <div class="card__price"><span>à partir de</span><br><strong>2 890 €</strong></div>
-            <span class="card__link">Voir le circuit →</span>
+          <div>
+            <h3 class="card__title">Safari Kenya</h3>
+            <div class="card__period">Septembre – Octobre</div>
           </div>
+          <div class="card__price"><span>dès</span> <strong>2 890 €</strong></div>
         </div>
       </a>
 
       <a href="#" class="card" data-reveal>
         <div class="card__media">
           <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Maldives" loading="lazy">
-          <span class="card__badge">Places disponibles</span>
         </div>
         <div class="card__body">
-          <div class="card__period">Novembre – Décembre</div>
-          <h3 class="card__title">Maldives</h3>
-          <p class="card__desc">Lagons turquoise et repos absolu au bord de l'eau.</p>
-          <div class="card__footer">
-            <div class="card__price"><span>à partir de</span><br><strong>2 690 €</strong></div>
-            <span class="card__link">Voir le circuit →</span>
+          <div>
+            <h3 class="card__title">Maldives</h3>
+            <div class="card__period">Novembre – Décembre</div>
           </div>
+          <div class="card__price"><span>dès</span> <strong>2 690 €</strong></div>
         </div>
       </a>
 
@@ -265,28 +252,28 @@
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
           </div>
           <h3>Accompagné de bout en bout</h3>
-          <p>Un accompagnateur francophone à vos côtés, du départ jusqu'au retour à la maison.</p>
+          <p>Un accompagnateur francophone, du départ au retour.</p>
         </div>
         <div class="reassurance__item" data-reveal>
           <div class="reassurance__icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5l3 2"></path></svg>
           </div>
           <h3>Un rythme tranquille</h3>
-          <p>Des journées pensées sans course ni précipitation. On prend le temps de tout savourer.</p>
+          <p>Des journées pensées pour savourer, jamais courir.</p>
         </div>
         <div class="reassurance__item" data-reveal>
           <div class="reassurance__icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="5" width="20" height="14" rx="2"></rect><path d="M2 10h20"></path></svg>
           </div>
           <h3>4×, 6× ou 10× sans frais</h3>
-          <p>Étalez le règlement de votre voyage à votre rythme, sans aucun frais supplémentaire.</p>
+          <p>Réglez votre voyage à votre rythme, sans frais.</p>
         </div>
         <div class="reassurance__item" data-reveal>
           <div class="reassurance__icon">
             <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
           </div>
           <h3>Des conseillers à l'écoute</h3>
-          <p>Une vraie personne au téléphone pour répondre à toutes vos questions, avant et pendant.</p>
+          <p>Une vraie personne au téléphone, à chaque étape.</p>
         </div>
       </div>
     </div>
@@ -296,12 +283,13 @@
   <section class="split">
     <div class="split__block" data-reveal>
       <div class="split__media">
-        <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80" alt="Voyage organisé" loading="lazy">
+        <img src="https://images.unsplash.com/photo-1543342384-1f1350e27861?auto=format&fit=crop&w=1000&q=80"
+             data-fallback="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=1000&q=80"
+             alt="Couple de voyageurs seniors" loading="lazy">
       </div>
       <div class="split__content">
         <p class="eyebrow">Clé en main</p>
         <h2 class="section-title section-title--md">Tout est déjà <em>organisé</em> pour vous</h2>
-        <p class="split__text">Vols, hébergements soigneusement sélectionnés, transferts et activités : nous nous occupons de chaque détail. Vous n'avez plus qu'à faire votre valise et profiter.</p>
         <div class="split__list">
           <div class="split__item"><span class="split__check">✓</span> Vols au départ de Paris inclus</div>
           <div class="split__item"><span class="split__check">✓</span> Hôtels de charme, confort garanti</div>
@@ -312,47 +300,14 @@
     </div>
   </section>
 
-  <!-- ============ TÉMOIGNAGES ============ -->
-  <section id="avis" class="testimonials">
-    <div class="testimonials__inner">
-      <div class="testimonials__header" data-reveal>
-        <p class="eyebrow">Ils sont partis avec nous</p>
-        <h2 class="section-title">Des souvenirs <em>pour la vie</em></h2>
-      </div>
-      <div class="testimonials__grid">
-        <div class="review" data-reveal>
-          <div class="review__stars" aria-label="5 étoiles sur 5">★★★★★</div>
-          <p class="review__quote">« Tout était parfait, du premier appel jusqu'au retour. On s'est laissés porter, sans aucun souci. Santorin restera un souvenir merveilleux. »</p>
-          <div class="review__author">
-            <div class="review__avatar">JM</div>
-            <div>
-              <div class="review__name">Jacqueline M.</div>
-              <div class="review__context">Santorin · Mai 2025</div>
-            </div>
-          </div>
-        </div>
-        <div class="review" data-reveal>
-          <div class="review__stars" aria-label="5 étoiles sur 5">★★★★★</div>
-          <p class="review__quote">« Le safari au Kenya était un rêve d'enfance. Un rythme adapté, un accompagnateur formidable et attentionné. Nous recommandons les yeux fermés. »</p>
-          <div class="review__author">
-            <div class="review__avatar">MF</div>
-            <div>
-              <div class="review__name">Michel &amp; Françoise</div>
-              <div class="review__context">Safari Kenya · Oct. 2025</div>
-            </div>
-          </div>
-        </div>
-        <div class="review" data-reveal>
-          <div class="review__stars" aria-label="5 étoiles sur 5">★★★★★</div>
-          <p class="review__quote">« J'appréhendais de voyager seule à mon âge. J'ai été rassurée dès le départ et parfaitement entourée. Marrakech était éblouissant. Merci à toute l'équipe. »</p>
-          <div class="review__author">
-            <div class="review__avatar">CR</div>
-            <div>
-              <div class="review__name">Colette R.</div>
-              <div class="review__context">Marrakech · Févr. 2025</div>
-            </div>
-          </div>
-        </div>
+  <!-- ============ TÉMOIGNAGE ============ -->
+  <section id="avis" class="testimonial">
+    <div class="testimonial__inner" data-reveal>
+      <div class="testimonial__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+      <blockquote class="testimonial__quote">« J'appréhendais de voyager seule à mon âge. J'ai été rassurée dès le départ et parfaitement entourée. »</blockquote>
+      <div class="testimonial__author">
+        <div class="testimonial__name">Colette R.</div>
+        <div class="testimonial__context">Marrakech · Février 2025</div>
       </div>
     </div>
   </section>
@@ -364,14 +319,7 @@
       <div class="payment__content">
         <p class="eyebrow eyebrow--gold">Paiement en toute sérénité</p>
         <h2 class="section-title section-title--light">Payez en 4×, 6× ou 10× — <em class="em--gold">sans frais</em></h2>
-        <p class="payment__text">Réservez aujourd'hui, réglez à votre rythme. Aucun frais caché, aucune mauvaise surprise.</p>
-        <div class="payment__methods">
-          <span class="payment__pill">Visa</span>
-          <span class="payment__pill">Mastercard</span>
-          <span class="payment__pill">American Express</span>
-          <span class="payment__pill">PayPal</span>
-          <span class="payment__pill">Apple Pay</span>
-        </div>
+        <p class="payment__methods">Visa · Mastercard · American Express · PayPal · Apple Pay</p>
         <div class="payment__notes">
           <span class="payment__note">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E8C9A8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
@@ -390,7 +338,6 @@
   <section class="newsletter">
     <div data-reveal>
       <h2 class="section-title section-title--md">Les meilleures offres, <em>avant tout le monde</em></h2>
-      <p class="newsletter__text">Recevez en avant-première l'ouverture des réservations et nos départs exceptionnels.</p>
       <form class="newsletter__form" id="newsletter-form">
         <input type="email" required placeholder="Votre adresse e-mail" aria-label="Votre adresse e-mail">
         <button type="submit" id="newsletter-submit">S'inscrire</button>

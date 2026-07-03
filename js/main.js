@@ -29,6 +29,23 @@
     });
   }
 
+  // --- Filet de sécurité images : si une photo ne charge pas,
+  //     on bascule sur la photo de secours indiquée dans data-fallback ---
+  document.querySelectorAll('img[data-fallback]').forEach(function (img) {
+    img.addEventListener('error', function () {
+      var fallback = img.getAttribute('data-fallback');
+      if (fallback && img.src !== fallback) {
+        img.src = fallback;
+        img.removeAttribute('data-fallback');
+      }
+    });
+    // l'erreur a pu survenir avant l'installation de l'écouteur
+    if (img.complete && img.naturalWidth === 0) {
+      img.src = img.getAttribute('data-fallback');
+      img.removeAttribute('data-fallback');
+    }
+  });
+
   // --- Onglets de la barre de recherche (visuel ; à brancher sur les vrais formulaires) ---
   var tabs = document.querySelectorAll('.search__tab');
   tabs.forEach(function (tab) {
