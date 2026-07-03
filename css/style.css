@@ -264,15 +264,18 @@ img { display: block; max-width: 100%; }
 
 .search {
   max-width: 1240px;
-  margin: -85px auto 0;
+  margin: -140px auto 0;
   padding: 0 40px;
   position: relative;
   z-index: 20;
 }
 .search__panel {
-  background: var(--teal);
+  background: rgba(27, 34, 89, .80);        /* bleu marine semi-transparent */
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, .14);
   border-radius: 16px;
-  box-shadow: 0 30px 70px rgba(15, 18, 45, .3);
+  box-shadow: 0 30px 70px rgba(15, 18, 45, .35);
   padding: 6px 34px 26px;
 }
 
