@@ -261,24 +261,7 @@ img { display: block; max-width: 100%; }
   display: flex;
   flex-wrap: wrap;
   gap: 16px;
-  margin-bottom: 48px;
 }
-
-.hero__stats { display: flex; flex-wrap: wrap; gap: 48px; }
-.hero__stat-number {
-  font-family: var(--serif);
-  font-size: 46px;
-  font-weight: 600;
-  color: var(--bg);
-  line-height: 1;
-}
-.hero__stat-suffix { font-size: 24px; color: var(--gold); }
-.hero__stat-label {
-  font-size: 15px;
-  color: rgba(250, 246, 240, .75);
-  margin-top: 2px;
-}
-.hero__stat-divider { width: 1px; background: rgba(250, 246, 240, .25); }
 
 /* ---------- Barre de recherche (panneau à onglets) ---------- */
 
@@ -892,9 +875,7 @@ img { display: block; max-width: 100%; }
   .header__inner { padding: 0 24px; }
   .header__phone { display: none; }
 
-  .hero { padding: 130px 24px 60px; }
-  .hero__stats { gap: 28px; }
-  .hero__stat-divider { display: none; }
+  .hero { padding: 130px 24px 110px; }
 
   .search { padding: 0 24px; margin-top: -70px; }
   .search__panel { padding: 4px 20px 18px; }
