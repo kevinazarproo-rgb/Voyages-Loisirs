@@ -142,9 +142,6 @@
     <div class="circuit-main">
       <p class="circuit-main__intro" id="c-intro"></p>
 
-      <h2 class="circuit-sec-title">Vous allez aimer</h2>
-      <div class="highlights" id="c-highlights"></div>
-
       <h2 class="circuit-sec-title">Le programme jour par jour</h2>
       <div class="days" id="c-days"></div>
 
@@ -377,10 +374,6 @@
 
   var badge = el('c-badge');
   if (d.badge) { badge.textContent = d.badge; badge.hidden = false; }
-
-  el('c-highlights').innerHTML = (d.points || []).map(function (p) {
-    return '<span>' + p + '</span>';
-  }).join('');
 
   el('c-days').innerHTML = (d.jours || []).map(function (j, i) {
     return '<div class="day">' +
