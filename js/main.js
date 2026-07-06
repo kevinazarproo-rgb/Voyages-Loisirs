@@ -77,6 +77,39 @@
     updateArrows();
   }
 
+  // --- Fenêtre « Être rappelé » ---
+  var modal = document.getElementById('callback-modal');
+  if (modal) {
+    var openModal = function (e) {
+      if (e) e.preventDefault();
+      modal.classList.add('is-open');
+      modal.setAttribute('aria-hidden', 'false');
+      document.body.style.overflow = 'hidden';
+    };
+    var closeModal = function () {
+      modal.classList.remove('is-open');
+      modal.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    };
+    document.querySelectorAll('.js-callback').forEach(function (btn) {
+      btn.addEventListener('click', openModal);
+    });
+    modal.querySelectorAll('[data-close]').forEach(function (x) {
+      x.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+    var cbForm = document.getElementById('callback-form');
+    if (cbForm) {
+      cbForm.addEventListener('submit', function (e) {
+        e.preventDefault();
+        cbForm.style.display = 'none';
+        document.getElementById('callback-done').hidden = false;
+      });
+    }
+  }
+
   // --- Newsletter : confirmation locale (à brancher sur un vrai service d'emailing) ---
   var form = document.getElementById('newsletter-form');
   if (form) {

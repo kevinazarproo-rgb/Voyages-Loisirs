@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=9">
+  <link rel="stylesheet" href="css/style.css?v=10">
 </head>
 <body>
 
@@ -56,7 +56,7 @@
         <p class="hero__subtitle">Six destinations d'exception chaque année, entièrement organisées. Vous n'avez qu'à profiter.</p>
         <div class="hero__ctas">
           <a href="#destinations" class="btn btn--accent btn--lg">Découvrir nos destinations</a>
-          <a href="tel:+33144556677" class="hero__link">Être rappelé →</a>
+          <a href="tel:+33144556677" class="hero__link js-callback">Être rappelé →</a>
         </div>
       </div>
     </div>
@@ -492,6 +492,26 @@
     </div>
   </footer>
 
+</div>
+
+<!-- ============ FENÊTRE « ÊTRE RAPPELÉ » ============ -->
+<div class="modal" id="callback-modal" aria-hidden="true">
+  <div class="modal__overlay" data-close></div>
+  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="cb-title">
+    <button type="button" class="modal__close" data-close aria-label="Fermer">&times;</button>
+    <h3 id="cb-title">Être rappelé</h3>
+    <p class="modal__sub">Laissez-nous vos coordonnées, un conseiller vous rappelle rapidement.</p>
+    <form class="modal__form" id="callback-form">
+      <div class="modal__row">
+        <input type="text" name="prenom" placeholder="Prénom" required>
+        <input type="text" name="nom" placeholder="Nom" required>
+      </div>
+      <input type="tel" name="tel" placeholder="Téléphone" required>
+      <input type="email" name="email" placeholder="E-mail (facultatif)">
+      <button type="submit" class="modal__submit">Être rappelé</button>
+    </form>
+    <div class="modal__done" id="callback-done" hidden>Merci ! Un conseiller vous rappelle très vite. 🙏</div>
+  </div>
 </div>
 
 <script src="js/main.js"></script>
