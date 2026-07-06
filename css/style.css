@@ -898,6 +898,8 @@ img { display: block; max-width: 100%; }
   letter-spacing: .3px;
 }
 .partner img { max-height: 48px; max-width: 130px; width: auto; object-fit: contain; }
+.partner--wide { min-width: 200px; }
+.partner--wide img { max-width: 190px; max-height: 60px; }
 
 @media (max-width: 639px) {
   .partners { padding: 10px 24px 90px; }
