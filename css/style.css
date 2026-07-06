@@ -575,40 +575,77 @@ img { display: block; max-width: 100%; }
 
 /* ---------- Témoignage ---------- */
 
-.testimonial {
+.reviews {
   background: var(--sand);
-  padding: 150px 40px;
+  padding: 130px 0;
+  overflow: hidden;
 }
-.testimonial__inner {
-  max-width: 860px;
-  margin: 0 auto;
+.reviews__header {
   text-align: center;
+  max-width: 620px;
+  margin: 0 auto 60px;
+  padding: 0 40px;
 }
-.testimonial__stars {
+.reviews__header .section-title { margin-bottom: 0; }
+
+/* Bandeau défilant */
+.reviews__marquee {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.reviews__track {
+  display: flex;
+  gap: 28px;
+  width: max-content;
+  padding: 8px 14px;
+  animation: reviews-scroll 60s linear infinite;
+}
+.reviews__marquee:hover .reviews__track { animation-play-state: paused; }
+
+@keyframes reviews-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); } /* la 2e série (copie) prend le relais */
+}
+@media (prefers-reduced-motion: reduce) {
+  .reviews__track { animation: none; }
+  .reviews__marquee { overflow-x: auto; }
+}
+
+.review-card {
+  flex: 0 0 420px;
+  max-width: 85vw;
+  margin: 0;
+  background: #fff;
+  border: 1px solid rgba(27, 34, 89, .08);
+  border-radius: 16px;
+  box-shadow: 0 10px 30px rgba(20, 26, 69, .06);
+  padding: 34px 34px 30px;
+}
+.review-card__stars {
   color: var(--accent);
-  font-size: 22px;
-  letter-spacing: 6px;
-  margin-bottom: 34px;
+  font-size: 18px;
+  letter-spacing: 4px;
+  margin-bottom: 18px;
 }
-.testimonial__quote {
+.review-card blockquote {
   font-family: var(--serif);
-  font-size: clamp(28px, 3.4vw, 42px);
-  line-height: 1.35;
+  font-size: 22px;
+  line-height: 1.4;
   font-style: italic;
   font-weight: 500;
-  margin: 0 0 38px;
   color: var(--ink);
+  margin: 0 0 22px;
 }
-.testimonial__name {
-  font-weight: 600;
-  font-size: 17px;
-}
-.testimonial__context {
-  font-size: 14px;
-  letter-spacing: 1.5px;
+.review-card figcaption { display: flex; flex-direction: column; gap: 3px; }
+.review-card figcaption strong { font-size: 16px; font-weight: 600; color: var(--ink); }
+.review-card figcaption span {
+  font-size: 13px;
+  letter-spacing: 1.2px;
   text-transform: uppercase;
   color: var(--text-3);
-  margin-top: 4px;
 }
 
 /* ---------- Réassurance paiement ---------- */
@@ -820,7 +857,10 @@ img { display: block; max-width: 100%; }
   .split { padding: 110px 24px; }
   .split__content { padding: 44px 28px; }
 
-  .testimonial { padding: 110px 24px; }
+  .reviews { padding: 90px 0; }
+  .reviews__header { padding: 0 24px; }
+  .review-card { flex-basis: 300px; padding: 28px 26px 24px; }
+  .review-card blockquote { font-size: 20px; }
 
   .payment { padding: 110px 24px; }
   .payment__block { padding: 60px 28px; }

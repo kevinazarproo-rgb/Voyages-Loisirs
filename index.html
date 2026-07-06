@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=7">
 </head>
 <body>
 
@@ -295,14 +295,77 @@
     </div>
   </section>
 
-  <!-- ============ TÉMOIGNAGE ============ -->
-  <section id="avis" class="testimonial">
-    <div class="testimonial__inner" data-reveal>
-      <div class="testimonial__stars" aria-label="5 étoiles sur 5">★★★★★</div>
-      <blockquote class="testimonial__quote">« J'appréhendais de voyager seule à mon âge. J'ai été rassurée dès le départ et parfaitement entourée. »</blockquote>
-      <div class="testimonial__author">
-        <div class="testimonial__name">Colette R.</div>
-        <div class="testimonial__context">Marrakech · Février 2025</div>
+  <!-- ============ AVIS (défilement automatique) ============ -->
+  <section id="avis" class="reviews">
+    <div class="reviews__header" data-reveal>
+      <p class="eyebrow">Ils sont partis avec nous</p>
+      <h2 class="section-title">Des souvenirs <em>pour la vie</em></h2>
+    </div>
+
+    <div class="reviews__marquee">
+      <div class="reviews__track">
+        <!-- Série 1 -->
+        <figure class="review-card">
+          <div class="review-card__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>« J'appréhendais de voyager seule à mon âge. J'ai été rassurée dès le départ et parfaitement entourée. »</blockquote>
+          <figcaption><strong>Colette R.</strong><span>Marrakech · Févr. 2025</span></figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="review-card__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>« Tout était parfait, du premier appel jusqu'au retour. On s'est laissés porter, sans aucun souci. »</blockquote>
+          <figcaption><strong>Jacqueline M.</strong><span>Santorin · Mai 2025</span></figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="review-card__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>« Le safari au Kenya était un rêve d'enfance. Un accompagnateur formidable. Nous recommandons les yeux fermés. »</blockquote>
+          <figcaption><strong>Michel &amp; Françoise</strong><span>Safari Kenya · Oct. 2025</span></figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="review-card__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>« Un rythme parfait, jamais fatigant. On a pris le temps de tout apprécier. Merci pour ce beau voyage. »</blockquote>
+          <figcaption><strong>Gérard L.</strong><span>Tokyo · Avril 2025</span></figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="review-card__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>« Le paiement en plusieurs fois nous a beaucoup aidés. Un séjour de rêve sans se priver. »</blockquote>
+          <figcaption><strong>Danielle P.</strong><span>Bali · Août 2025</span></figcaption>
+        </figure>
+        <figure class="review-card">
+          <div class="review-card__stars" aria-label="5 étoiles sur 5">★★★★★</div>
+          <blockquote>« Des paysages magnifiques et une équipe aux petits soins. On repart quand vous voulez ! »</blockquote>
+          <figcaption><strong>Robert &amp; Simone</strong><span>Maldives · Déc. 2025</span></figcaption>
+        </figure>
+        <!-- Série 2 : copie pour un défilement en boucle sans coupure (aria-hidden) -->
+        <figure class="review-card" aria-hidden="true">
+          <div class="review-card__stars">★★★★★</div>
+          <blockquote>« J'appréhendais de voyager seule à mon âge. J'ai été rassurée dès le départ et parfaitement entourée. »</blockquote>
+          <figcaption><strong>Colette R.</strong><span>Marrakech · Févr. 2025</span></figcaption>
+        </figure>
+        <figure class="review-card" aria-hidden="true">
+          <div class="review-card__stars">★★★★★</div>
+          <blockquote>« Tout était parfait, du premier appel jusqu'au retour. On s'est laissés porter, sans aucun souci. »</blockquote>
+          <figcaption><strong>Jacqueline M.</strong><span>Santorin · Mai 2025</span></figcaption>
+        </figure>
+        <figure class="review-card" aria-hidden="true">
+          <div class="review-card__stars">★★★★★</div>
+          <blockquote>« Le safari au Kenya était un rêve d'enfance. Un accompagnateur formidable. Nous recommandons les yeux fermés. »</blockquote>
+          <figcaption><strong>Michel &amp; Françoise</strong><span>Safari Kenya · Oct. 2025</span></figcaption>
+        </figure>
+        <figure class="review-card" aria-hidden="true">
+          <div class="review-card__stars">★★★★★</div>
+          <blockquote>« Un rythme parfait, jamais fatigant. On a pris le temps de tout apprécier. Merci pour ce beau voyage. »</blockquote>
+          <figcaption><strong>Gérard L.</strong><span>Tokyo · Avril 2025</span></figcaption>
+        </figure>
+        <figure class="review-card" aria-hidden="true">
+          <div class="review-card__stars">★★★★★</div>
+          <blockquote>« Le paiement en plusieurs fois nous a beaucoup aidés. Un séjour de rêve sans se priver. »</blockquote>
+          <figcaption><strong>Danielle P.</strong><span>Bali · Août 2025</span></figcaption>
+        </figure>
+        <figure class="review-card" aria-hidden="true">
+          <div class="review-card__stars">★★★★★</div>
+          <blockquote>« Des paysages magnifiques et une équipe aux petits soins. On repart quand vous voulez ! »</blockquote>
+          <figcaption><strong>Robert &amp; Simone</strong><span>Maldives · Déc. 2025</span></figcaption>
+        </figure>
       </div>
     </div>
   </section>
