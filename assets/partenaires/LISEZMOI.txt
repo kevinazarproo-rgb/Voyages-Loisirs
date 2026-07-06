@@ -1,0 +1,16 @@
+Déposez ici les logos des partenaires (PNG à fond transparent de préférence),
+avec EXACTEMENT ces noms de fichiers :
+
+  atout-france.png
+  apst.png
+  iata.png
+  entreprises-du-voyage.png
+  virtuoso.png
+  tourcom.png
+  manor.png
+  fsc.png
+  pefc.png
+  greenly.png
+
+Dès qu'un fichier est déposé, le logo remplace automatiquement le texte
+dans la section « Nos partenaires » de la page d'accueil.
