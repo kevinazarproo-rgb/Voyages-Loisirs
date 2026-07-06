@@ -46,6 +46,37 @@
     }
   });
 
+  // --- Carrousel des destinations (flèches précédent / suivant) ---
+  var track = document.getElementById('dest-track');
+  if (track) {
+    var slider = track.closest('.slider');
+    var prev = slider.querySelector('.slider__arrow--prev');
+    var next = slider.querySelector('.slider__arrow--next');
+
+    var step = function () {
+      var card = track.querySelector('.card');
+      if (!card) return track.clientWidth;
+      var gap = parseInt(getComputedStyle(track).columnGap || '34', 10) || 34;
+      return card.offsetWidth + gap;
+    };
+
+    var updateArrows = function () {
+      var maxScroll = track.scrollWidth - track.clientWidth - 2;
+      if (prev) prev.disabled = track.scrollLeft <= 2;
+      if (next) next.disabled = track.scrollLeft >= maxScroll;
+    };
+
+    if (prev) prev.addEventListener('click', function () {
+      track.scrollBy({ left: -step(), behavior: 'smooth' });
+    });
+    if (next) next.addEventListener('click', function () {
+      track.scrollBy({ left: step(), behavior: 'smooth' });
+    });
+    track.addEventListener('scroll', updateArrows, { passive: true });
+    window.addEventListener('resize', updateArrows);
+    updateArrows();
+  }
+
   // --- Newsletter : confirmation locale (à brancher sur un vrai service d'emailing) ---
   var form = document.getElementById('newsletter-form');
   if (form) {

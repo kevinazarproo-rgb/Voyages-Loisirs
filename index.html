@@ -12,7 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=5">
+  <link rel="stylesheet" href="css/style.css?v=6">
 </head>
 <body>
 
@@ -138,89 +138,99 @@
       </div>
     </div>
 
-    <div class="destinations__grid">
+    <div class="slider">
+      <button type="button" class="slider__arrow slider__arrow--prev" aria-label="Destination précédente">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
+      </button>
 
-      <a href="#" class="card" data-reveal>
-        <div class="card__media">
-          <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=800&q=80" alt="Marrakech" loading="lazy">
-          <span class="card__badge">Dernières places</span>
-        </div>
-        <div class="card__body">
-          <div>
-            <h3 class="card__title">Marrakech</h3>
-            <div class="card__period">Janvier – Février</div>
+      <div class="slider__track" id="dest-track">
+
+        <a href="circuit.html?d=marrakech" class="card" data-reveal>
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=800&q=80" alt="Marrakech" loading="lazy">
+            <span class="card__badge">Dernières places</span>
           </div>
-          <div class="card__price"><span>dès</span> <strong>1 290 €</strong></div>
-        </div>
-      </a>
-
-      <a href="#" class="card" data-reveal>
-        <div class="card__media">
-          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Tokyo" loading="lazy">
-        </div>
-        <div class="card__body">
-          <div>
-            <h3 class="card__title">Tokyo</h3>
-            <div class="card__period">Mars – Avril</div>
+          <div class="card__body">
+            <div>
+              <h3 class="card__title">Marrakech</h3>
+              <div class="card__period">Janvier – Février</div>
+            </div>
+            <div class="card__price"><span>dès</span> <strong>1 290 €</strong></div>
           </div>
-          <div class="card__price"><span>dès</span> <strong>2 490 €</strong></div>
-        </div>
-      </a>
+        </a>
 
-      <a href="#" class="card" data-reveal>
-        <div class="card__media">
-          <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="Santorin" loading="lazy">
-          <span class="card__badge">Bientôt complet</span>
-        </div>
-        <div class="card__body">
-          <div>
-            <h3 class="card__title">Santorin</h3>
-            <div class="card__period">Mai – Juin</div>
+        <a href="circuit.html?d=tokyo" class="card" data-reveal>
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Tokyo" loading="lazy">
           </div>
-          <div class="card__price"><span>dès</span> <strong>1 690 €</strong></div>
-        </div>
-      </a>
-
-      <a href="#" class="card" data-reveal>
-        <div class="card__media">
-          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali" loading="lazy">
-        </div>
-        <div class="card__body">
-          <div>
-            <h3 class="card__title">Bali</h3>
-            <div class="card__period">Juillet – Août</div>
+          <div class="card__body">
+            <div>
+              <h3 class="card__title">Tokyo</h3>
+              <div class="card__period">Mars – Avril</div>
+            </div>
+            <div class="card__price"><span>dès</span> <strong>2 490 €</strong></div>
           </div>
-          <div class="card__price"><span>dès</span> <strong>2 190 €</strong></div>
-        </div>
-      </a>
+        </a>
 
-      <a href="#" class="card" data-reveal>
-        <div class="card__media">
-          <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80" alt="Safari Kenya" loading="lazy">
-          <span class="card__badge">Dernières places</span>
-        </div>
-        <div class="card__body">
-          <div>
-            <h3 class="card__title">Safari Kenya</h3>
-            <div class="card__period">Septembre – Octobre</div>
+        <a href="circuit.html?d=santorin" class="card" data-reveal>
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="Santorin" loading="lazy">
+            <span class="card__badge">Bientôt complet</span>
           </div>
-          <div class="card__price"><span>dès</span> <strong>2 890 €</strong></div>
-        </div>
-      </a>
-
-      <a href="#" class="card" data-reveal>
-        <div class="card__media">
-          <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Maldives" loading="lazy">
-        </div>
-        <div class="card__body">
-          <div>
-            <h3 class="card__title">Maldives</h3>
-            <div class="card__period">Novembre – Décembre</div>
+          <div class="card__body">
+            <div>
+              <h3 class="card__title">Santorin</h3>
+              <div class="card__period">Mai – Juin</div>
+            </div>
+            <div class="card__price"><span>dès</span> <strong>1 690 €</strong></div>
           </div>
-          <div class="card__price"><span>dès</span> <strong>2 690 €</strong></div>
-        </div>
-      </a>
+        </a>
 
+        <a href="circuit.html?d=bali" class="card" data-reveal>
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali" loading="lazy">
+          </div>
+          <div class="card__body">
+            <div>
+              <h3 class="card__title">Bali</h3>
+              <div class="card__period">Juillet – Août</div>
+            </div>
+            <div class="card__price"><span>dès</span> <strong>2 190 €</strong></div>
+          </div>
+        </a>
+
+        <a href="circuit.html?d=kenya" class="card" data-reveal>
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80" alt="Safari Kenya" loading="lazy">
+            <span class="card__badge">Dernières places</span>
+          </div>
+          <div class="card__body">
+            <div>
+              <h3 class="card__title">Safari Kenya</h3>
+              <div class="card__period">Septembre – Octobre</div>
+            </div>
+            <div class="card__price"><span>dès</span> <strong>2 890 €</strong></div>
+          </div>
+        </a>
+
+        <a href="circuit.html?d=maldives" class="card" data-reveal>
+          <div class="card__media">
+            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Maldives" loading="lazy">
+          </div>
+          <div class="card__body">
+            <div>
+              <h3 class="card__title">Maldives</h3>
+              <div class="card__period">Novembre – Décembre</div>
+            </div>
+            <div class="card__price"><span>dès</span> <strong>2 690 €</strong></div>
+          </div>
+        </a>
+
+      </div>
+
+      <button type="button" class="slider__arrow slider__arrow--next" aria-label="Destination suivante">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m9 18 6-6-6-6"></path></svg>
+      </button>
     </div>
   </section>
 

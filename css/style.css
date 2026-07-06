@@ -365,11 +365,49 @@ img { display: block; max-width: 100%; }
   color: var(--text-3);
 }
 
-.destinations__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 34px;
+/* Carrousel horizontal */
+.slider {
+  position: relative;
 }
+.slider__track {
+  display: flex;
+  gap: 34px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 6px 4px 20px;
+  -ms-overflow-style: none;   /* IE/Edge */
+  scrollbar-width: none;      /* Firefox */
+}
+.slider__track::-webkit-scrollbar { display: none; } /* Chrome/Safari */
+
+.slider__track .card {
+  flex: 0 0 calc((100% - 68px) / 3); /* 3 cartes visibles (gap 34px ×2) */
+  scroll-snap-align: start;
+}
+
+.slider__arrow {
+  position: absolute;
+  top: 38%;
+  transform: translateY(-50%);
+  z-index: 5;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: 1px solid rgba(27, 34, 89, .15);
+  background: #fff;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 8px 24px rgba(20, 26, 69, .16);
+  transition: background .3s ease, color .3s ease, opacity .3s ease;
+}
+.slider__arrow:hover { background: var(--ink); color: #fff; }
+.slider__arrow--prev { left: -18px; }
+.slider__arrow--next { right: -18px; }
+.slider__arrow[disabled] { opacity: 0; pointer-events: none; }
 
 .card {
   text-decoration: none;
@@ -746,7 +784,9 @@ img { display: block; max-width: 100%; }
 @media (max-width: 1023px) {
   .nav { display: none; }
 
-  .destinations__grid { grid-template-columns: repeat(2, 1fr); }
+  .slider__track .card { flex-basis: calc((100% - 34px) / 2); } /* 2 cartes */
+  .slider__arrow--prev { left: 4px; }
+  .slider__arrow--next { right: 4px; }
   .reassurance__grid { grid-template-columns: repeat(2, 1fr); gap: 56px 40px; }
 
   .search__form { grid-template-columns: 1fr 1fr; }
@@ -770,7 +810,9 @@ img { display: block; max-width: 100%; }
   .search__form { grid-template-columns: 1fr; }
 
   .destinations { padding: 110px 24px 40px; }
-  .destinations__grid { grid-template-columns: 1fr; gap: 44px; }
+  .slider__track { gap: 18px; }
+  .slider__track .card { flex-basis: 82%; } /* ~1 carte + aperçu de la suivante */
+  .slider__arrow { display: none; } /* sur mobile on glisse au doigt */
 
   .reassurance { padding: 100px 24px; margin-top: 110px; }
   .reassurance__grid { grid-template-columns: 1fr; gap: 52px; }
