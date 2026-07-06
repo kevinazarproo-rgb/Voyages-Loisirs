@@ -46,6 +46,11 @@
     .day__text { font-size: 16px; line-height: 1.7; color: var(--text-2); margin: 0; }
 
     /* Aside réservation */
+    /* Galerie */
+    .circuit-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
+    .circuit-gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 14px; display: block; }
+    .circuit-gallery img:first-child { grid-column: 1 / -1; height: 320px; }
+
     .circuit-side { display: flex; flex-direction: column; gap: 24px; }
     .circuit-aside { background: var(--ink); color: #fff; border-radius: 18px; padding: 38px 34px; }
     .circuit-aside h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; margin: 0 0 20px; }
@@ -142,6 +147,9 @@
 
       <h2 class="circuit-sec-title">Le programme jour par jour</h2>
       <div class="days" id="c-days"></div>
+
+      <h2 class="circuit-sec-title" style="margin-top:56px">En images</h2>
+      <div class="circuit-gallery" id="c-gallery"></div>
     </div>
 
     <div class="circuit-side">
@@ -384,6 +392,24 @@
 
   el('c-includes').innerHTML = INCLUS.map(function (x) { return '<li>' + x + '</li>'; }).join('');
   el('c-excludes').innerHTML = NON_INCLUS.map(function (x) { return '<li>' + x + '</li>'; }).join('');
+
+  // Galerie : photo principale + 2 visuels d'ambiance (à remplacer par les vraies photos)
+  var galerie = d.galerie || [
+    d.img,
+    'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80',
+    'https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=900&q=80'
+  ];
+  el('c-gallery').innerHTML = galerie.map(function (src) {
+    return '<img src="' + src + '" alt="' + d.nom + '" loading="lazy" data-fallback="' + d.img + '">';
+  }).join('');
+
+  // Filet de sécurité : si une image ne charge pas, on bascule sur la photo principale
+  document.querySelectorAll('img[data-fallback]').forEach(function (img) {
+    img.addEventListener('error', function () {
+      var fb = img.getAttribute('data-fallback');
+      if (fb && img.src !== fb) { img.src = fb; img.removeAttribute('data-fallback'); }
+    });
+  });
 </script>
 </body>
 </html>
