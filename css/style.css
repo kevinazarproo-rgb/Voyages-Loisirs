@@ -143,11 +143,11 @@ img { display: block; max-width: 100%; }
   line-height: 1;
 }
 .logo__img {
-  height: 64px;
+  height: 78px;
   width: auto;
   transition: height .4s ease;
 }
-.header.is-scrolled .logo__img { height: 52px; }
+.header.is-scrolled .logo__img { height: 62px; }
 
 .nav { display: flex; align-items: center; gap: 38px; }
 .nav a {
@@ -716,7 +716,7 @@ img { display: block; max-width: 100%; }
   border-bottom: 1px solid rgba(250, 246, 240, .1);
 }
 .footer__logo-img {
-  height: 92px;
+  height: 116px;
   width: auto;
   margin-bottom: 20px;
 }
