@@ -46,7 +46,8 @@
     .day__text { font-size: 16px; line-height: 1.7; color: var(--text-2); margin: 0; }
 
     /* Aside réservation */
-    .circuit-aside { background: var(--ink); color: #fff; border-radius: 18px; padding: 38px 34px; position: sticky; top: 100px; }
+    .circuit-side { display: flex; flex-direction: column; gap: 24px; }
+    .circuit-aside { background: var(--ink); color: #fff; border-radius: 18px; padding: 38px 34px; }
     .circuit-aside h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; margin: 0 0 20px; }
     .aside-facts { list-style: none; margin: 0 0 26px; padding: 0; }
     .aside-facts li { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.14); font-size: 15px; }
@@ -56,10 +57,9 @@
     .circuit-aside__phone { display: block; text-align: center; text-decoration: none; color: #fff; font-size: 20px; font-weight: 700; margin-top: 18px; }
     .circuit-aside__note { text-align: center; font-size: 13px; color: rgba(255,255,255,.6); margin-top: 6px; }
 
-    /* Prix comprend / ne comprend pas */
-    .price-info { max-width: 1320px; margin: 0 auto; padding: 20px 40px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-    .price-box { background: #fff; border: 1px solid rgba(27,34,89,.1); border-radius: 18px; padding: 40px 38px; }
-    .price-box h2 { font-family: var(--serif); font-weight: 600; font-size: 26px; margin: 0 0 22px; color: var(--ink); }
+    /* Prix comprend / ne comprend pas (colonne de droite) */
+    .price-box { background: #fff; border: 1px solid rgba(27,34,89,.1); border-radius: 18px; padding: 32px 30px; }
+    .price-box h2 { font-family: var(--serif); font-weight: 600; font-size: 24px; margin: 0 0 20px; color: var(--ink); }
     .price-box ul { list-style: none; margin: 0; padding: 0; }
     .price-box li { position: relative; padding: 0 0 14px 34px; font-size: 16px; line-height: 1.6; color: var(--text-2); }
     .price-box li::before { position: absolute; left: 0; top: -1px; font-size: 18px; font-weight: 700; }
@@ -71,17 +71,13 @@
 
     @media (max-width: 900px) {
       .circuit-body { grid-template-columns: 1fr; gap: 40px; }
-      .circuit-aside { position: static; }
-      .price-info { grid-template-columns: 1fr; }
     }
     @media (max-width: 639px) {
       .circuit__back { padding: 110px 24px 0; }
       .circuit-hero { padding: 0 24px; }
       .circuit-hero__content { padding: 32px 26px; }
       .circuit-body { padding: 50px 24px 30px; }
-      .price-info { padding: 20px 24px 30px; }
-      .price-box { padding: 32px 26px; }
-      .circuit-note { padding: 0 24px 60px; }
+      .price-box { padding: 28px 24px; }
     }
   </style>
 </head>
@@ -148,6 +144,7 @@
       <div class="days" id="c-days"></div>
     </div>
 
+    <div class="circuit-side">
     <aside class="circuit-aside" id="reserver">
       <h3>Réservez votre place</h3>
       <ul class="aside-facts">
@@ -161,19 +158,17 @@
       <a href="tel:+33144556677" class="circuit-aside__phone">01 44 55 66 77</a>
       <div class="circuit-aside__note">Du lundi au samedi, 9h – 19h</div>
     </aside>
-  </div>
 
-  <!-- ============ PRIX COMPREND / NE COMPREND PAS ============ -->
-  <section class="price-info">
-    <div class="price-box price-box--yes">
-      <h2>Le prix comprend</h2>
-      <ul id="c-includes"></ul>
+      <div class="price-box price-box--yes">
+        <h2>Le prix comprend</h2>
+        <ul id="c-includes"></ul>
+      </div>
+      <div class="price-box price-box--no">
+        <h2>Le prix ne comprend pas</h2>
+        <ul id="c-excludes"></ul>
+      </div>
     </div>
-    <div class="price-box price-box--no">
-      <h2>Le prix ne comprend pas</h2>
-      <ul id="c-excludes"></ul>
-    </div>
-  </section>
+  </div>
 
   <!-- ============ FOOTER ============ -->
   <footer id="contact" class="footer">
