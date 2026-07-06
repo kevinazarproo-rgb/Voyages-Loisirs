@@ -10,92 +10,78 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=6">
+  <link rel="stylesheet" href="css/style.css?v=8">
   <style>
-    /* Page circuit : styles spécifiques (réutilise les variables du site) */
-    .circuit__back {
-      max-width: 1320px;
-      margin: 0 auto;
-      padding: 130px 40px 0;
-    }
-    .circuit__back a {
-      display: inline-flex; align-items: center; gap: 8px;
-      text-decoration: none; color: var(--text-2);
-      font-size: 15px; font-weight: 600;
-    }
+    .circuit__back { max-width: 1320px; margin: 0 auto; padding: 130px 40px 0; }
+    .circuit__back a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-2); font-size: 15px; font-weight: 600; }
     .circuit__back a:hover { color: var(--accent); }
 
-    .circuit-hero {
-      max-width: 1320px; margin: 24px auto 0; padding: 0 40px;
-    }
-    .circuit-hero__media {
-      position: relative; border-radius: 20px; overflow: hidden;
-      min-height: 460px; display: flex; align-items: flex-end;
-    }
-    .circuit-hero__media img {
-      position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
-    }
-    .circuit-hero__media::after {
-      content: ""; position: absolute; inset: 0;
-      background: linear-gradient(180deg, rgba(12,16,42,.15) 0%, rgba(12,16,42,.75) 100%);
-    }
-    .circuit-hero__content {
-      position: relative; padding: 48px 52px; color: #fff; width: 100%;
-    }
-    .circuit-hero__badge {
-      display: inline-block; background: #fff; color: var(--ink);
-      font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase;
-      padding: 8px 15px; border-radius: 100px; margin-bottom: 18px;
-    }
-    .circuit-hero__period {
-      font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase;
-      color: var(--gold-light); margin: 0 0 8px;
-    }
-    .circuit-hero__title {
-      font-family: var(--serif); font-weight: 500; font-size: clamp(44px, 6vw, 76px);
-      line-height: 1; margin: 0 0 16px; letter-spacing: -1px;
-    }
-    .circuit-hero__price { font-size: 19px; }
-    .circuit-hero__price strong { font-family: var(--serif); font-size: 30px; font-weight: 600; }
+    .circuit-hero { max-width: 1320px; margin: 24px auto 0; padding: 0 40px; }
+    .circuit-hero__media { position: relative; border-radius: 20px; overflow: hidden; min-height: 460px; display: flex; align-items: flex-end; }
+    .circuit-hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+    .circuit-hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,16,42,.15) 0%, rgba(12,16,42,.78) 100%); }
+    .circuit-hero__content { position: relative; padding: 48px 52px; color: #fff; width: 100%; }
+    .circuit-hero__badge { display: inline-block; background: #fff; color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: 8px 15px; border-radius: 100px; margin-bottom: 18px; }
+    .circuit-hero__period { font-size: 13px; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin: 0 0 8px; }
+    .circuit-hero__title { font-family: var(--serif); font-weight: 500; font-size: clamp(44px, 6vw, 76px); line-height: 1; margin: 0 0 16px; letter-spacing: -1px; }
+    .circuit-hero__meta { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 16px; color: rgba(255,255,255,.9); }
+    .circuit-hero__meta strong { color: #fff; }
 
-    .circuit-body {
-      max-width: 1320px; margin: 0 auto; padding: 70px 40px 40px;
-      display: grid; grid-template-columns: 1.4fr .9fr; gap: 60px; align-items: start;
-    }
-    .circuit-body__intro { font-size: 20px; line-height: 1.75; color: var(--text-2); margin: 0 0 34px; }
-    .circuit-body h2 {
-      font-family: var(--serif); font-weight: 500; font-size: 34px; margin: 0 0 24px; color: var(--ink);
-    }
-    .circuit-incl { display: flex; flex-direction: column; gap: 18px; }
-    .circuit-incl div {
-      display: flex; align-items: center; gap: 16px; font-size: 17px; font-weight: 500;
-    }
-    .circuit-incl span {
-      flex: none; width: 28px; height: 28px; border-radius: 50%;
-      background: var(--accent); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 14px;
-    }
-    .circuit-aside {
-      background: var(--ink); color: #fff; border-radius: 18px; padding: 40px 36px;
-      position: sticky; top: 100px;
-    }
-    .circuit-aside h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; margin: 0 0 8px; }
-    .circuit-aside p { color: rgba(255,255,255,.75); font-size: 16px; margin: 0 0 24px; }
+    .circuit-body { max-width: 1320px; margin: 0 auto; padding: 70px 40px 40px; display: grid; grid-template-columns: 1.5fr .85fr; gap: 60px; align-items: start; }
+    .circuit-main__intro { font-size: 20px; line-height: 1.75; color: var(--text-2); margin: 0 0 40px; }
+
+    .circuit-sec-title { font-family: var(--serif); font-weight: 500; font-size: 34px; margin: 0 0 24px; color: var(--ink); }
+
+    /* Points forts */
+    .highlights { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 50px; }
+    .highlights span { background: var(--sand); color: var(--ink); border-radius: 100px; padding: 10px 18px; font-size: 15px; font-weight: 500; }
+
+    /* Programme jour par jour */
+    .days { margin: 0 0 20px; border-left: 2px solid rgba(27,34,89,.12); }
+    .day { position: relative; padding: 0 0 30px 34px; }
+    .day::before { content: ""; position: absolute; left: -8px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid #fff; }
+    .day:last-child { padding-bottom: 0; }
+    .day__num { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
+    .day__title { font-weight: 700; font-size: 18px; color: var(--ink); margin: 0 0 6px; }
+    .day__text { font-size: 16px; line-height: 1.7; color: var(--text-2); margin: 0; }
+
+    /* Aside réservation */
+    .circuit-aside { background: var(--ink); color: #fff; border-radius: 18px; padding: 38px 34px; position: sticky; top: 100px; }
+    .circuit-aside h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; margin: 0 0 20px; }
+    .aside-facts { list-style: none; margin: 0 0 26px; padding: 0; }
+    .aside-facts li { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.14); font-size: 15px; }
+    .aside-facts li span { color: rgba(255,255,255,.7); }
+    .aside-facts li strong { color: #fff; text-align: right; }
     .circuit-aside .btn { width: 100%; text-align: center; margin-bottom: 12px; }
-    .circuit-aside__phone {
-      display: block; text-align: center; text-decoration: none; color: #fff;
-      font-size: 20px; font-weight: 700; margin-top: 18px;
-    }
+    .circuit-aside__phone { display: block; text-align: center; text-decoration: none; color: #fff; font-size: 20px; font-weight: 700; margin-top: 18px; }
     .circuit-aside__note { text-align: center; font-size: 13px; color: rgba(255,255,255,.6); margin-top: 6px; }
+
+    /* Prix comprend / ne comprend pas */
+    .price-info { max-width: 1320px; margin: 0 auto; padding: 20px 40px 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+    .price-box { background: #fff; border: 1px solid rgba(27,34,89,.1); border-radius: 18px; padding: 40px 38px; }
+    .price-box h2 { font-family: var(--serif); font-weight: 600; font-size: 26px; margin: 0 0 22px; color: var(--ink); }
+    .price-box ul { list-style: none; margin: 0; padding: 0; }
+    .price-box li { position: relative; padding: 0 0 14px 34px; font-size: 16px; line-height: 1.6; color: var(--text-2); }
+    .price-box li::before { position: absolute; left: 0; top: -1px; font-size: 18px; font-weight: 700; }
+    .price-box--yes li::before { content: "✓"; color: #1f8a5b; }
+    .price-box--no li::before { content: "✕"; color: #c0472f; }
+
+    .circuit-note { max-width: 1320px; margin: 0 auto; padding: 0 40px 80px; }
+    .circuit-note p { background: #FFF6E9; border: 1px solid #F0D9B0; color: #7a5a1e; border-radius: 12px; padding: 16px 20px; font-size: 14px; margin: 0; }
 
     @media (max-width: 900px) {
       .circuit-body { grid-template-columns: 1fr; gap: 40px; }
       .circuit-aside { position: static; }
+      .price-info { grid-template-columns: 1fr; }
     }
     @media (max-width: 639px) {
       .circuit__back { padding: 110px 24px 0; }
       .circuit-hero { padding: 0 24px; }
-      .circuit-hero__content { padding: 32px 28px; }
+      .circuit-hero__content { padding: 32px 26px; }
       .circuit-body { padding: 50px 24px 30px; }
+      .price-info { padding: 20px 24px 30px; }
+      .price-box { padding: 32px 26px; }
+      .circuit-note { padding: 0 24px 60px; }
     }
   </style>
 </head>
@@ -142,33 +128,55 @@
         <span class="circuit-hero__badge" id="c-badge" hidden></span>
         <p class="circuit-hero__period" id="c-period"></p>
         <h1 class="circuit-hero__title" id="c-title"></h1>
-        <div class="circuit-hero__price">à partir de <strong id="c-price"></strong> · par personne</div>
+        <div class="circuit-hero__meta">
+          <span id="c-duration"></span>
+          <span>à partir de <strong id="c-price"></strong> / pers.</span>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ============ CORPS ============ -->
   <div class="circuit-body">
-    <div>
-      <p class="circuit-body__intro" id="c-intro"></p>
-      <h2>Ce qui est inclus</h2>
-      <div class="circuit-incl">
-        <div><span>✓</span> Vols au départ de Paris inclus</div>
-        <div><span>✓</span> Hôtels de charme, confort garanti</div>
-        <div><span>✓</span> Accompagnateur francophone du départ au retour</div>
-        <div><span>✓</span> Excursions et repas typiques prévus</div>
-        <div><span>✓</span> Assistance 24h/24 pendant le séjour</div>
-      </div>
+    <div class="circuit-main">
+      <p class="circuit-main__intro" id="c-intro"></p>
+
+      <h2 class="circuit-sec-title">Vous allez aimer</h2>
+      <div class="highlights" id="c-highlights"></div>
+
+      <h2 class="circuit-sec-title">Le programme jour par jour</h2>
+      <div class="days" id="c-days"></div>
     </div>
 
     <aside class="circuit-aside" id="reserver">
       <h3>Réservez votre place</h3>
-      <p>Payez en 4×, 6× ou 10× sans frais. Places limitées.</p>
+      <ul class="aside-facts">
+        <li><span>Durée</span> <strong id="c-fact-duration"></strong></li>
+        <li><span>Période</span> <strong id="c-fact-period"></strong></li>
+        <li><span>À partir de</span> <strong id="c-fact-price"></strong></li>
+        <li><span>Paiement</span> <strong>4× · 6× · 10× sans frais</strong></li>
+      </ul>
       <a href="tel:+33144556677" class="btn btn--accent btn--lg">Être rappelé</a>
       <a href="mailto:bonjour@voyages-loisirs.fr" class="btn btn--dark btn--lg" style="background:rgba(255,255,255,.14);color:#fff">Demander un devis</a>
       <a href="tel:+33144556677" class="circuit-aside__phone">01 44 55 66 77</a>
       <div class="circuit-aside__note">Du lundi au samedi, 9h – 19h</div>
     </aside>
+  </div>
+
+  <!-- ============ PRIX COMPREND / NE COMPREND PAS ============ -->
+  <section class="price-info">
+    <div class="price-box price-box--yes">
+      <h2>Le prix comprend</h2>
+      <ul id="c-includes"></ul>
+    </div>
+    <div class="price-box price-box--no">
+      <h2>Le prix ne comprend pas</h2>
+      <ul id="c-excludes"></ul>
+    </div>
+  </section>
+
+  <div class="circuit-note">
+    <p>ℹ️ Programme, prix et dates donnés à titre indicatif — exemple à personnaliser. Contactez nos conseillers au 01 44 55 66 77 pour le détail et la disponibilité de chaque départ.</p>
   </div>
 
   <!-- ============ FOOTER ============ -->
@@ -217,57 +225,174 @@
 </div>
 
 <script>
-  // Données des destinations (à brancher plus tard sur le back-office)
+  // Éléments communs à tous les circuits (standard — à ajuster si besoin)
+  var INCLUS = [
+    "Les vols internationaux aller-retour au départ de Paris, en classe économique",
+    "Les taxes d'aéroport et de sécurité",
+    "Les transferts aéroport – hôtel – aéroport",
+    "L'hébergement en hôtels 4★ en chambre double",
+    "Les petits déjeuners et les repas mentionnés au programme",
+    "Les excursions et visites mentionnées au programme",
+    "Un accompagnateur francophone durant tout le séjour",
+    "L'assistance de notre équipe 24h/24"
+  ];
+  var NON_INCLUS = [
+    "Les boissons",
+    "Le supplément chambre individuelle",
+    "La formule pension complète (en option)",
+    "Le port des bagages",
+    "Les pourboires (guides, chauffeurs)",
+    "Les dépenses personnelles",
+    "Les assurances annulation / multirisque (nous consulter)",
+    "Les excursions non mentionnées au programme",
+    "Tout ce qui n'est pas indiqué dans « Le prix comprend »"
+  ];
+
+  // Données par destination (programmes = exemples à remplacer par les vrais)
   var DESTINATIONS = {
     marrakech: {
       nom: 'Marrakech', periode: 'Janvier – Février', prix: '1 290 €', badge: 'Dernières places',
+      duree: '8 jours / 7 nuits',
       img: 'https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1600&q=80',
-      intro: "Perdez-vous dans les ruelles colorées de la médina, respirez le parfum des souks et savourez la douceur de l'hiver marocain. Un séjour tout en douceur, entre palmeraies, jardins et terrasses ensoleillées."
+      intro: "Perdez-vous dans les ruelles colorées de la médina, respirez le parfum des souks et savourez la douceur de l'hiver marocain — un séjour tout en douceur, entre palmeraies, jardins et terrasses ensoleillées.",
+      points: ['Médina & souks', 'Jardin Majorelle', 'Palmeraie', 'Dîner spectacle', 'Excursion Atlas'],
+      jours: [
+        ['Paris – Marrakech', "Envol pour Marrakech, accueil et transfert à l'hôtel. Temps libre. Dîner et nuit à l'hôtel."],
+        ['La médina', "Visite guidée de la médina, de la place Jemaa el-Fna et des souks. Déjeuner typique. Après-midi libre."],
+        ['Jardins & palais', "Découverte du jardin Majorelle, du palais de la Bahia et des jardins de la Ménara. Déjeuner et temps libre."],
+        ['Palmeraie', "Balade dans la palmeraie, pause thé à la menthe. Après-midi détente ou hammam traditionnel (en option)."],
+        ["Montagnes de l'Atlas", "Excursion à la journée dans l'Atlas et ses villages berbères. Déjeuner chez l'habitant. Retour à Marrakech."],
+        ['Journée libre', "Journée libre pour flâner, faire des achats ou profiter de l'hôtel. Dîner spectacle folklorique (en option)."],
+        ['Derniers instants', "Matinée libre, derniers achats dans les souks. Temps libre avant le transfert."],
+        ['Marrakech – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
+      ]
     },
     tokyo: {
       nom: 'Tokyo', periode: 'Mars – Avril', prix: '2 490 €', badge: '',
+      duree: '9 jours / 7 nuits',
       img: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80',
-      intro: "Découvrez le Japon au moment magique des cerisiers en fleurs. Entre temples paisibles, jardins raffinés et art de vivre japonais, un voyage dépaysant au rythme tranquille."
+      intro: "Découvrez le Japon au moment magique des cerisiers en fleurs — entre temples paisibles, jardins raffinés et art de vivre japonais, un voyage dépaysant au rythme tranquille.",
+      points: ['Cerisiers en fleurs', 'Temples de Kyoto', 'Mont Fuji', 'Train à grande vitesse', 'Jardins zen'],
+      jours: [
+        ['Paris – Tokyo', "Envol pour Tokyo. Nuit à bord."],
+        ['Arrivée à Tokyo', "Accueil et transfert à l'hôtel. Temps libre pour un premier contact avec la ville. Dîner et nuit."],
+        ['Tokyo', "Visite guidée : quartier d'Asakusa, temple Senso-ji et panorama sur la ville. Déjeuner. Après-midi libre."],
+        ['Tokyo & jardins', "Découverte des jardins impériaux et du quartier de Shibuya. Balade sous les cerisiers en fleurs."],
+        ['Mont Fuji', "Excursion vers le mont Fuji et la région des lacs. Déjeuner. Retour en fin de journée."],
+        ['Vers Kyoto', "Train à grande vitesse pour Kyoto. Installation à l'hôtel. Temps libre."],
+        ['Kyoto', "Visite des temples et jardins zen, du quartier de Gion. Déjeuner traditionnel."],
+        ['Kyoto libre', "Journée libre pour explorer à votre rythme. Dîner d'adieu."],
+        ['Retour – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
+      ]
     },
     santorin: {
       nom: 'Santorin', periode: 'Mai – Juin', prix: '1 690 €', badge: 'Bientôt complet',
+      duree: '8 jours / 7 nuits',
       img: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1600&q=80',
-      intro: "Villages blancs suspendus au-dessus de la mer Égée, couchers de soleil sur la Caldeira et douceur des Cyclades. La carte postale grecque par excellence, à votre rythme."
+      intro: "Villages blancs suspendus au-dessus de la mer Égée, couchers de soleil sur la Caldeira et douceur des Cyclades — la carte postale grecque par excellence, à votre rythme.",
+      points: ['Coucher de soleil à Oia', 'Villages blancs', 'Croisière Caldeira', 'Dégustation de vins', 'Plages volcaniques'],
+      jours: [
+        ['Paris – Santorin', "Envol pour Santorin, accueil et transfert à l'hôtel. Dîner et nuit."],
+        ['Fira', "Visite guidée de Fira, la capitale, perchée sur la falaise. Déjeuner face à la mer. Après-midi libre."],
+        ['Oia', "Découverte du village d'Oia et de ses ruelles. Le soir, célèbre coucher de soleil sur la Caldeira."],
+        ['Croisière', "Croisière dans la Caldeira, bain dans les sources chaudes volcaniques. Déjeuner à bord."],
+        ['Vignobles', "Visite d'un domaine viticole et dégustation de vins locaux. Après-midi détente."],
+        ['Journée libre', "Journée libre : plages de sable noir, farniente ou shopping."],
+        ['Villages du sud', "Excursion vers les villages traditionnels et le site d'Akrotiri. Déjeuner typique."],
+        ['Santorin – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
+      ]
     },
     bali: {
       nom: 'Bali', periode: 'Juillet – Août', prix: '2 190 €', badge: '',
+      duree: '10 jours / 8 nuits',
       img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=80',
-      intro: "Rizières en terrasses, temples sacrés et hospitalité balinaise légendaire. Une immersion sereine au cœur de l'île des dieux, entre nature luxuriante et traditions vivantes."
+      intro: "Rizières en terrasses, temples sacrés et hospitalité balinaise légendaire — une immersion sereine au cœur de l'île des dieux, entre nature luxuriante et traditions vivantes.",
+      points: ['Rizières de Tegallalang', 'Temples sacrés', 'Ubud', 'Danses traditionnelles', 'Plages du sud'],
+      jours: [
+        ['Paris – Bali', "Envol pour Bali. Nuit à bord."],
+        ['Arrivée à Bali', "Accueil et transfert à l'hôtel. Temps libre. Dîner et nuit."],
+        ['Ubud', "Route vers Ubud, cœur culturel de l'île. Visite du marché et du palais. Déjeuner."],
+        ['Rizières', "Découverte des rizières en terrasses de Tegallalang. Balade et déjeuner avec vue."],
+        ['Temples', "Visite des temples sacrés et d'une source purificatrice. Spectacle de danses traditionnelles."],
+        ['Volcan & lac', "Excursion au volcan Batur et au lac. Déjeuner panoramique."],
+        ['Vers le sud', "Route vers les plages du sud. Installation à l'hôtel. Temps libre."],
+        ['Détente', "Journée libre : plage, farniente ou soin balinais (en option)."],
+        ['Journée libre', "Dernière journée libre. Dîner d'adieu au bord de l'eau."],
+        ['Retour – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
+      ]
     },
     kenya: {
       nom: 'Safari Kenya', periode: 'Septembre – Octobre', prix: '2 890 €', badge: 'Dernières places',
+      duree: '9 jours / 7 nuits',
       img: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80',
-      intro: "Vivez la grande aventure du Masaï Mara : lions, éléphants et grands espaces de la savane, au rythme paisible des safaris. Un rêve d'enfance accessible et parfaitement encadré."
+      intro: "Vivez la grande aventure du Masaï Mara : lions, éléphants et grands espaces de la savane, au rythme paisible des safaris — un rêve d'enfance accessible et parfaitement encadré.",
+      points: ['Masaï Mara', 'Big Five', 'Lac Nakuru', 'Rencontre Masaï', 'Safaris en 4×4'],
+      jours: [
+        ['Paris – Nairobi', "Envol pour Nairobi. Nuit à bord."],
+        ['Nairobi', "Accueil et transfert. Visite de la ville et d'un refuge d'éléphants. Dîner et nuit."],
+        ['Lac Nakuru', "Route vers le lac Nakuru, réputé pour ses flamants roses et ses rhinocéros. Safari."],
+        ['Vers le Masaï Mara', "Route vers la célèbre réserve du Masaï Mara. Premier safari en fin de journée."],
+        ['Masaï Mara', "Journée de safari à la recherche des Big Five. Déjeuner pique-nique dans la savane."],
+        ['Masaï Mara', "Safari matinal et rencontre avec un village Masaï. Après-midi d'observation."],
+        ['Retour Nairobi', "Route retour vers Nairobi. Déjeuner en cours de route. Temps libre."],
+        ['Journée libre', "Journée libre à Nairobi ou shopping d'artisanat. Dîner d'adieu."],
+        ['Retour – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
+      ]
     },
     maldives: {
       nom: 'Maldives', periode: 'Novembre – Décembre', prix: '2 690 €', badge: '',
+      duree: '8 jours / 7 nuits',
       img: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1600&q=80',
-      intro: "Lagons turquoise, sable blanc et repos absolu au bord de l'eau. Le paradis pour se ressourcer en toute tranquillité, loin de l'agitation."
+      intro: "Lagons turquoise, sable blanc et repos absolu au bord de l'eau — le paradis pour se ressourcer en toute tranquillité, loin de l'agitation.",
+      points: ['Lagon turquoise', 'Bungalow sur pilotis', 'Plongée & snorkeling', 'Coucher de soleil en mer', 'Spa'],
+      jours: [
+        ['Paris – Malé', "Envol pour Malé. Nuit à bord."],
+        ['Arrivée aux Maldives', "Accueil et transfert en bateau vers l'île. Installation. Temps libre."],
+        ['Farniente', "Journée détente sur la plage et découverte du lagon. Snorkeling au départ de la plage."],
+        ['Découverte marine', "Sortie en mer, observation des dauphins (selon conditions). Déjeuner."],
+        ['Détente & spa', "Journée libre : plage, piscine ou soin au spa (en option)."],
+        ['Île voisine', "Excursion vers une île voisine et son village. Déjeuner les pieds dans l'eau."],
+        ['Dernier jour', "Matinée libre au bord du lagon. Transfert vers Malé."],
+        ['Retour – Paris', "Vol retour vers Paris."]
+      ]
     }
   };
 
-  function param(name) {
-    return new URLSearchParams(window.location.search).get(name);
-  }
+  function param(name) { return new URLSearchParams(window.location.search).get(name); }
+  function el(id) { return document.getElementById(id); }
 
   var slug = (param('d') || 'marrakech').toLowerCase();
   var d = DESTINATIONS[slug] || DESTINATIONS.marrakech;
 
   document.title = d.nom + ' — Voyages Loisirs';
-  document.getElementById('c-img').src = d.img;
-  document.getElementById('c-img').alt = d.nom;
-  document.getElementById('c-period').textContent = d.periode;
-  document.getElementById('c-title').textContent = d.nom;
-  document.getElementById('c-price').textContent = d.prix;
-  document.getElementById('c-intro').textContent = d.intro;
+  el('c-img').src = d.img;
+  el('c-img').alt = d.nom;
+  el('c-period').textContent = d.periode;
+  el('c-title').textContent = d.nom;
+  el('c-price').textContent = d.prix;
+  el('c-duration').innerHTML = '<strong>' + d.duree + '</strong>';
+  el('c-intro').textContent = d.intro;
+  el('c-fact-duration').textContent = d.duree;
+  el('c-fact-period').textContent = d.periode;
+  el('c-fact-price').textContent = d.prix;
 
-  var badge = document.getElementById('c-badge');
+  var badge = el('c-badge');
   if (d.badge) { badge.textContent = d.badge; badge.hidden = false; }
+
+  el('c-highlights').innerHTML = (d.points || []).map(function (p) {
+    return '<span>' + p + '</span>';
+  }).join('');
+
+  el('c-days').innerHTML = (d.jours || []).map(function (j, i) {
+    return '<div class="day">' +
+      '<div class="day__num">Jour ' + (i + 1) + '</div>' +
+      '<div class="day__title">' + j[0] + '</div>' +
+      '<p class="day__text">' + j[1] + '</p>' +
+      '</div>';
+  }).join('');
+
+  el('c-includes').innerHTML = INCLUS.map(function (x) { return '<li>' + x + '</li>'; }).join('');
+  el('c-excludes').innerHTML = NON_INCLUS.map(function (x) { return '<li>' + x + '</li>'; }).join('');
 </script>
 </body>
 </html>
