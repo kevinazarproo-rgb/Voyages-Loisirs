@@ -20,14 +20,15 @@
    * colors
    */
 
-  --united-nations-blue: hsl(214, 56%, 58%);
-  --bright-navy-blue: hsl(214, 57%, 51%);
+  /* Palette adaptée au logo : navy #031E5A + orange #FB8B1F */
+  --united-nations-blue: hsl(220, 55%, 32%);  /* navy moyen (bandeau prix) */
+  --bright-navy-blue: hsl(30, 95%, 55%);       /* ORANGE — accent, boutons */
   --spanish-gray: hsl(0, 0%, 60%);
-  --black-coral: hsl(225, 8%, 42%);
-  --oxford-blue: hsl(208, 97%, 12%);
-  --yale-blue: hsl(214, 72%, 33%);
-  --blue-ncs: hsl(197, 100%, 36%);
-  --gunmetal: hsl(206, 34%, 20%);
+  --black-coral: hsl(222, 14%, 40%);           /* texte courant */
+  --oxford-blue: hsl(220, 74%, 13%);           /* navy profond (bannières) */
+  --yale-blue: hsl(28, 90%, 47%);              /* orange foncé (survol) */
+  --blue-ncs: hsl(29, 88%, 48%);               /* orange (sous-titres) */
+  --gunmetal: hsl(220, 62%, 19%);              /* navy (titres, footer, aside) */
   --gainsboro: hsl(0, 0%, 88%);
   --cultured: hsl(0, 0%, 98%);
   --white: hsl(0, 0%, 100%);
@@ -765,7 +766,7 @@ address {
 .footer-form .btn { width: 100%; }
 
 .footer-bottom {
-  --gunmetal: hsl(205, 36%, 17%);
+  --gunmetal: hsl(220, 62%, 13%);
   background: var(--gunmetal);
   padding-block: 20px;
   text-align: center;
@@ -1429,7 +1430,7 @@ address {
 \*-----------------------------------*/
 
 .page-banner {
-  background-image: linear-gradient(hsla(208, 80%, 12%, 0.78), hsla(208, 80%, 12%, 0.86)), url("../images/hero-banner.jpg");
+  background-image: linear-gradient(hsla(220, 74%, 12%, 0.78), hsla(220, 74%, 12%, 0.86)), url("../images/hero-banner.jpg");
   background-size: cover;
   background-position: center;
   padding-top: 180px;
@@ -1551,7 +1552,7 @@ address {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, hsla(208, 80%, 8%, 0) 45%, hsla(208, 80%, 8%, 0.75) 100%);
+  background: linear-gradient(180deg, hsla(220, 74%, 8%, 0) 45%, hsla(220, 74%, 8%, 0.75) 100%);
 }
 
 .circuit-hero__content {
@@ -1844,7 +1845,7 @@ address {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(hsla(208, 80%, 8%, 0.5), hsla(208, 80%, 8%, 0.65));
+  background: linear-gradient(hsla(220, 74%, 8%, 0.5), hsla(220, 74%, 8%, 0.65));
   z-index: 1;
 }
 
@@ -1884,7 +1885,7 @@ address {
 .cb-modal__overlay {
   position: absolute;
   inset: 0;
-  background: hsla(208, 80%, 8%, 0.6);
+  background: hsla(220, 74%, 8%, 0.6);
 }
 
 .cb-modal__panel {
@@ -2095,6 +2096,9 @@ address {
 
 .perk-banner strong { font-weight: var(--fw-800); }
 
+/* Bande CTA en navy (l'accent orange reste sur le bandeau paiement + boutons) */
+.cta { background: var(--oxford-blue); }
+
 
 /*-----------------------------------*\
  * #AVIS CLIENTS
@@ -2116,7 +2120,7 @@ address {
 }
 
 .review-stars {
-  color: #f5a623;
+  color: var(--bright-navy-blue);
   font-size: 15px;
   letter-spacing: 2px;
   margin-bottom: 14px;
