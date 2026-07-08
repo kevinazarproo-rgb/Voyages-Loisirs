@@ -1329,13 +1329,14 @@ address {
   height: 40px;
 }
 
-/* Logo dans la barre fixe (au scroll, bureau) — tout à gauche */
+/* Logo dans la barre fixe (au scroll, bureau) — tout à gauche, réseaux conservés */
 .header-bottom__logo { display: none; }
 
 @media (min-width: 992px) {
-  .header.active .header-bottom__logo { display: block; }
+  .header.active .header-bottom__logo { display: block; margin-right: 26px; }
   .header-bottom__logo img { height: 30px; width: auto; }
-  .header.active .social-list { display: none; }
+  .header.active .header-bottom .container { justify-content: flex-start; }
+  .header.active .navbar { margin-left: auto; }
 }
 
 /* Bloc présentation / rachat AYA */
