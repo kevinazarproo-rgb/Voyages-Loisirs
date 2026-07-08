@@ -1309,24 +1309,24 @@ address {
    pour qu'il reste net dans la barre du haut au lieu de s'afficher géant. */
 .header-top .logo img {
   max-width: none;
-  height: 26px;
+  height: 42px;
   width: auto;
 }
 
 @media (min-width: 580px) {
-  .header-top .logo img { height: 30px; }
+  .header-top .logo img { height: 50px; }
 }
 
 /* Logo dans le menu mobile */
 .navbar-top .logo img {
   width: auto;
-  height: 34px;
+  height: 56px;
 }
 
 /* Logo dans le footer */
 .footer-brand img {
   width: auto;
-  height: 40px;
+  height: 60px;
 }
 
 /* Logo dans la barre fixe (au scroll, bureau) — tout à gauche, réseaux conservés */
@@ -1334,7 +1334,7 @@ address {
 
 @media (min-width: 992px) {
   .header.active .header-bottom__logo { display: block; margin-right: 26px; }
-  .header-bottom__logo img { height: 30px; width: auto; }
+  .header-bottom__logo img { height: 44px; width: auto; }
   .header.active .header-bottom .container { justify-content: flex-start; }
   .header.active .navbar { margin-left: auto; }
 }
