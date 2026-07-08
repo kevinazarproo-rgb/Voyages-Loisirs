@@ -1,170 +1,205 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+
   <title>Politique de cookies — Voyages Loisirs</title>
+
+  <link rel="shortcut icon" href="assets/logo-marine.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/tourly.css?v=6">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=11">
-  <style>
-    .legal { max-width: 860px; margin: 0 auto; padding: 160px 40px 100px; }
-    .legal h1 {
-      font-family: var(--serif); font-weight: 500;
-      font-size: clamp(38px, 5vw, 60px); line-height: 1.05;
-      letter-spacing: -.5px; margin: 0 0 12px; color: var(--ink);
-    }
-    .legal__updated { color: var(--text-3); font-size: 14px; margin: 0 0 50px; }
-    .legal h2 {
-      font-family: var(--serif); font-weight: 600; font-size: 26px;
-      color: var(--ink); margin: 44px 0 14px;
-    }
-    .legal p, .legal li { font-size: 17px; line-height: 1.75; color: var(--text-2); }
-    .legal ul { padding-left: 22px; margin: 0 0 10px; }
-    .legal li { margin-bottom: 12px; }
-    .legal a { color: var(--accent); }
-    .legal strong { color: var(--ink); }
-    @media (max-width: 639px) { .legal { padding: 120px 24px 70px; } }
-  </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 </head>
-<body>
 
-<div class="page">
+<body id="top">
 
-  <!-- ============ HEADER ============ -->
-  <header class="header is-scrolled" id="header">
-    <div class="header__inner">
-      <a href="index.html" class="logo">
-        <img src="assets/logo-blanc.png" alt="Voyages Loisirs" class="logo__img">
-      </a>
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="index.html#destinations">Destinations</a>
-        <a href="index.html#experiences">Expériences</a>
-        <a href="index.html#avis">Avis</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-      <div class="header__actions">
-        <a href="tel:+33158366669" class="header__phone">
-          <span class="header__phone-label">Conseillers</span>
-          <span class="header__phone-number">01 58 36 66 69</span>
+  <!-- #HEADER -->
+  <header class="header" data-header>
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+        <a href="tel:+33158366669" class="helpline-box">
+          <div class="icon-box"><ion-icon name="call-outline"></ion-icon></div>
+          <div class="wrapper">
+            <p class="helpline-title">Nos conseillers :</p>
+            <p class="helpline-number">01 58 36 66 69</p>
+          </div>
         </a>
+        <a href="index.html" class="logo"><img src="assets/logo-blanc.png" alt="Voyages Loisirs"></a>
+        <div class="header-btn-group">
+          <button class="search-btn" aria-label="Rechercher"><ion-icon name="search"></ion-icon></button>
+          <button class="nav-open-btn" aria-label="Ouvrir le menu" data-nav-open-btn><ion-icon name="menu-outline"></ion-icon></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+        <ul class="social-list">
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
+        </ul>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="index.html" class="logo"><img src="assets/logo-marine.png" alt="Voyages Loisirs"></a>
+            <button class="nav-close-btn" aria-label="Fermer le menu" data-nav-close-btn><ion-icon name="close-outline"></ion-icon></button>
+          </div>
+          <ul class="navbar-list">
+            <li><a href="index.html" class="navbar-link" data-nav-link>accueil</a></li>
+            <li><a href="index.html#about" class="navbar-link" data-nav-link>l'agence</a></li>
+            <li><a href="index.html#package" class="navbar-link" data-nav-link>destinations</a></li>
+            <li><a href="index.html#gallery" class="navbar-link" data-nav-link>galerie</a></li>
+            <li><a href="index.html#contact" class="navbar-link" data-nav-link>contact</a></li>
+          </ul>
+        </nav>
+
+        <a href="index.html#package" class="btn btn-primary">Réserver</a>
       </div>
     </div>
   </header>
 
-  <!-- ============ CONTENU ============ -->
-  <main class="legal">
-    <h1>Politique de cookies</h1>
-    <p class="legal__updated">Dernière mise à jour : juillet 2026</p>
 
-    <h2>Qu'est-ce que les cookies ?</h2>
-    <p>
-      Ce site web utilise des cookies et/ou des technologies similaires qui stockent et
-      récupèrent des informations lorsque vous naviguez. En général, ces technologies peuvent
-      être utiles pour un large éventail de finalités, telles que vous reconnaître en tant
-      qu'utilisateur, obtenir des informations sur vos habitudes de navigation, ou personnaliser
-      la façon dont le contenu est affiché. Les utilisations spécifiques que nous faisons de ces
-      technologies sont décrites ci-dessous.
-    </p>
+  <main>
 
-    <h2>Quels types de cookies sont utilisés sur ce site ?</h2>
-    <p>
-      Notre site web utilise des cookies de première partie, ainsi que des cookies Google
-      (plus d'informations sur <a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener">policies.google.com/privacy</a>)
-      et des cookies Facebook (plus d'informations sur <a href="https://www.facebook.com/about/privacy/" target="_blank" rel="noopener">facebook.com/about/privacy</a>),
-      répartis selon les catégories suivantes :
-    </p>
-    <ul>
-      <li>
-        <strong>Nécessaires :</strong> ces cookies sont essentiels pour naviguer correctement
-        sur notre site ; ils n'exigent donc pas le consentement de l'utilisateur. Par exemple,
-        certains cookies enregistrent temporairement les préférences de l'utilisateur lors de la
-        navigation, ou permettent un accès sécurisé aux zones qui le nécessitent.
-      </li>
-      <li>
-        <strong>Analyse :</strong> ils permettent de quantifier le nombre d'utilisateurs et
-        d'effectuer des mesures statistiques et des analyses sur l'utilisation faite du site.
-        Pour cela, la navigation sur notre site web est analysée afin d'améliorer les services.
-      </li>
-      <li>
-        <strong>Technique :</strong> ce sont ceux que l'éditeur utilise, entre autres, pour
-        permettre la gestion et le fonctionnement du site et activer ses fonctionnalités et
-        services — par exemple le contrôle du trafic et de la communication des données, ou
-        l'identification des sessions.
-      </li>
-      <li>
-        <strong>Publicité :</strong> ils nous permettent d'analyser vos habitudes de navigation
-        sur Internet afin de vous montrer de la publicité liée à votre profil de navigation.
-      </li>
-    </ul>
+    <!-- #BANNIÈRE -->
+    <section class="page-banner">
+      <div class="container">
+        <h1 class="h1">Politique de cookies</h1>
+        <p class="page-banner__text">Comment nous utilisons les cookies sur ce site.</p>
+      </div>
+    </section>
 
-    <h2>Gérer les cookies</h2>
-    <p>
-      Vous pouvez autoriser ou bloquer les cookies, ainsi que supprimer vos données de navigation
-      (y compris les cookies) depuis votre navigateur. Consultez les options et les instructions
-      de votre navigateur à ce sujet. Gardez à l'esprit que si vous avez accepté des cookies tiers,
-      vous devrez les supprimer directement depuis les options du navigateur.
-    </p>
+    <!-- #CONTENU -->
+    <section class="legal">
+      <div class="container">
+        <div class="legal-content">
 
-    <h2>Vos droits</h2>
-    <p>
-      Vous pouvez exercer vos droits conformément au chapitre III du Règlement général sur la
-      protection des données (RGPD) : accès, rectification, limitation, portabilité, effacement
-      et opposition. Pour plus d'informations, vous pouvez consulter les
-      <a href="mentions-legales.html">mentions légales</a> de notre site ou nous écrire à
-      <a href="mailto:voyagesloisirs@ayavoyages.fr">voyagesloisirs@ayavoyages.fr</a>.
-    </p>
-  </main>
+          <p class="legal-updated">Dernière mise à jour : juillet 2026</p>
 
-  <!-- ============ FOOTER ============ -->
-  <footer id="contact" class="footer">
-    <div class="footer__inner">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <img src="assets/logo-blanc.png" alt="Voyages Loisirs" class="footer__logo-img">
-          <p class="footer__kts">Une marque du groupe KTS</p>
-          <p class="footer__baseline">Six destinations d'exception chaque année, pour voyager l'esprit léger.</p>
-        </div>
-        <div>
-          <div class="footer__heading">Découvrir</div>
-          <div class="footer__links">
-            <a href="index.html#destinations">Nos 6 destinations</a>
-            <a href="#">Cartes cadeaux</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer__heading">L'agence</div>
-          <div class="footer__links">
-            <a href="#">Qui sommes-nous</a>
-            <a href="index.html#avis">Avis voyageurs</a>
-            <a href="index.html#experiences">Nos garanties</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer__heading">Contact</div>
-          <div class="footer__links">
-            <a href="tel:+33158366669" class="footer__phone">01 58 36 66 69</a>
-            <span>Du lundi au samedi, 9h – 19h</span>
-            <span class="footer__address">47 rue des Mathurins<br>75008 Paris</span>
-            <a href="mailto:voyagesloisirs@ayavoyages.fr">voyagesloisirs@ayavoyages.fr</a>
-          </div>
+          <h2>Qu'est-ce que les cookies ?</h2>
+          <p>
+            Ce site web utilise des cookies et/ou des technologies similaires qui stockent et
+            récupèrent des informations lorsque vous naviguez. En général, ces technologies peuvent
+            être utiles pour un large éventail de finalités, telles que vous reconnaître en tant
+            qu'utilisateur, obtenir des informations sur vos habitudes de navigation, ou personnaliser
+            la façon dont le contenu est affiché. Les utilisations spécifiques que nous faisons de ces
+            technologies sont décrites ci-dessous.
+          </p>
+
+          <h2>Quels types de cookies sont utilisés sur ce site ?</h2>
+          <p>
+            Notre site web utilise des cookies de première partie, ainsi que des cookies Google
+            (plus d'informations sur <a href="https://policies.google.com/privacy?hl=fr" target="_blank" rel="noopener">policies.google.com/privacy</a>)
+            et des cookies Facebook (plus d'informations sur <a href="https://www.facebook.com/about/privacy/" target="_blank" rel="noopener">facebook.com/about/privacy</a>),
+            répartis selon les catégories suivantes :
+          </p>
+          <ul>
+            <li>
+              <strong>Nécessaires :</strong> ces cookies sont essentiels pour naviguer correctement
+              sur notre site ; ils n'exigent donc pas le consentement de l'utilisateur. Par exemple,
+              certains cookies enregistrent temporairement les préférences de l'utilisateur lors de la
+              navigation, ou permettent un accès sécurisé aux zones qui le nécessitent.
+            </li>
+            <li>
+              <strong>Analyse :</strong> ils permettent de quantifier le nombre d'utilisateurs et
+              d'effectuer des mesures statistiques et des analyses sur l'utilisation faite du site.
+              Pour cela, la navigation sur notre site web est analysée afin d'améliorer les services.
+            </li>
+            <li>
+              <strong>Technique :</strong> ce sont ceux que l'éditeur utilise, entre autres, pour
+              permettre la gestion et le fonctionnement du site et activer ses fonctionnalités et
+              services — par exemple le contrôle du trafic et de la communication des données, ou
+              l'identification des sessions.
+            </li>
+            <li>
+              <strong>Publicité :</strong> ils nous permettent d'analyser vos habitudes de navigation
+              sur Internet afin de vous montrer de la publicité liée à votre profil de navigation.
+            </li>
+          </ul>
+
+          <h2>Gérer les cookies</h2>
+          <p>
+            Vous pouvez autoriser ou bloquer les cookies, ainsi que supprimer vos données de navigation
+            (y compris les cookies) depuis votre navigateur. Consultez les options et les instructions
+            de votre navigateur à ce sujet. Gardez à l'esprit que si vous avez accepté des cookies tiers,
+            vous devrez les supprimer directement depuis les options du navigateur.
+          </p>
+
+          <h2>Vos droits</h2>
+          <p>
+            Vous pouvez exercer vos droits conformément au chapitre III du Règlement général sur la
+            protection des données (RGPD) : accès, rectification, limitation, portabilité, effacement
+            et opposition. Pour plus d'informations, vous pouvez consulter les
+            <a href="mentions-legales.html">mentions légales</a> de notre site ou nous écrire à
+            <a href="mailto:voyagesloisirs@ayavoyages.fr">voyagesloisirs@ayavoyages.fr</a>.
+          </p>
+
         </div>
       </div>
-      <div class="footer__legal">
-        <span>© 2026 Voyages Loisirs — Tous droits réservés · IM075240012 · Voyages garantis APST</span>
-        <div class="footer__legal-links">
-          <a href="mentions-legales.html">Mentions légales</a>
-          <a href="cookies.html">Cookies</a>
+    </section>
+
+  </main>
+
+
+  <!-- #FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><img src="assets/logo-blanc.png" alt="Voyages Loisirs"></a>
+          <p class="footer-text">
+            Une marque du groupe KTS. Six destinations d'exception chaque année, entièrement organisées
+            et accompagnées, pour voyager l'esprit léger.
+          </p>
         </div>
+        <div class="footer-contact">
+          <h4 class="contact-title">Nous contacter</h4>
+          <p class="contact-text">Du lundi au samedi, de 9h à 19h.</p>
+          <ul>
+            <li class="contact-item"><ion-icon name="call-outline"></ion-icon><a href="tel:+33158366669" class="contact-link">01 58 36 66 69</a></li>
+            <li class="contact-item"><ion-icon name="mail-outline"></ion-icon><a href="mailto:voyagesloisirs@ayavoyages.fr" class="contact-link">voyagesloisirs@ayavoyages.fr</a></li>
+            <li class="contact-item"><ion-icon name="location-outline"></ion-icon><address>47 rue des Mathurins, 75008 Paris</address></li>
+          </ul>
+        </div>
+        <div class="footer-form">
+          <p class="form-text">Inscrivez-vous : soyez prévenu·e en avant-première dès l'ouverture des réservations.</p>
+          <form action="" class="form-wrapper">
+            <input type="email" name="email" class="input-field" placeholder="Votre e-mail" required>
+            <button type="submit" class="btn btn-secondary">S'inscrire</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">© 2026 Voyages Loisirs — Tous droits réservés · IM075240012 · Voyages garantis APST</p>
+        <ul class="footer-bottom-list">
+          <li><a href="mentions-legales.html" class="footer-bottom-link">Mentions légales</a></li>
+          <li><a href="cookies.html" class="footer-bottom-link">Cookies</a></li>
+        </ul>
       </div>
     </div>
   </footer>
 
-</div>
+  <a href="#top" class="go-top" data-go-top><ion-icon name="chevron-up-outline"></ion-icon></a>
+
+  <script src="assets/js/tourly.js?v=6"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>

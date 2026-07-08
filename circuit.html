@@ -1,444 +1,388 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
+
   <title>Circuit — Voyages Loisirs</title>
+
+  <link rel="shortcut icon" href="assets/logo-marine.png" type="image/png">
+  <link rel="stylesheet" href="assets/css/tourly.css?v=6">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=13">
-  <style>
-    .circuit__back { max-width: 1320px; margin: 0 auto; padding: 130px 40px 0; }
-    .circuit__back a { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--text-2); font-size: 15px; font-weight: 600; }
-    .circuit__back a:hover { color: var(--accent); }
-
-    .circuit-hero { max-width: 1320px; margin: 24px auto 0; padding: 0 40px; }
-    .circuit-hero__media { position: relative; border-radius: 20px; overflow: hidden; min-height: 460px; display: flex; align-items: flex-end; }
-    .circuit-hero__media img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
-    .circuit-hero__media::after { content: ""; position: absolute; inset: 0; background: linear-gradient(180deg, rgba(12,16,42,0) 55%, rgba(12,16,42,.6) 100%); }
-    .circuit-hero__content { position: relative; padding: 44px 52px; color: #fff; width: 100%; }
-    .circuit-hero__badge { display: inline-block; background: #fff; color: var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 1.2px; text-transform: uppercase; padding: 8px 15px; border-radius: 100px; margin-bottom: 18px; }
-    .circuit-hero__badge[hidden] { display: none; }
-    .circuit-hero__period { font-size: 13px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; color: var(--gold-light); margin: 0 0 8px; }
-    .circuit-hero__title { font-family: var(--serif); font-weight: 600; font-size: clamp(44px, 6vw, 76px); line-height: 1; margin: 0 0 16px; letter-spacing: -1px; color: #fff; }
-    .circuit-hero__meta { display: flex; flex-wrap: wrap; gap: 10px 26px; font-size: 16px; color: #fff; }
-    .circuit-hero__meta strong { color: #fff; }
-
-    .circuit-body { max-width: 1320px; margin: 0 auto; padding: 70px 40px 40px; display: grid; grid-template-columns: 1.5fr .85fr; gap: 60px; align-items: start; }
-    .circuit-main__intro { font-size: 20px; line-height: 1.75; color: var(--text-2); margin: 0 0 40px; }
-
-    .circuit-sec-title { font-family: var(--serif); font-weight: 500; font-size: 34px; margin: 0 0 24px; color: var(--ink); }
-
-    /* Points forts */
-    .highlights { display: flex; flex-wrap: wrap; gap: 12px; margin: 0 0 50px; }
-    .highlights span { background: var(--sand); color: var(--ink); border-radius: 100px; padding: 10px 18px; font-size: 15px; font-weight: 500; }
-
-    /* Programme jour par jour */
-    .days { margin: 0 0 20px; border-left: 2px solid rgba(27,34,89,.12); }
-    .day { position: relative; padding: 0 0 30px 34px; }
-    .day::before { content: ""; position: absolute; left: -8px; top: 4px; width: 14px; height: 14px; border-radius: 50%; background: var(--accent); border: 3px solid #fff; }
-    .day:last-child { padding-bottom: 0; }
-    .day__num { font-size: 12px; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--accent); margin-bottom: 4px; }
-    .day__title { font-weight: 700; font-size: 18px; color: var(--ink); margin: 0 0 6px; }
-    .day__text { font-size: 16px; line-height: 1.7; color: var(--text-2); margin: 0; }
-
-    /* Aside réservation */
-    /* Galerie */
-    .circuit-gallery { display: grid; grid-template-columns: repeat(2, 1fr); gap: 14px; }
-    .circuit-gallery img { width: 100%; height: 220px; object-fit: cover; border-radius: 14px; display: block; }
-    .circuit-gallery img:first-child { grid-column: 1 / -1; height: 320px; }
-
-    .circuit-side { display: flex; flex-direction: column; gap: 24px; }
-    .circuit-aside { background: var(--ink); color: #fff; border-radius: 18px; padding: 38px 34px; }
-    .circuit-aside h3 { font-family: var(--serif); font-weight: 500; font-size: 26px; margin: 0 0 20px; }
-    .aside-facts { list-style: none; margin: 0 0 26px; padding: 0; }
-    .aside-facts li { display: flex; justify-content: space-between; gap: 12px; padding: 11px 0; border-bottom: 1px solid rgba(255,255,255,.14); font-size: 15px; }
-    .aside-facts li span { color: rgba(255,255,255,.7); }
-    .aside-facts li strong { color: #fff; text-align: right; }
-    .circuit-aside .btn { width: 100%; text-align: center; margin-bottom: 12px; }
-    .circuit-aside__phone { display: block; text-align: center; text-decoration: none; color: #fff; font-size: 20px; font-weight: 700; margin-top: 18px; }
-    .circuit-aside__note { text-align: center; font-size: 13px; color: rgba(255,255,255,.6); margin-top: 6px; }
-
-    /* Prix comprend / ne comprend pas (colonne de droite) */
-    .price-box { background: #fff; border: 1px solid rgba(27,34,89,.1); border-radius: 18px; padding: 32px 30px; }
-    .price-box h2 { font-family: var(--serif); font-weight: 600; font-size: 24px; margin: 0 0 20px; color: var(--ink); }
-    .price-box ul { list-style: none; margin: 0; padding: 0; }
-    .price-box li { position: relative; padding: 0 0 14px 34px; font-size: 16px; line-height: 1.6; color: var(--text-2); }
-    .price-box li::before { position: absolute; left: 0; top: -1px; font-size: 18px; font-weight: 700; }
-    .price-box--yes li::before { content: "✓"; color: #1f8a5b; }
-    .price-box--no li::before { content: "✕"; color: #c0472f; }
-
-    .circuit-note { max-width: 1320px; margin: 0 auto; padding: 0 40px 80px; }
-    .circuit-note p { background: #FFF6E9; border: 1px solid #F0D9B0; color: #7a5a1e; border-radius: 12px; padding: 16px 20px; font-size: 14px; margin: 0; }
-
-    @media (max-width: 900px) {
-      .circuit-body { grid-template-columns: 1fr; gap: 40px; }
-    }
-    @media (max-width: 639px) {
-      .circuit__back { padding: 110px 24px 0; }
-      .circuit-hero { padding: 0 24px; }
-      .circuit-hero__content { padding: 32px 26px; }
-      .circuit-body { padding: 50px 24px 30px; }
-      .price-box { padding: 28px 24px; }
-    }
-  </style>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 </head>
-<body>
 
-<div class="page">
+<body id="top">
 
-  <!-- ============ HEADER ============ -->
-  <header class="header is-scrolled" id="header">
-    <div class="header__inner">
-      <a href="index.html" class="logo">
-        <img src="assets/logo-blanc.png" alt="Voyages Loisirs" class="logo__img">
-      </a>
-      <nav class="nav" aria-label="Navigation principale">
-        <a href="index.html">Accueil</a>
-        <a href="index.html#destinations">Destinations</a>
-        <a href="index.html#experiences">Expériences</a>
-        <a href="index.html#avis">Avis</a>
-        <a href="index.html#contact">Contact</a>
-      </nav>
-      <div class="header__actions">
-        <a href="tel:+33158366669" class="header__phone">
-          <span class="header__phone-label">Conseillers</span>
-          <span class="header__phone-number">01 58 36 66 69</span>
+  <!-- #HEADER -->
+  <header class="header" data-header>
+    <div class="overlay" data-overlay></div>
+
+    <div class="header-top">
+      <div class="container">
+        <a href="tel:+33158366669" class="helpline-box">
+          <div class="icon-box"><ion-icon name="call-outline"></ion-icon></div>
+          <div class="wrapper">
+            <p class="helpline-title">Nos conseillers :</p>
+            <p class="helpline-number">01 58 36 66 69</p>
+          </div>
         </a>
+        <a href="index.html" class="logo"><img src="assets/logo-blanc.png" alt="Voyages Loisirs"></a>
+        <div class="header-btn-group">
+          <button class="search-btn" aria-label="Rechercher"><ion-icon name="search"></ion-icon></button>
+          <button class="nav-open-btn" aria-label="Ouvrir le menu" data-nav-open-btn><ion-icon name="menu-outline"></ion-icon></button>
+        </div>
+      </div>
+    </div>
+
+    <div class="header-bottom">
+      <div class="container">
+        <ul class="social-list">
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
+        </ul>
+
+        <nav class="navbar" data-navbar>
+          <div class="navbar-top">
+            <a href="index.html" class="logo"><img src="assets/logo-marine.png" alt="Voyages Loisirs"></a>
+            <button class="nav-close-btn" aria-label="Fermer le menu" data-nav-close-btn><ion-icon name="close-outline"></ion-icon></button>
+          </div>
+          <ul class="navbar-list">
+            <li><a href="index.html" class="navbar-link" data-nav-link>accueil</a></li>
+            <li><a href="index.html#about" class="navbar-link" data-nav-link>l'agence</a></li>
+            <li><a href="index.html#package" class="navbar-link" data-nav-link>destinations</a></li>
+            <li><a href="index.html#gallery" class="navbar-link" data-nav-link>galerie</a></li>
+            <li><a href="index.html#contact" class="navbar-link" data-nav-link>contact</a></li>
+          </ul>
+        </nav>
+
+        <a href="index.html#package" class="btn btn-primary">Réserver</a>
       </div>
     </div>
   </header>
 
-  <!-- ============ FIL D'ARIANE ============ -->
-  <div class="circuit__back">
-    <a href="index.html#destinations">
-      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"></path></svg>
-      Toutes les destinations
-    </a>
-  </div>
 
-  <!-- ============ HERO DU CIRCUIT ============ -->
-  <section class="circuit-hero">
-    <div class="circuit-hero__media">
-      <img id="c-img" src="" alt="">
-      <div class="circuit-hero__content">
-        <span class="circuit-hero__badge" id="c-badge" hidden></span>
-        <p class="circuit-hero__period" id="c-period"></p>
-        <h1 class="circuit-hero__title" id="c-title"></h1>
-        <div class="circuit-hero__meta">
-          <span id="c-duration"></span>
-          <span>à partir de <strong id="c-price"></strong> / pers.</span>
-        </div>
+  <main>
+
+    <!-- #FIL D'ARIANE -->
+    <div class="circuit-back">
+      <div class="container">
+        <a href="index.html#package">
+          <ion-icon name="chevron-back-outline"></ion-icon>
+          Toutes les destinations
+        </a>
       </div>
     </div>
-  </section>
 
-  <!-- ============ CORPS ============ -->
-  <div class="circuit-body">
-    <div class="circuit-main">
-      <p class="circuit-main__intro" id="c-intro"></p>
-
-      <h2 class="circuit-sec-title">Le programme jour par jour</h2>
-      <div class="days" id="c-days"></div>
-
-      <h2 class="circuit-sec-title" style="margin-top:56px">En images</h2>
-      <div class="circuit-gallery" id="c-gallery"></div>
-    </div>
-
-    <div class="circuit-side">
-    <aside class="circuit-aside" id="reserver">
-      <h3>Réservez votre place</h3>
-      <ul class="aside-facts">
-        <li><span>Durée</span> <strong id="c-fact-duration"></strong></li>
-        <li><span>Période</span> <strong id="c-fact-period"></strong></li>
-        <li><span>À partir de</span> <strong id="c-fact-price"></strong></li>
-        <li><span>Paiement</span> <strong>4× · 6× · 10× sans frais</strong></li>
-      </ul>
-      <a href="tel:+33158366669" class="btn btn--accent btn--lg js-callback">Être rappelé</a>
-      <a href="mailto:voyagesloisirs@ayavoyages.fr" class="btn btn--dark btn--lg" style="background:rgba(255,255,255,.14);color:#fff">Réserver</a>
-      <a href="tel:+33158366669" class="circuit-aside__phone">01 58 36 66 69</a>
-      <div class="circuit-aside__note">Du lundi au samedi, 9h – 19h</div>
-    </aside>
-
-      <div class="price-box price-box--yes">
-        <h2>Le prix comprend</h2>
-        <ul id="c-includes"></ul>
-      </div>
-      <div class="price-box price-box--no">
-        <h2>Le prix ne comprend pas</h2>
-        <ul id="c-excludes"></ul>
-      </div>
-    </div>
-  </div>
-
-  <!-- ============ FOOTER ============ -->
-  <footer id="contact" class="footer">
-    <div class="footer__inner">
-      <div class="footer__grid">
-        <div class="footer__brand">
-          <img src="assets/logo-blanc.png" alt="Voyages Loisirs" class="footer__logo-img">
-          <p class="footer__kts">Une marque du groupe KTS</p>
-          <p class="footer__baseline">Six destinations d'exception chaque année, pour voyager l'esprit léger.</p>
-        </div>
-        <div>
-          <div class="footer__heading">Découvrir</div>
-          <div class="footer__links">
-            <a href="index.html#destinations">Nos 6 destinations</a>
-            <a href="#">Cartes cadeaux</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer__heading">L'agence</div>
-          <div class="footer__links">
-            <a href="#">Qui sommes-nous</a>
-            <a href="index.html#avis">Avis voyageurs</a>
-            <a href="index.html#experiences">Nos garanties</a>
-          </div>
-        </div>
-        <div>
-          <div class="footer__heading">Contact</div>
-          <div class="footer__links">
-            <a href="tel:+33158366669" class="footer__phone">01 58 36 66 69</a>
-            <span>Du lundi au samedi, 9h – 19h</span>
-            <span class="footer__address">47 rue des Mathurins<br>75008 Paris</span>
-            <a href="mailto:voyagesloisirs@ayavoyages.fr">voyagesloisirs@ayavoyages.fr</a>
+    <!-- #HERO DU CIRCUIT -->
+    <section class="circuit-hero">
+      <div class="container">
+        <div class="circuit-hero__media">
+          <img id="c-img" src="" alt="">
+          <div class="circuit-hero__content">
+            <span class="circuit-hero__badge" id="c-badge" hidden></span>
+            <p class="circuit-hero__period" id="c-period"></p>
+            <h1 class="circuit-hero__title" id="c-title"></h1>
+            <div class="circuit-hero__meta">
+              <span id="c-duration"></span>
+              <span>à partir de <strong id="c-price"></strong> / pers.</span>
+            </div>
           </div>
         </div>
       </div>
-      <div class="footer__legal">
-        <span>© 2026 Voyages Loisirs — Tous droits réservés · IM075240012 · Voyages garantis APST</span>
-        <div class="footer__legal-links">
-          <a href="mentions-legales.html">Mentions légales</a>
-          <a href="cookies.html">Cookies</a>
+    </section>
+
+    <!-- #CORPS -->
+    <section class="circuit-body-wrap">
+      <div class="container">
+        <div class="circuit-body">
+
+          <div class="circuit-main">
+            <p class="circuit-main__intro" id="c-intro"></p>
+
+            <div class="highlights" id="c-highlights"></div>
+
+            <h2 class="circuit-sec-title">Le programme jour par jour</h2>
+            <div class="days" id="c-days"></div>
+
+            <h2 class="circuit-sec-title" style="margin-top:50px">En images</h2>
+            <div class="circuit-gallery" id="c-gallery"></div>
+          </div>
+
+          <div class="circuit-side">
+            <aside class="circuit-aside" id="reserver">
+              <h3>Réservez votre place</h3>
+              <ul class="aside-facts">
+                <li><span>Durée</span> <strong id="c-fact-duration"></strong></li>
+                <li><span>Période</span> <strong id="c-fact-period"></strong></li>
+                <li><span>À partir de</span> <strong id="c-fact-price"></strong></li>
+                <li><span>Paiement</span> <strong>4× · 6× · 10× sans frais</strong></li>
+              </ul>
+              <a href="tel:+33158366669" class="btn btn-primary">Être rappelé</a>
+              <a href="mailto:voyagesloisirs@ayavoyages.fr?subject=Demande%20de%20r%C3%A9servation" class="btn btn-secondary">Réserver</a>
+              <a href="tel:+33158366669" class="circuit-aside__phone">01 58 36 66 69</a>
+              <div class="circuit-aside__note">Du lundi au samedi, 9h – 19h</div>
+            </aside>
+
+            <div class="price-box price-box--yes">
+              <h2>Le prix comprend</h2>
+              <ul id="c-includes"></ul>
+            </div>
+            <div class="price-box price-box--no">
+              <h2>Le prix ne comprend pas</h2>
+              <ul id="c-excludes"></ul>
+            </div>
+          </div>
+
         </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- #FOOTER -->
+  <footer class="footer">
+    <div class="footer-top">
+      <div class="container">
+        <div class="footer-brand">
+          <a href="index.html" class="logo"><img src="assets/logo-blanc.png" alt="Voyages Loisirs"></a>
+          <p class="footer-text">
+            Une marque du groupe KTS. Six destinations d'exception chaque année, entièrement organisées
+            et accompagnées, pour voyager l'esprit léger.
+          </p>
+        </div>
+        <div class="footer-contact">
+          <h4 class="contact-title">Nous contacter</h4>
+          <p class="contact-text">Du lundi au samedi, de 9h à 19h.</p>
+          <ul>
+            <li class="contact-item"><ion-icon name="call-outline"></ion-icon><a href="tel:+33158366669" class="contact-link">01 58 36 66 69</a></li>
+            <li class="contact-item"><ion-icon name="mail-outline"></ion-icon><a href="mailto:voyagesloisirs@ayavoyages.fr" class="contact-link">voyagesloisirs@ayavoyages.fr</a></li>
+            <li class="contact-item"><ion-icon name="location-outline"></ion-icon><address>47 rue des Mathurins, 75008 Paris</address></li>
+          </ul>
+        </div>
+        <div class="footer-form">
+          <p class="form-text">Inscrivez-vous : soyez prévenu·e en avant-première dès l'ouverture des réservations.</p>
+          <form action="" class="form-wrapper">
+            <input type="email" name="email" class="input-field" placeholder="Votre e-mail" required>
+            <button type="submit" class="btn btn-secondary">S'inscrire</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">© 2026 Voyages Loisirs — Tous droits réservés · IM075240012 · Voyages garantis APST</p>
+        <ul class="footer-bottom-list">
+          <li><a href="mentions-legales.html" class="footer-bottom-link">Mentions légales</a></li>
+          <li><a href="cookies.html" class="footer-bottom-link">Cookies</a></li>
+        </ul>
       </div>
     </div>
   </footer>
 
-</div>
+  <a href="#top" class="go-top" data-go-top><ion-icon name="chevron-up-outline"></ion-icon></a>
 
-<!-- ============ FENÊTRE « ÊTRE RAPPELÉ » ============ -->
-<div class="modal" id="callback-modal" aria-hidden="true">
-  <div class="modal__overlay" data-close></div>
-  <div class="modal__panel" role="dialog" aria-modal="true" aria-labelledby="cb-title">
-    <button type="button" class="modal__close" data-close aria-label="Fermer">&times;</button>
-    <h3 id="cb-title">Être rappelé</h3>
-    <p class="modal__sub">Laissez-nous vos coordonnées, un conseiller vous rappelle rapidement.</p>
-    <form class="modal__form" id="callback-form">
-      <div class="modal__row">
-        <input type="text" name="prenom" placeholder="Prénom" required>
-        <input type="text" name="nom" placeholder="Nom" required>
-      </div>
-      <input type="tel" name="tel" placeholder="Téléphone" required>
-      <input type="email" name="email" placeholder="E-mail (facultatif)">
-      <button type="submit" class="modal__submit">Être rappelé</button>
-    </form>
-    <div class="modal__done" id="callback-done" hidden>Merci ! Un conseiller vous rappelle très vite. 🙏</div>
-  </div>
-</div>
+  <script src="assets/js/tourly.js?v=6"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
-<script>
-  // Fenêtre « Être rappelé »
-  (function () {
-    var modal = document.getElementById('callback-modal');
-    if (!modal) return;
-    var open = function (e) { if (e) e.preventDefault(); modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; };
-    var close = function () { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; };
-    document.querySelectorAll('.js-callback').forEach(function (b) { b.addEventListener('click', open); });
-    modal.querySelectorAll('[data-close]').forEach(function (x) { x.addEventListener('click', close); });
-    document.addEventListener('keydown', function (e) { if (e.key === 'Escape' && modal.classList.contains('is-open')) close(); });
-    var f = document.getElementById('callback-form');
-    if (f) f.addEventListener('submit', function (e) { e.preventDefault(); f.style.display = 'none'; document.getElementById('callback-done').hidden = false; });
-  })();
-</script>
+  <script>
+    // Éléments communs à tous les circuits (standard — à ajuster si besoin)
+    var INCLUS = [
+      "Les vols internationaux aller-retour au départ de Paris, en classe économique",
+      "Les taxes d'aéroport et de sécurité",
+      "Les transferts aéroport – hôtel – aéroport",
+      "L'hébergement en hôtels 4★ en chambre double",
+      "Les petits déjeuners et les repas mentionnés au programme",
+      "Les excursions et visites mentionnées au programme",
+      "Un accompagnateur francophone durant tout le séjour",
+      "L'assistance de notre équipe 24h/24"
+    ];
+    var NON_INCLUS = [
+      "Les boissons",
+      "Le supplément chambre individuelle",
+      "La formule pension complète (en option)",
+      "Le port des bagages",
+      "Les pourboires (guides, chauffeurs)",
+      "Les dépenses personnelles",
+      "Les assurances annulation / multirisque (nous consulter)",
+      "Les excursions non mentionnées au programme",
+      "Tout ce qui n'est pas indiqué dans « Le prix comprend »"
+    ];
 
-<script>
-  // Éléments communs à tous les circuits (standard — à ajuster si besoin)
-  var INCLUS = [
-    "Les vols internationaux aller-retour au départ de Paris, en classe économique",
-    "Les taxes d'aéroport et de sécurité",
-    "Les transferts aéroport – hôtel – aéroport",
-    "L'hébergement en hôtels 4★ en chambre double",
-    "Les petits déjeuners et les repas mentionnés au programme",
-    "Les excursions et visites mentionnées au programme",
-    "Un accompagnateur francophone durant tout le séjour",
-    "L'assistance de notre équipe 24h/24"
-  ];
-  var NON_INCLUS = [
-    "Les boissons",
-    "Le supplément chambre individuelle",
-    "La formule pension complète (en option)",
-    "Le port des bagages",
-    "Les pourboires (guides, chauffeurs)",
-    "Les dépenses personnelles",
-    "Les assurances annulation / multirisque (nous consulter)",
-    "Les excursions non mentionnées au programme",
-    "Tout ce qui n'est pas indiqué dans « Le prix comprend »"
-  ];
+    var DESTINATIONS = {
+      marrakech: {
+        nom: 'Marrakech', periode: 'Janvier – Février', prix: '1 290 €', badge: 'Dernières places',
+        duree: '8 jours / 7 nuits',
+        img: 'https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1600&q=80',
+        intro: "Perdez-vous dans les ruelles colorées de la médina, respirez le parfum des souks et savourez la douceur de l'hiver marocain — un séjour tout en douceur, entre palmeraies, jardins et terrasses ensoleillées.",
+        points: ['Médina & souks', 'Jardin Majorelle', 'Palmeraie', 'Dîner spectacle', 'Excursion Atlas'],
+        jours: [
+          ['Paris – Marrakech', "Envol pour Marrakech, accueil et transfert à l'hôtel. Temps libre. Dîner et nuit à l'hôtel."],
+          ['La médina', "Visite guidée de la médina, de la place Jemaa el-Fna et des souks. Déjeuner typique. Après-midi libre."],
+          ['Jardins & palais', "Découverte du jardin Majorelle, du palais de la Bahia et des jardins de la Ménara. Déjeuner et temps libre."],
+          ['Palmeraie', "Balade dans la palmeraie, pause thé à la menthe. Après-midi détente ou hammam traditionnel (en option)."],
+          ["Montagnes de l'Atlas", "Excursion à la journée dans l'Atlas et ses villages berbères. Déjeuner chez l'habitant. Retour à Marrakech."],
+          ['Journée libre', "Journée libre pour flâner, faire des achats ou profiter de l'hôtel. Dîner spectacle folklorique (en option)."],
+          ['Derniers instants', "Matinée libre, derniers achats dans les souks. Temps libre avant le transfert."],
+          ['Marrakech – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
+        ]
+      },
+      tokyo: {
+        nom: 'Tokyo', periode: 'Mars – Avril', prix: '2 490 €', badge: '',
+        duree: '9 jours / 7 nuits',
+        img: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80',
+        intro: "Découvrez le Japon au moment magique des cerisiers en fleurs — entre temples paisibles, jardins raffinés et art de vivre japonais, un voyage dépaysant au rythme tranquille.",
+        points: ['Cerisiers en fleurs', 'Temples de Kyoto', 'Mont Fuji', 'Train à grande vitesse', 'Jardins zen'],
+        jours: [
+          ['Paris – Tokyo', "Envol pour Tokyo. Nuit à bord."],
+          ['Arrivée à Tokyo', "Accueil et transfert à l'hôtel. Temps libre pour un premier contact avec la ville. Dîner et nuit."],
+          ['Tokyo', "Visite guidée : quartier d'Asakusa, temple Senso-ji et panorama sur la ville. Déjeuner. Après-midi libre."],
+          ['Tokyo & jardins', "Découverte des jardins impériaux et du quartier de Shibuya. Balade sous les cerisiers en fleurs."],
+          ['Mont Fuji', "Excursion vers le mont Fuji et la région des lacs. Déjeuner. Retour en fin de journée."],
+          ['Vers Kyoto', "Train à grande vitesse pour Kyoto. Installation à l'hôtel. Temps libre."],
+          ['Kyoto', "Visite des temples et jardins zen, du quartier de Gion. Déjeuner traditionnel."],
+          ['Kyoto libre', "Journée libre pour explorer à votre rythme. Dîner d'adieu."],
+          ['Retour – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
+        ]
+      },
+      santorin: {
+        nom: 'Santorin', periode: 'Mai – Juin', prix: '1 690 €', badge: 'Bientôt complet',
+        duree: '8 jours / 7 nuits',
+        img: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1600&q=80',
+        intro: "Villages blancs suspendus au-dessus de la mer Égée, couchers de soleil sur la Caldeira et douceur des Cyclades — la carte postale grecque par excellence, à votre rythme.",
+        points: ['Coucher de soleil à Oia', 'Villages blancs', 'Croisière Caldeira', 'Dégustation de vins', 'Plages volcaniques'],
+        jours: [
+          ['Paris – Santorin', "Envol pour Santorin, accueil et transfert à l'hôtel. Dîner et nuit."],
+          ['Fira', "Visite guidée de Fira, la capitale, perchée sur la falaise. Déjeuner face à la mer. Après-midi libre."],
+          ['Oia', "Découverte du village d'Oia et de ses ruelles. Le soir, célèbre coucher de soleil sur la Caldeira."],
+          ['Croisière', "Croisière dans la Caldeira, bain dans les sources chaudes volcaniques. Déjeuner à bord."],
+          ['Vignobles', "Visite d'un domaine viticole et dégustation de vins locaux. Après-midi détente."],
+          ['Journée libre', "Journée libre : plages de sable noir, farniente ou shopping."],
+          ['Villages du sud', "Excursion vers les villages traditionnels et le site d'Akrotiri. Déjeuner typique."],
+          ['Santorin – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
+        ]
+      },
+      bali: {
+        nom: 'Bali', periode: 'Juillet – Août', prix: '2 190 €', badge: '',
+        duree: '10 jours / 8 nuits',
+        img: 'https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=1600&q=80',
+        intro: "Rizières en terrasses, temples sacrés et hospitalité balinaise légendaire — une immersion sereine au cœur de l'île des dieux, entre nature luxuriante et traditions vivantes.",
+        points: ['Rizières de Tegallalang', 'Temples sacrés', 'Ubud', 'Danses traditionnelles', 'Plages du sud'],
+        jours: [
+          ['Paris – Bali', "Envol pour Bali. Nuit à bord."],
+          ['Arrivée à Bali', "Accueil et transfert à l'hôtel. Temps libre. Dîner et nuit."],
+          ['Ubud', "Route vers Ubud, cœur culturel de l'île. Visite du marché et du palais. Déjeuner."],
+          ['Rizières', "Découverte des rizières en terrasses de Tegallalang. Balade et déjeuner avec vue."],
+          ['Temples', "Visite des temples sacrés et d'une source purificatrice. Spectacle de danses traditionnelles."],
+          ['Volcan & lac', "Excursion au volcan Batur et au lac. Déjeuner panoramique."],
+          ['Vers le sud', "Route vers les plages du sud. Installation à l'hôtel. Temps libre."],
+          ['Détente', "Journée libre : plage, farniente ou soin balinais (en option)."],
+          ['Journée libre', "Dernière journée libre. Dîner d'adieu au bord de l'eau."],
+          ['Retour – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
+        ]
+      },
+      kenya: {
+        nom: 'Safari Kenya', periode: 'Septembre – Octobre', prix: '2 890 €', badge: 'Dernières places',
+        duree: '9 jours / 7 nuits',
+        img: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=1600&q=80',
+        intro: "Vivez la grande aventure du Masaï Mara : lions, éléphants et grands espaces de la savane, au rythme paisible des safaris — un rêve d'enfance accessible et parfaitement encadré.",
+        points: ['Masaï Mara', 'Big Five', 'Lac Nakuru', 'Rencontre Masaï', 'Safaris en 4×4'],
+        jours: [
+          ['Paris – Nairobi', "Envol pour Nairobi. Nuit à bord."],
+          ['Nairobi', "Accueil et transfert. Visite de la ville et d'un refuge d'éléphants. Dîner et nuit."],
+          ['Lac Nakuru', "Route vers le lac Nakuru, réputé pour ses flamants roses et ses rhinocéros. Safari."],
+          ['Vers le Masaï Mara', "Route vers la célèbre réserve du Masaï Mara. Premier safari en fin de journée."],
+          ['Masaï Mara', "Journée de safari à la recherche des Big Five. Déjeuner pique-nique dans la savane."],
+          ['Masaï Mara', "Safari matinal et rencontre avec un village Masaï. Après-midi d'observation."],
+          ['Retour Nairobi', "Route retour vers Nairobi. Déjeuner en cours de route. Temps libre."],
+          ['Journée libre', "Journée libre à Nairobi ou shopping d'artisanat. Dîner d'adieu."],
+          ['Retour – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
+        ]
+      },
+      maldives: {
+        nom: 'Maldives', periode: 'Novembre – Décembre', prix: '2 690 €', badge: '',
+        duree: '8 jours / 7 nuits',
+        img: 'https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=1600&q=80',
+        intro: "Lagons turquoise, sable blanc et repos absolu au bord de l'eau — le paradis pour se ressourcer en toute tranquillité, loin de l'agitation.",
+        points: ['Lagon turquoise', 'Bungalow sur pilotis', 'Plongée & snorkeling', 'Coucher de soleil en mer', 'Spa'],
+        jours: [
+          ['Paris – Malé', "Envol pour Malé. Nuit à bord."],
+          ['Arrivée aux Maldives', "Accueil et transfert en bateau vers l'île. Installation. Temps libre."],
+          ['Farniente', "Journée détente sur la plage et découverte du lagon. Snorkeling au départ de la plage."],
+          ['Découverte marine', "Sortie en mer, observation des dauphins (selon conditions). Déjeuner."],
+          ['Détente & spa', "Journée libre : plage, piscine ou soin au spa (en option)."],
+          ['Île voisine', "Excursion vers une île voisine et son village. Déjeuner les pieds dans l'eau."],
+          ['Dernier jour', "Matinée libre au bord du lagon. Transfert vers Malé."],
+          ['Retour – Paris', "Vol retour vers Paris."]
+        ]
+      }
+    };
 
-  // Données par destination (programmes = exemples à remplacer par les vrais)
-  var DESTINATIONS = {
-    marrakech: {
-      nom: 'Marrakech', periode: 'Janvier – Février', prix: '1 290 €', badge: 'Dernières places',
-      duree: '8 jours / 7 nuits',
-      img: 'https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=1600&q=80',
-      intro: "Perdez-vous dans les ruelles colorées de la médina, respirez le parfum des souks et savourez la douceur de l'hiver marocain — un séjour tout en douceur, entre palmeraies, jardins et terrasses ensoleillées.",
-      points: ['Médina & souks', 'Jardin Majorelle', 'Palmeraie', 'Dîner spectacle', 'Excursion Atlas'],
-      jours: [
-        ['Paris – Marrakech', "Envol pour Marrakech, accueil et transfert à l'hôtel. Temps libre. Dîner et nuit à l'hôtel."],
-        ['La médina', "Visite guidée de la médina, de la place Jemaa el-Fna et des souks. Déjeuner typique. Après-midi libre."],
-        ['Jardins & palais', "Découverte du jardin Majorelle, du palais de la Bahia et des jardins de la Ménara. Déjeuner et temps libre."],
-        ['Palmeraie', "Balade dans la palmeraie, pause thé à la menthe. Après-midi détente ou hammam traditionnel (en option)."],
-        ["Montagnes de l'Atlas", "Excursion à la journée dans l'Atlas et ses villages berbères. Déjeuner chez l'habitant. Retour à Marrakech."],
-        ['Journée libre', "Journée libre pour flâner, faire des achats ou profiter de l'hôtel. Dîner spectacle folklorique (en option)."],
-        ['Derniers instants', "Matinée libre, derniers achats dans les souks. Temps libre avant le transfert."],
-        ['Marrakech – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
-      ]
-    },
-    tokyo: {
-      nom: 'Tokyo', periode: 'Mars – Avril', prix: '2 490 €', badge: '',
-      duree: '9 jours / 7 nuits',
-      img: 'https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1600&q=80',
-      intro: "Découvrez le Japon au moment magique des cerisiers en fleurs — entre temples paisibles, jardins raffinés et art de vivre japonais, un voyage dépaysant au rythme tranquille.",
-      points: ['Cerisiers en fleurs', 'Temples de Kyoto', 'Mont Fuji', 'Train à grande vitesse', 'Jardins zen'],
-      jours: [
-        ['Paris – Tokyo', "Envol pour Tokyo. Nuit à bord."],
-        ['Arrivée à Tokyo', "Accueil et transfert à l'hôtel. Temps libre pour un premier contact avec la ville. Dîner et nuit."],
-        ['Tokyo', "Visite guidée : quartier d'Asakusa, temple Senso-ji et panorama sur la ville. Déjeuner. Après-midi libre."],
-        ['Tokyo & jardins', "Découverte des jardins impériaux et du quartier de Shibuya. Balade sous les cerisiers en fleurs."],
-        ['Mont Fuji', "Excursion vers le mont Fuji et la région des lacs. Déjeuner. Retour en fin de journée."],
-        ['Vers Kyoto', "Train à grande vitesse pour Kyoto. Installation à l'hôtel. Temps libre."],
-        ['Kyoto', "Visite des temples et jardins zen, du quartier de Gion. Déjeuner traditionnel."],
-        ['Kyoto libre', "Journée libre pour explorer à votre rythme. Dîner d'adieu."],
-        ['Retour – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
-      ]
-    },
-    santorin: {
-      nom: 'Santorin', periode: 'Mai – Juin', prix: '1 690 €', badge: 'Bientôt complet',
-      duree: '8 jours / 7 nuits',
-      img: 'https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=1600&q=80',
-      intro: "Villages blancs suspendus au-dessus de la mer Égée, couchers de soleil sur la Caldeira et douceur des Cyclades — la carte postale grecque par excellence, à votre rythme.",
-      points: ['Coucher de soleil à Oia', 'Villages blancs', 'Croisière Caldeira', 'Dégustation de vins', 'Plages volcaniques'],
-      jours: [
-        ['Paris – Santorin', "Envol pour Santorin, accueil et transfert à l'hôtel. Dîner et nuit."],
-        ['Fira', "Visite guidée de Fira, la capitale, perchée sur la falaise. Déjeuner face à la mer. Après-midi libre."],
-        ['Oia', "Découverte du village d'Oia et de ses ruelles. Le soir, célèbre coucher de soleil sur la Caldeira."],
-        ['Croisière', "Croisière dans la Caldeira, bain dans les sources chaudes volcaniques. Déjeuner à bord."],
-        ['Vignobles', "Visite d'un domaine viticole et dégustation de vins locaux. Après-midi détente."],
-        ['Journée libre', "Journée libre : plages de sable noir, farniente ou shopping."],
-        ['Villages du sud', "Excursion vers les villages traditionnels et le site d'Akrotiri. Déjeuner typique."],
-        ['Santorin – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
-      ]
-    },
-    bali: {
-      nom: 'Bali', periode: 'Juillet – Août', prix: '2 190 €', badge: '',
-      duree: '10 jours / 8 nuits',
-      img: 'https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=1600&q=80',
-      intro: "Rizières en terrasses, temples sacrés et hospitalité balinaise légendaire — une immersion sereine au cœur de l'île des dieux, entre nature luxuriante et traditions vivantes.",
-      points: ['Rizières de Tegallalang', 'Temples sacrés', 'Ubud', 'Danses traditionnelles', 'Plages du sud'],
-      jours: [
-        ['Paris – Bali', "Envol pour Bali. Nuit à bord."],
-        ['Arrivée à Bali', "Accueil et transfert à l'hôtel. Temps libre. Dîner et nuit."],
-        ['Ubud', "Route vers Ubud, cœur culturel de l'île. Visite du marché et du palais. Déjeuner."],
-        ['Rizières', "Découverte des rizières en terrasses de Tegallalang. Balade et déjeuner avec vue."],
-        ['Temples', "Visite des temples sacrés et d'une source purificatrice. Spectacle de danses traditionnelles."],
-        ['Volcan & lac', "Excursion au volcan Batur et au lac. Déjeuner panoramique."],
-        ['Vers le sud', "Route vers les plages du sud. Installation à l'hôtel. Temps libre."],
-        ['Détente', "Journée libre : plage, farniente ou soin balinais (en option)."],
-        ['Journée libre', "Dernière journée libre. Dîner d'adieu au bord de l'eau."],
-        ['Retour – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
-      ]
-    },
-    kenya: {
-      nom: 'Safari Kenya', periode: 'Septembre – Octobre', prix: '2 890 €', badge: 'Dernières places',
-      duree: '9 jours / 7 nuits',
-      img: 'https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=1600&q=80',
-      intro: "Vivez la grande aventure du Masaï Mara : lions, éléphants et grands espaces de la savane, au rythme paisible des safaris — un rêve d'enfance accessible et parfaitement encadré.",
-      points: ['Masaï Mara', 'Big Five', 'Lac Nakuru', 'Rencontre Masaï', 'Safaris en 4×4'],
-      jours: [
-        ['Paris – Nairobi', "Envol pour Nairobi. Nuit à bord."],
-        ['Nairobi', "Accueil et transfert. Visite de la ville et d'un refuge d'éléphants. Dîner et nuit."],
-        ['Lac Nakuru', "Route vers le lac Nakuru, réputé pour ses flamants roses et ses rhinocéros. Safari."],
-        ['Vers le Masaï Mara', "Route vers la célèbre réserve du Masaï Mara. Premier safari en fin de journée."],
-        ['Masaï Mara', "Journée de safari à la recherche des Big Five. Déjeuner pique-nique dans la savane."],
-        ['Masaï Mara', "Safari matinal et rencontre avec un village Masaï. Après-midi d'observation."],
-        ['Retour Nairobi', "Route retour vers Nairobi. Déjeuner en cours de route. Temps libre."],
-        ['Journée libre', "Journée libre à Nairobi ou shopping d'artisanat. Dîner d'adieu."],
-        ['Retour – Paris', "Transfert à l'aéroport et vol retour vers Paris."]
-      ]
-    },
-    maldives: {
-      nom: 'Maldives', periode: 'Novembre – Décembre', prix: '2 690 €', badge: '',
-      duree: '8 jours / 7 nuits',
-      img: 'https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=1600&q=80',
-      intro: "Lagons turquoise, sable blanc et repos absolu au bord de l'eau — le paradis pour se ressourcer en toute tranquillité, loin de l'agitation.",
-      points: ['Lagon turquoise', 'Bungalow sur pilotis', 'Plongée & snorkeling', 'Coucher de soleil en mer', 'Spa'],
-      jours: [
-        ['Paris – Malé', "Envol pour Malé. Nuit à bord."],
-        ['Arrivée aux Maldives', "Accueil et transfert en bateau vers l'île. Installation. Temps libre."],
-        ['Farniente', "Journée détente sur la plage et découverte du lagon. Snorkeling au départ de la plage."],
-        ['Découverte marine', "Sortie en mer, observation des dauphins (selon conditions). Déjeuner."],
-        ['Détente & spa', "Journée libre : plage, piscine ou soin au spa (en option)."],
-        ['Île voisine', "Excursion vers une île voisine et son village. Déjeuner les pieds dans l'eau."],
-        ['Dernier jour', "Matinée libre au bord du lagon. Transfert vers Malé."],
-        ['Retour – Paris', "Vol retour vers Paris."]
-      ]
-    }
-  };
+    function param(name) { return new URLSearchParams(window.location.search).get(name); }
+    function el(id) { return document.getElementById(id); }
 
-  function param(name) { return new URLSearchParams(window.location.search).get(name); }
-  function el(id) { return document.getElementById(id); }
+    var slug = (param('d') || 'marrakech').toLowerCase();
+    var d = DESTINATIONS[slug] || DESTINATIONS.marrakech;
 
-  var slug = (param('d') || 'marrakech').toLowerCase();
-  var d = DESTINATIONS[slug] || DESTINATIONS.marrakech;
+    document.title = d.nom + ' — Voyages Loisirs';
+    el('c-img').src = d.img;
+    el('c-img').alt = d.nom;
+    el('c-period').textContent = d.periode;
+    el('c-title').textContent = d.nom;
+    el('c-price').textContent = d.prix;
+    el('c-duration').innerHTML = '<strong>' + d.duree + '</strong>';
+    el('c-intro').textContent = d.intro;
+    el('c-fact-duration').textContent = d.duree;
+    el('c-fact-period').textContent = d.periode;
+    el('c-fact-price').textContent = d.prix;
 
-  document.title = d.nom + ' — Voyages Loisirs';
-  el('c-img').src = d.img;
-  el('c-img').alt = d.nom;
-  el('c-period').textContent = d.periode;
-  el('c-title').textContent = d.nom;
-  el('c-price').textContent = d.prix;
-  el('c-duration').innerHTML = '<strong>' + d.duree + '</strong>';
-  el('c-intro').textContent = d.intro;
-  el('c-fact-duration').textContent = d.duree;
-  el('c-fact-period').textContent = d.periode;
-  el('c-fact-price').textContent = d.prix;
+    var badge = el('c-badge');
+    if (d.badge) { badge.textContent = d.badge; badge.hidden = false; }
 
-  var badge = el('c-badge');
-  if (d.badge) { badge.textContent = d.badge; badge.hidden = false; }
+    el('c-highlights').innerHTML = (d.points || []).map(function (p) {
+      return '<span>' + p + '</span>';
+    }).join('');
 
-  el('c-days').innerHTML = (d.jours || []).map(function (j, i) {
-    return '<div class="day">' +
-      '<div class="day__num">Jour ' + (i + 1) + '</div>' +
-      '<div class="day__title">' + j[0] + '</div>' +
-      '<p class="day__text">' + j[1] + '</p>' +
-      '</div>';
-  }).join('');
+    el('c-days').innerHTML = (d.jours || []).map(function (j, i) {
+      return '<div class="day">' +
+        '<div class="day__num">Jour ' + (i + 1) + '</div>' +
+        '<div class="day__title">' + j[0] + '</div>' +
+        '<p class="day__text">' + j[1] + '</p>' +
+        '</div>';
+    }).join('');
 
-  el('c-includes').innerHTML = INCLUS.map(function (x) { return '<li>' + x + '</li>'; }).join('');
-  el('c-excludes').innerHTML = NON_INCLUS.map(function (x) { return '<li>' + x + '</li>'; }).join('');
+    el('c-includes').innerHTML = INCLUS.map(function (x) { return '<li>' + x + '</li>'; }).join('');
+    el('c-excludes').innerHTML = NON_INCLUS.map(function (x) { return '<li>' + x + '</li>'; }).join('');
 
-  // Galerie : photo principale + 2 visuels d'ambiance (à remplacer par les vraies photos)
-  var galerie = d.galerie || [
-    d.img,
-    'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80',
-    'https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=900&q=80'
-  ];
-  el('c-gallery').innerHTML = galerie.map(function (src) {
-    return '<img src="' + src + '" alt="' + d.nom + '" loading="lazy" data-fallback="' + d.img + '">';
-  }).join('');
+    var galerie = d.galerie || [
+      d.img,
+      'https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=900&q=80',
+      'https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=900&q=80'
+    ];
+    el('c-gallery').innerHTML = galerie.map(function (src) {
+      return '<img src="' + src + '" alt="' + d.nom + '" loading="lazy" data-fallback="' + d.img + '">';
+    }).join('');
 
-  // Filet de sécurité : si une image ne charge pas, on bascule sur la photo principale
-  document.querySelectorAll('img[data-fallback]').forEach(function (img) {
-    img.addEventListener('error', function () {
-      var fb = img.getAttribute('data-fallback');
-      if (fb && img.src !== fb) { img.src = fb; img.removeAttribute('data-fallback'); }
+    document.querySelectorAll('img[data-fallback]').forEach(function (img) {
+      img.addEventListener('error', function () {
+        var fb = img.getAttribute('data-fallback');
+        if (fb && img.src !== fb) { img.src = fb; img.removeAttribute('data-fallback'); }
+      });
     });
-  });
-</script>
+  </script>
+
 </body>
+
 </html>
