@@ -1329,6 +1329,15 @@ address {
   height: 40px;
 }
 
+/* Logo dans la barre fixe (au scroll, bureau) — tout à gauche */
+.header-bottom__logo { display: none; }
+
+@media (min-width: 992px) {
+  .header.active .header-bottom__logo { display: block; }
+  .header-bottom__logo img { height: 30px; width: auto; }
+  .header.active .social-list { display: none; }
+}
+
 /* Bloc présentation / rachat AYA */
 .about {
   padding-block: var(--section-padding);
