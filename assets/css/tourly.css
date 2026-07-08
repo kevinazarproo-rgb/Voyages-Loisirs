@@ -1798,6 +1798,9 @@ address {
   .tour-search .btn { --padding: 15px; grid-column: unset; margin-top: 0; }
 }
 
+/* Fond de la barre de recherche un peu transparent */
+.tour-search { background: hsla(214, 57%, 51%, 0.85); }
+
 .tour-search-form select.input-field {
   appearance: none;
   -webkit-appearance: none;
