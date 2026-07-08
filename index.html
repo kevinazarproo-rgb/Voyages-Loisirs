@@ -15,7 +15,7 @@
 
   <link rel="shortcut icon" href="assets/logo-marine.png" type="image/png">
 
-  <link rel="stylesheet" href="assets/css/tourly.css?v=5">
+  <link rel="stylesheet" href="assets/css/tourly.css?v=7">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -34,15 +34,7 @@
     <div class="header-top">
       <div class="container">
 
-        <a href="tel:+33158366669" class="helpline-box">
-          <div class="icon-box">
-            <ion-icon name="call-outline"></ion-icon>
-          </div>
-          <div class="wrapper">
-            <p class="helpline-title">Nos conseillers :</p>
-            <p class="helpline-number">01 58 36 66 69</p>
-          </div>
-        </a>
+        <div class="helpline-spacer"></div>
 
         <a href="#top" class="logo">
           <img src="assets/logo-blanc.png" alt="Voyages Loisirs">
@@ -66,7 +58,6 @@
         <ul class="social-list">
           <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
           <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
-          <li><a href="#" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
         </ul>
 
         <nav class="navbar" data-navbar>
@@ -81,16 +72,13 @@
           </div>
 
           <ul class="navbar-list">
-            <li><a href="#home" class="navbar-link" data-nav-link>accueil</a></li>
-            <li><a href="#about" class="navbar-link" data-nav-link>l'agence</a></li>
-            <li><a href="#package" class="navbar-link" data-nav-link>destinations</a></li>
-            <li><a href="#gallery" class="navbar-link" data-nav-link>galerie</a></li>
-            <li><a href="#contact" class="navbar-link" data-nav-link>contact</a></li>
+            <li><a href="index.html" class="navbar-link" data-nav-link>accueil</a></li>
+            <li><a href="agence.html" class="navbar-link" data-nav-link>l'agence</a></li>
+            <li><a href="destinations.html" class="navbar-link" data-nav-link>destinations</a></li>
+            <li><a href="contact.html" class="navbar-link" data-nav-link>contact</a></li>
           </ul>
 
         </nav>
-
-        <a href="#package" class="btn btn-primary">Réserver</a>
 
       </div>
     </div>
@@ -113,8 +101,8 @@
           </p>
 
           <div class="btn-group">
-            <a href="#package" class="btn btn-primary">Nos destinations</a>
-            <a href="tel:+33158366669" class="btn btn-secondary">Être rappelé</a>
+            <a href="destinations.html" class="btn btn-primary">Nos destinations</a>
+            <button type="button" class="btn btn-secondary" data-callback-open>Être rappelé</button>
           </div>
 
         </div>
@@ -125,26 +113,40 @@
       <section class="tour-search">
         <div class="container">
 
-          <form action="#package" class="tour-search-form">
+          <form action="destinations.html" class="tour-search-form">
 
             <div class="input-wrapper">
-              <label for="destination" class="input-label">Destination*</label>
-              <input type="text" name="destination" id="destination" placeholder="Marrakech, Tokyo…" class="input-field">
+              <label for="people" class="input-label">Voyageurs</label>
+              <input type="number" name="people" id="people" min="1" placeholder="Nombre de voyageurs" class="input-field">
             </div>
 
             <div class="input-wrapper">
-              <label for="people" class="input-label">Voyageurs*</label>
-              <input type="number" name="people" id="people" placeholder="Nombre de personnes" class="input-field">
+              <label for="depart" class="input-label">Date de départ</label>
+              <select name="depart" id="depart" class="input-field">
+                <option value="">Choisir un mois</option>
+                <option>Janvier</option>
+                <option>Février</option>
+                <option>Mars</option>
+                <option>Avril</option>
+                <option>Mai</option>
+                <option>Juin</option>
+                <option>Juillet</option>
+                <option>Août</option>
+                <option>Septembre</option>
+                <option>Octobre</option>
+                <option>Novembre</option>
+                <option>Décembre</option>
+              </select>
             </div>
 
             <div class="input-wrapper">
-              <label for="checkin" class="input-label">Date de départ*</label>
-              <input type="date" name="checkin" id="checkin" class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="checkout" class="input-label">Date de retour*</label>
-              <input type="date" name="checkout" id="checkout" class="input-field">
+              <label for="budget" class="input-label">Budget</label>
+              <select name="budget" id="budget" class="input-field">
+                <option value="">Peu importe</option>
+                <option>Moins de 1 500 €</option>
+                <option>1 500 € – 2 500 €</option>
+                <option>Plus de 2 500 €</option>
+              </select>
             </div>
 
             <button type="submit" class="btn btn-secondary">Rechercher</button>
@@ -219,12 +221,6 @@
                   </ul>
                 </div>
                 <div class="card-price">
-                  <div class="wrapper">
-                    <p class="reviews">(48 avis)</p>
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
-                    </div>
-                  </div>
                   <p class="price">2 190 €<span>/ pers.</span></p>
                   <a href="circuit.html?d=bali" class="btn btn-secondary">Réserver</a>
                 </div>
@@ -248,12 +244,6 @@
                   </ul>
                 </div>
                 <div class="card-price">
-                  <div class="wrapper">
-                    <p class="reviews">(36 avis)</p>
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
-                    </div>
-                  </div>
                   <p class="price">2 890 €<span>/ pers.</span></p>
                   <a href="circuit.html?d=kenya" class="btn btn-secondary">Réserver</a>
                 </div>
@@ -266,7 +256,7 @@
                   <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80" alt="Maldives" loading="lazy">
                 </figure>
                 <div class="card-content">
-                  <h3 class="h3 card-title">Maldives, séjour paradisiaque — nov. / déc.</h3>
+                  <h3 class="h3 card-title">Maldives, séjour paradisiaque — novembre / décembre</h3>
                   <p class="card-text">
                     Lagons turquoise, bungalows sur pilotis et farniente absolu pour clôturer l'année en beauté.
                   </p>
@@ -277,12 +267,6 @@
                   </ul>
                 </div>
                 <div class="card-price">
-                  <div class="wrapper">
-                    <p class="reviews">(52 avis)</p>
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
-                    </div>
-                  </div>
                   <p class="price">2 690 €<span>/ pers.</span></p>
                   <a href="circuit.html?d=maldives" class="btn btn-secondary">Réserver</a>
                 </div>
@@ -292,7 +276,7 @@
           </ul>
 
           <div class="package-cta">
-            <a href="#package" class="btn btn-primary">Toutes les destinations</a>
+            <a href="destinations.html" class="btn btn-primary">Toutes les destinations</a>
           </div>
 
         </div>
@@ -334,7 +318,7 @@
             </p>
           </div>
 
-          <a href="tel:+33158366669" class="btn btn-secondary">Nous contacter</a>
+          <a href="contact.html" class="btn btn-secondary">Nous contacter</a>
 
         </div>
       </section>
@@ -435,8 +419,43 @@
   </a>
 
 
+  <!-- #FENÊTRE « ÊTRE RAPPELÉ » -->
+  <div class="cb-modal" id="callback-modal" aria-hidden="true">
+    <div class="cb-modal__overlay" data-callback-close></div>
+    <div class="cb-modal__panel" role="dialog" aria-modal="true" aria-labelledby="cb-title">
+      <button class="cb-modal__close" data-callback-close aria-label="Fermer"><ion-icon name="close-outline"></ion-icon></button>
+      <h3 id="cb-title">Être rappelé</h3>
+      <p class="cb-modal__sub">Laissez-nous vos coordonnées, un conseiller vous rappelle rapidement.</p>
+      <form class="cb-form" id="callback-form">
+        <div class="cb-row">
+          <input type="text" name="prenom" placeholder="Prénom" required>
+          <input type="text" name="nom" placeholder="Nom" required>
+        </div>
+        <input type="tel" name="tel" placeholder="Numéro de téléphone" required>
+        <input type="email" name="email" placeholder="E-mail (facultatif)">
+        <button type="submit" class="btn btn-primary">Être rappelé</button>
+      </form>
+      <div class="cb-done" id="callback-done" hidden>Merci ! Un conseiller vous rappelle très vite. 🙏</div>
+    </div>
+  </div>
+
+  <!-- #GO TO TOP -->
+
   <!-- custom js -->
   <script src="assets/js/tourly.js?v=1"></script>
+  <script>
+    (function () {
+      var modal = document.getElementById('callback-modal');
+      if (!modal) return;
+      function open(e) { if (e) e.preventDefault(); modal.classList.add('is-open'); modal.setAttribute('aria-hidden', 'false'); document.body.style.overflow = 'hidden'; }
+      function close() { modal.classList.remove('is-open'); modal.setAttribute('aria-hidden', 'true'); document.body.style.overflow = ''; }
+      document.querySelectorAll('[data-callback-open]').forEach(function (b) { b.addEventListener('click', open); });
+      modal.querySelectorAll('[data-callback-close]').forEach(function (x) { x.addEventListener('click', close); });
+      document.addEventListener('keydown', function (e) { if (e.key === 'Escape') close(); });
+      var f = document.getElementById('callback-form');
+      if (f) f.addEventListener('submit', function (e) { e.preventDefault(); f.style.display = 'none'; document.getElementById('callback-done').hidden = false; });
+    })();
+  </script>
 
   <!-- ionicons -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
