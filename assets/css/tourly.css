@@ -1373,3 +1373,11 @@ address {
 @media (min-width: 768px) {
   .about-features { grid-template-columns: repeat(3, 1fr); }
 }
+
+/* Bouton "Toutes les destinations" centré */
+.package-cta { text-align: center; }
+
+.package-cta .btn {
+  display: inline-block;
+  margin-inline: auto;
+}
