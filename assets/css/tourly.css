@@ -2054,3 +2054,95 @@ address {
   color: var(--black-coral);
   font-size: var(--fs-5);
 }
+
+
+/*-----------------------------------*\
+ * #BANDEAU PAIEMENT 10x
+\*-----------------------------------*/
+
+.perk-banner {
+  background: var(--bright-navy-blue);
+  color: var(--white);
+  padding: 18px 15px;
+}
+
+.perk-banner .container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  text-align: center;
+}
+
+.perk-banner ion-icon { font-size: 26px; flex-shrink: 0; }
+
+.perk-banner p {
+  font-family: var(--ff-montserrat);
+  font-weight: var(--fw-600);
+  font-size: var(--fs-4);
+}
+
+.perk-banner strong { font-weight: var(--fw-800); }
+
+
+/*-----------------------------------*\
+ * #AVIS CLIENTS
+\*-----------------------------------*/
+
+.reviews { padding-block: var(--section-padding); background: var(--cultured); }
+
+.reviews-list { display: grid; gap: 25px; margin-top: 40px; }
+
+@media (min-width: 768px) {
+  .reviews-list { grid-template-columns: repeat(3, 1fr); }
+}
+
+.review-card {
+  background: var(--white);
+  border-radius: var(--radius-15);
+  padding: 30px 26px;
+  box-shadow: 0 6px 24px hsla(0, 0%, 0%, 0.06);
+}
+
+.review-stars {
+  color: #f5a623;
+  font-size: 15px;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+}
+
+.review-text {
+  color: var(--black-coral);
+  font-size: var(--fs-4);
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 18px;
+}
+
+.review-author {
+  font-family: var(--ff-montserrat);
+  font-weight: var(--fw-700);
+  color: var(--gunmetal);
+}
+
+.review-trip { color: var(--spanish-gray); font-size: var(--fs-6); }
+
+
+/*-----------------------------------*\
+ * #NOTE DE FILTRE (page destinations)
+\*-----------------------------------*/
+
+.filter-note {
+  text-align: center;
+  color: var(--black-coral);
+  font-size: var(--fs-4);
+  background: var(--cultured);
+  border: 1px solid var(--gainsboro);
+  border-radius: 100px;
+  padding: 12px 24px;
+  max-width: max-content;
+  margin: 0 auto 35px;
+}
+
+.filter-note strong { color: var(--bright-navy-blue); }

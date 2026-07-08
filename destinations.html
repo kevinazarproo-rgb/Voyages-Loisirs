@@ -13,7 +13,7 @@
   <meta name="description" content="Nos 6 destinations d'exception : Marrakech, Tokyo, Santorin, Bali, Safari Kenya et Maldives. Circuits accompagnés, paiement en 10× sans frais.">
 
   <link rel="shortcut icon" href="assets/logo-marine.png" type="image/png">
-  <link rel="stylesheet" href="assets/css/tourly.css?v=13">
+  <link rel="stylesheet" href="assets/css/tourly.css?v=14">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -80,10 +80,12 @@
     <section class="popular">
       <div class="container">
 
-        <ul class="popular-list">
+        <p class="filter-note" id="filter-note" hidden></p>
+
+        <ul class="popular-list" id="dest-list">
 
           <li>
-            <a href="circuit.html?d=marrakech" class="popular-card">
+            <a href="circuit.html?d=marrakech" class="popular-card" data-price="1290" data-months="1,2">
               <figure class="card-img"><img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=800&q=80" alt="Marrakech" loading="lazy"></figure>
               <div class="card-content">                <p class="card-subtitle">Maroc · Janvier – Février</p>
                 <h3 class="h3 card-title">Marrakech</h3>
@@ -93,7 +95,7 @@
           </li>
 
           <li>
-            <a href="circuit.html?d=tokyo" class="popular-card">
+            <a href="circuit.html?d=tokyo" class="popular-card" data-price="2490" data-months="3,4">
               <figure class="card-img"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Tokyo" loading="lazy"></figure>
               <div class="card-content">                <p class="card-subtitle">Japon · Mars – Avril</p>
                 <h3 class="h3 card-title">Tokyo</h3>
@@ -103,7 +105,7 @@
           </li>
 
           <li>
-            <a href="circuit.html?d=santorin" class="popular-card">
+            <a href="circuit.html?d=santorin" class="popular-card" data-price="1690" data-months="5,6">
               <figure class="card-img"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="Santorin" loading="lazy"></figure>
               <div class="card-content">                <p class="card-subtitle">Grèce · Mai – Juin</p>
                 <h3 class="h3 card-title">Santorin</h3>
@@ -113,7 +115,7 @@
           </li>
 
           <li>
-            <a href="circuit.html?d=bali" class="popular-card">
+            <a href="circuit.html?d=bali" class="popular-card" data-price="2190" data-months="7,8">
               <figure class="card-img"><img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80" alt="Bali" loading="lazy"></figure>
               <div class="card-content">                <p class="card-subtitle">Indonésie · Juillet – Août</p>
                 <h3 class="h3 card-title">Bali</h3>
@@ -123,7 +125,7 @@
           </li>
 
           <li>
-            <a href="circuit.html?d=kenya" class="popular-card">
+            <a href="circuit.html?d=kenya" class="popular-card" data-price="2890" data-months="9,10">
               <figure class="card-img"><img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80" alt="Safari Kenya" loading="lazy"></figure>
               <div class="card-content">                <p class="card-subtitle">Kenya · Septembre – Octobre</p>
                 <h3 class="h3 card-title">Safari Kenya</h3>
@@ -133,7 +135,7 @@
           </li>
 
           <li>
-            <a href="circuit.html?d=maldives" class="popular-card">
+            <a href="circuit.html?d=maldives" class="popular-card" data-price="2690" data-months="11,12">
               <figure class="card-img"><img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80" alt="Maldives" loading="lazy"></figure>
               <div class="card-content">                <p class="card-subtitle">Maldives · Novembre – Décembre</p>
                 <h3 class="h3 card-title">Maldives</h3>
@@ -193,6 +195,42 @@
   <a href="#top" class="go-top" data-go-top><ion-icon name="chevron-up-outline"></ion-icon></a>
 
   <script src="assets/js/tourly.js?v=6"></script>
+  <script>
+    // Filtrage des destinations selon la recherche (mois + budget)
+    (function () {
+      var p = new URLSearchParams(location.search);
+      var month = p.get('depart');   // "" ou "1".."12"
+      var budget = p.get('budget');  // "" ou "0-1500" / "1500-2500" / "2500-"
+      if (!month && !budget) return;  // pas de recherche → on montre tout
+
+      var min = 0, max = Infinity;
+      if (budget) { var b = budget.split('-'); min = +b[0] || 0; max = b[1] ? +b[1] : Infinity; }
+
+      var cards = document.querySelectorAll('#dest-list .popular-card');
+      var shown = 0;
+      cards.forEach(function (c) {
+        var price = +c.dataset.price;
+        var months = (c.dataset.months || '').split(',').map(Number);
+        var ok = true;
+        if (month) ok = ok && months.indexOf(+month) !== -1;
+        if (budget) ok = ok && price >= min && price <= max;
+        c.closest('li').style.display = ok ? '' : 'none';
+        if (ok) shown++;
+      });
+
+      var note = document.getElementById('filter-note');
+      if (note) {
+        if (shown === 0) {
+          // aucune correspondance → on réaffiche tout
+          cards.forEach(function (c) { c.closest('li').style.display = ''; });
+          note.innerHTML = "Aucune destination ne correspond exactement à votre recherche — voici <strong>toutes nos destinations</strong>.";
+        } else {
+          note.innerHTML = "<strong>" + shown + "</strong> destination" + (shown > 1 ? "s" : "") + " correspond" + (shown > 1 ? "ent" : "") + " à votre recherche.";
+        }
+        note.hidden = false;
+      }
+    })();
+  </script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 

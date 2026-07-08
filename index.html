@@ -13,9 +13,17 @@
   <title>Voyages Loisirs — Circuits accompagnés haut de gamme</title>
   <meta name="description" content="Six destinations d'exception chaque année, accompagnées de bout en bout. Payez en 4×, 6× ou 10× sans frais.">
 
+  <!-- Partage réseaux sociaux (OpenGraph) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Voyages Loisirs — Circuits culturels accompagnés">
+  <meta property="og:description" content="Six destinations d'exception chaque année, accompagnées de guides francophones. Payez en 4×, 6× ou 10× sans frais.">
+  <meta property="og:image" content="https://kevinazarproo-rgb.github.io/Voyages-Loisirs/assets/og-image.jpg">
+  <meta property="og:url" content="https://kevinazarproo-rgb.github.io/Voyages-Loisirs/">
+  <meta name="twitter:card" content="summary_large_image">
+
   <link rel="shortcut icon" href="assets/logo-marine.png" type="image/png">
 
-  <link rel="stylesheet" href="assets/css/tourly.css?v=13">
+  <link rel="stylesheet" href="assets/css/tourly.css?v=14">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,18 +135,18 @@
               <label for="depart" class="input-label">Date de départ</label>
               <select name="depart" id="depart" class="input-field">
                 <option value="">Choisir un mois</option>
-                <option>Janvier</option>
-                <option>Février</option>
-                <option>Mars</option>
-                <option>Avril</option>
-                <option>Mai</option>
-                <option>Juin</option>
-                <option>Juillet</option>
-                <option>Août</option>
-                <option>Septembre</option>
-                <option>Octobre</option>
-                <option>Novembre</option>
-                <option>Décembre</option>
+                <option value="1">Janvier</option>
+                <option value="2">Février</option>
+                <option value="3">Mars</option>
+                <option value="4">Avril</option>
+                <option value="5">Mai</option>
+                <option value="6">Juin</option>
+                <option value="7">Juillet</option>
+                <option value="8">Août</option>
+                <option value="9">Septembre</option>
+                <option value="10">Octobre</option>
+                <option value="11">Novembre</option>
+                <option value="12">Décembre</option>
               </select>
             </div>
 
@@ -146,9 +154,9 @@
               <label for="budget" class="input-label">Budget</label>
               <select name="budget" id="budget" class="input-field">
                 <option value="">Peu importe</option>
-                <option>Moins de 1 500 €</option>
-                <option>1 500 € – 2 500 €</option>
-                <option>Plus de 2 500 €</option>
+                <option value="0-1500">Moins de 1 500 €</option>
+                <option value="1500-2500">1 500 € – 2 500 €</option>
+                <option value="2500-">Plus de 2 500 €</option>
               </select>
             </div>
 
@@ -156,6 +164,15 @@
 
           </form>
 
+        </div>
+      </section>
+
+
+      <!-- #BANDEAU PAIEMENT 10x -->
+      <section class="perk-banner">
+        <div class="container">
+          <ion-icon name="card-outline"></ion-icon>
+          <p>Payez en <strong>4×, 6× ou 10× — sans frais</strong> ni intérêts. Voyagez maintenant, réglez à votre rythme.</p>
         </div>
       </section>
 
@@ -281,6 +298,39 @@
           <div class="package-cta">
             <a href="destinations.html" class="btn btn-primary">Toutes les destinations</a>
           </div>
+
+        </div>
+      </section>
+
+
+      <!-- #AVIS CLIENTS -->
+      <section class="reviews">
+        <div class="container">
+
+          <p class="section-subtitle">Ils sont partis avec nous</p>
+          <h2 class="h2 section-title">Des souvenirs pour la vie</h2>
+          <p class="section-text">Ce que nos voyageurs racontent à leur retour.</p>
+
+          <ul class="reviews-list">
+            <li class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">« J'appréhendais de voyager seule à mon âge. J'ai été rassurée dès le départ et parfaitement entourée, du début à la fin. »</p>
+              <p class="review-author">Colette R.</p>
+              <p class="review-trip">Marrakech · Février 2026</p>
+            </li>
+            <li class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">« Le safari au Kenya était un rêve d'enfance. Un accompagnateur formidable et une organisation sans faille. Nous recommandons les yeux fermés. »</p>
+              <p class="review-author">Michel &amp; Françoise</p>
+              <p class="review-trip">Safari Kenya · Octobre 2025</p>
+            </li>
+            <li class="review-card">
+              <div class="review-stars">★★★★★</div>
+              <p class="review-text">« Le paiement en plusieurs fois nous a beaucoup aidés. Un séjour de rêve à Bali sans se priver, et un rythme parfait. »</p>
+              <p class="review-author">Danielle P.</p>
+              <p class="review-trip">Bali · Août 2025</p>
+            </li>
+          </ul>
 
         </div>
       </section>
