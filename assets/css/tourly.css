@@ -2040,7 +2040,7 @@ address {
 .agence-intro { padding-block: var(--section-padding); }
 
 .agence-intro .lead {
-  font-size: var(--fs-3);
+  font-size: 16px;
   line-height: 1.8;
   color: var(--black-coral);
   max-width: 70ch;
