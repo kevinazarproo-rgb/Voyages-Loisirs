@@ -1309,24 +1309,24 @@ address {
    pour qu'il reste net dans la barre du haut au lieu de s'afficher géant. */
 .header-top .logo img {
   max-width: none;
-  height: 56px;
+  height: 26px;
   width: auto;
 }
 
 @media (min-width: 580px) {
-  .header-top .logo img { height: 64px; }
+  .header-top .logo img { height: 30px; }
 }
 
 /* Logo dans le menu mobile */
 .navbar-top .logo img {
   width: auto;
-  height: 70px;
+  height: 34px;
 }
 
 /* Logo dans le footer */
 .footer-brand img {
   width: auto;
-  height: 90px;
+  height: 40px;
 }
 
 /* Bloc présentation / rachat AYA */
