@@ -1813,6 +1813,15 @@ address {
 .tour-search-form .input-field { padding: 11px 15px; }
 .tour-search-form .input-label { margin-bottom: 6px; }
 
+/* Chevauchement : moitié sur la vidéo du hero, moitié sur le fond blanc */
+@media (min-width: 768px) {
+  .tour-search {
+    position: relative;
+    z-index: 3;
+    margin-top: -52px;
+  }
+}
+
 /* Hero avec vidéo en fond */
 .hero {
   position: relative;
