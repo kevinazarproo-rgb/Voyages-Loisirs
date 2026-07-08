@@ -1474,16 +1474,17 @@ address {
 
 .legal-content h2 {
   font-family: var(--ff-montserrat);
-  font-weight: var(--fw-700);
+  font-weight: var(--fw-800);
+  text-transform: uppercase;
   color: var(--gunmetal);
-  font-size: var(--fs-3);
-  margin: 38px 0 14px;
+  font-size: var(--fs-2);
+  margin: 42px 0 16px;
 }
 
 .legal-content p,
 .legal-content li {
   color: var(--black-coral);
-  font-size: var(--fs-4);
+  font-size: 16px;
   line-height: 1.8;
 }
 
@@ -1959,8 +1960,10 @@ address {
 .contact-info h2,
 .contact-form-box h2 {
   font-family: var(--ff-montserrat);
+  font-weight: var(--fw-800);
+  text-transform: uppercase;
   color: var(--gunmetal);
-  font-size: var(--fs-3);
+  font-size: var(--fs-2);
   margin-bottom: 20px;
 }
 
