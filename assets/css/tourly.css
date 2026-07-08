@@ -1798,8 +1798,10 @@ address {
   .tour-search .btn { --padding: 15px; grid-column: unset; margin-top: 0; }
 }
 
-/* Fond de la barre de recherche un peu transparent */
-.tour-search { background: hsla(214, 57%, 51%, 0.85); }
+/* Barre de recherche : plus fine et plus transparente */
+.tour-search { background: hsla(214, 57%, 51%, 0.6); padding-block: 22px; }
+.tour-search-form .input-field { padding: 11px 15px; }
+.tour-search-form .input-label { margin-bottom: 6px; }
 
 /* Hero avec vidéo en fond */
 .hero {
