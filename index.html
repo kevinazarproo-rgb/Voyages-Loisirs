@@ -1,422 +1,458 @@
 <!DOCTYPE html>
 <html lang="fr">
+
 <head>
   <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- Anti-cache -->
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
 
-  <link rel="shortcut icon" href="assets/logo-marine.png" type="image/png">
-
   <title>Voyages Loisirs — Circuits accompagnés haut de gamme</title>
   <meta name="description" content="Six destinations d'exception chaque année, accompagnées de bout en bout. Payez en 4×, 6× ou 10× sans frais.">
 
-  <!--=============== REMIXICONS ===============-->
-  <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/logo-marine.png" type="image/png">
 
-  <!--=============== SWIPER CSS ===============-->
-  <link rel="stylesheet" href="assets/css/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/css/tourly.css?v=1">
 
-  <!--=============== CSS ===============-->
-  <link rel="stylesheet" href="css/bedim.css?v=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
 </head>
-<body>
-  <!--==================== HEADER ====================-->
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo">Voyages Loisirs</a>
 
-      <div class="nav__menu" id="nav-menu">
-        <ul class="nav__list">
-          <li class="nav__item"><a href="#home" class="nav__link active-link">Accueil</a></li>
-          <li class="nav__item"><a href="#about" class="nav__link">L'agence</a></li>
-          <li class="nav__item"><a href="#discover" class="nav__link">Destinations</a></li>
-          <li class="nav__item"><a href="#place" class="nav__link">Réserver</a></li>
-        </ul>
+<body id="top">
 
-        <div class="nav__dark">
-          <span class="change-theme-name">Mode sombre</span>
-          <i class="ri-moon-line change-theme" id="theme-button"></i>
-        </div>
+  <!-- #HEADER -->
+  <header class="header" data-header>
 
-        <i class="ri-close-line nav__close" id="nav-close"></i>
-      </div>
+    <div class="overlay" data-overlay></div>
 
-      <div class="nav__toggle" id="nav-toggle">
-        <i class="ri-function-line"></i>
-      </div>
-    </nav>
-  </header>
+    <div class="header-top">
+      <div class="container">
 
-  <main class="main">
-    <!--==================== HOME ====================-->
-    <section class="home" id="home">
-      <img src="https://images.unsplash.com/photo-1476900543704-4312b78632f8?auto=format&fit=crop&w=2000&q=80" alt="" class="home__img">
-
-      <div class="home__container container grid">
-        <div class="home__data">
-          <span class="home__data-subtitle">Circuits accompagnés</span>
-          <h1 class="home__data-title">Explorez <br> le monde <b>l'esprit <br> léger</b></h1>
-          <a href="#place" class="button">Découvrir</a>
-        </div>
-
-        <div class="home__social">
-          <a href="#" target="_blank" class="home__social-link"><i class="ri-facebook-box-fill"></i></a>
-          <a href="#" target="_blank" class="home__social-link"><i class="ri-instagram-fill"></i></a>
-          <a href="#" target="_blank" class="home__social-link"><i class="ri-youtube-fill"></i></a>
-        </div>
-
-        <div class="home__info">
-          <div>
-            <span class="home__info-title">6 destinations d'exception</span>
-            <a href="#discover" class="button button--flex button--link home__info-button">
-              Voir <i class="ri-arrow-right-line"></i>
-            </a>
+        <a href="tel:+33158366669" class="helpline-box">
+          <div class="icon-box">
+            <ion-icon name="call-outline"></ion-icon>
           </div>
-
-          <div class="home__info-overlay">
-            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=500&q=80" alt="" class="home__info-img">
+          <div class="wrapper">
+            <p class="helpline-title">Nos conseillers :</p>
+            <p class="helpline-number">01 58 36 66 69</p>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <!--==================== ABOUT / L'AGENCE ====================-->
-    <section class="about section" id="about">
-      <div class="about__container container grid">
-        <div class="about__data">
-          <h2 class="section__title about__title">Tout est déjà <br> organisé pour vous</h2>
-          <p class="about__description">Une agence française spécialisée dans les circuits accompagnés haut de gamme. Vous choisissez la destination, on s'occupe de tout — vous n'avez qu'à profiter.</p>
-          <ul class="about__list">
-            <li><i class="ri-checkbox-circle-line"></i> Vols au départ de Paris inclus</li>
-            <li><i class="ri-checkbox-circle-line"></i> Hôtels de charme, confort garanti</li>
-            <li><i class="ri-checkbox-circle-line"></i> Accompagnateur francophone</li>
-            <li><i class="ri-checkbox-circle-line"></i> Assistance 24h/24 pendant le séjour</li>
-          </ul>
-          <a href="#place" class="button">Réserver une place</a>
-        </div>
-
-        <div class="about__img">
-          <div class="about__img-overlay">
-            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80" alt="" class="about__img-one">
-          </div>
-          <div class="about__img-overlay">
-            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=700&q=80" alt="" class="about__img-two">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--==================== DISCOVER / DESTINATIONS (SWIPER) ====================-->
-    <section class="discover section" id="discover">
-      <h2 class="section__title">Découvrez nos <br> plus belles destinations</h2>
-
-      <div class="discover__container container swiper-container">
-        <div class="swiper-wrapper">
-          <div class="discover__card swiper-slide">
-            <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=800&q=80" alt="" class="discover__img">
-            <div class="discover__data">
-              <h2 class="discover__title">Marrakech</h2>
-              <span class="discover__description">Janvier – Février</span>
-            </div>
-          </div>
-
-          <div class="discover__card swiper-slide">
-            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="" class="discover__img">
-            <div class="discover__data">
-              <h2 class="discover__title">Tokyo</h2>
-              <span class="discover__description">Mars – Avril</span>
-            </div>
-          </div>
-
-          <div class="discover__card swiper-slide">
-            <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="" class="discover__img">
-            <div class="discover__data">
-              <h2 class="discover__title">Santorin</h2>
-              <span class="discover__description">Mai – Juin</span>
-            </div>
-          </div>
-
-          <div class="discover__card swiper-slide">
-            <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="" class="discover__img">
-            <div class="discover__data">
-              <h2 class="discover__title">Bali</h2>
-              <span class="discover__description">Juillet – Août</span>
-            </div>
-          </div>
-
-          <div class="discover__card swiper-slide">
-            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80" alt="" class="discover__img">
-            <div class="discover__data">
-              <h2 class="discover__title">Safari Kenya</h2>
-              <span class="discover__description">Septembre – Octobre</span>
-            </div>
-          </div>
-
-          <div class="discover__card swiper-slide">
-            <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="" class="discover__img">
-            <div class="discover__data">
-              <h2 class="discover__title">Maldives</h2>
-              <span class="discover__description">Novembre – Décembre</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--==================== EXPERIENCE / CHIFFRES ====================-->
-    <section class="experience section">
-      <h2 class="section__title">Notre expérience <br> à votre service</h2>
-
-      <div class="experience__container container grid">
-        <div class="experience__content grid">
-          <div class="experience__data">
-            <h2 class="experience__number">15</h2>
-            <span class="experience__description">Ans <br> d'expérience</span>
-          </div>
-          <div class="experience__data">
-            <h2 class="experience__number">06</h2>
-            <span class="experience__description">Départs <br> garantis / an</span>
-          </div>
-          <div class="experience__data">
-            <h2 class="experience__number">1200+</h2>
-            <span class="experience__description">Voyageurs <br> comblés</span>
-          </div>
-        </div>
-
-        <div class="experience__img grid">
-          <div class="experience__overlay">
-            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80" alt="" class="experience__img-one">
-          </div>
-          <div class="experience__overlay">
-            <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=500&q=80" alt="" class="experience__img-two">
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!--==================== PAIEMENT (bandeau teal) ====================-->
-    <section class="pay section">
-      <div class="pay__bg">
-        <div class="pay__container container">
-          <h2 class="section__title pay__title">Payez en 4×, 6× ou 10× <br> sans frais</h2>
-          <p class="pay__description">Un voyage à 1 290 €, réglé à votre rythme — sans intérêts ni frais cachés.</p>
-
-          <div class="pay__options">
-            <div class="pay__option">
-              <span class="pay__times">4×</span>
-              <span class="pay__amount">322 €/mois</span>
-            </div>
-            <div class="pay__option pay__option--featured">
-              <span class="pay__times">6×</span>
-              <span class="pay__amount">215 €/mois</span>
-            </div>
-            <div class="pay__option">
-              <span class="pay__times">10×</span>
-              <span class="pay__amount">129 €/mois</span>
-            </div>
-          </div>
-
-          <p class="pay__methods">Visa · Mastercard · American Express · PayPal · Apple Pay — paiement crypté SSL</p>
-        </div>
-      </div>
-    </section>
-
-    <!--==================== PLACES / RÉSERVER ====================-->
-    <section class="place section" id="place">
-      <h2 class="section__title">Choisissez votre destination</h2>
-
-      <div class="place__container container grid">
-        <a href="circuit.html?d=marrakech" class="place__card">
-          <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=800&q=80" alt="" class="place__img">
-          <div class="place__content">
-            <span class="place__rating">
-              <i class="ri-star-fill place__rating-icon"></i>
-              <span class="place__rating-number">4,9</span>
-            </span>
-            <div class="place__data">
-              <h3 class="place__title">Marrakech</h3>
-              <span class="place__subtitle">Janvier – Février</span>
-              <span class="place__price">dès 1 290 €</span>
-            </div>
-          </div>
-          <span class="button button--flex place__button"><i class="ri-arrow-right-line"></i></span>
         </a>
 
-        <a href="circuit.html?d=tokyo" class="place__card">
-          <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="" class="place__img">
-          <div class="place__content">
-            <span class="place__rating">
-              <i class="ri-star-fill place__rating-icon"></i>
-              <span class="place__rating-number">5,0</span>
-            </span>
-            <div class="place__data">
-              <h3 class="place__title">Tokyo</h3>
-              <span class="place__subtitle">Mars – Avril</span>
-              <span class="place__price">dès 2 490 €</span>
-            </div>
-          </div>
-          <span class="button button--flex place__button"><i class="ri-arrow-right-line"></i></span>
+        <a href="#top" class="logo">
+          <img src="assets/logo-blanc.png" alt="Voyages Loisirs">
         </a>
 
-        <a href="circuit.html?d=santorin" class="place__card">
-          <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="" class="place__img">
-          <div class="place__content">
-            <span class="place__rating">
-              <i class="ri-star-fill place__rating-icon"></i>
-              <span class="place__rating-number">4,8</span>
-            </span>
-            <div class="place__data">
-              <h3 class="place__title">Santorin</h3>
-              <span class="place__subtitle">Mai – Juin</span>
-              <span class="place__price">dès 1 690 €</span>
-            </div>
-          </div>
-          <span class="button button--flex place__button"><i class="ri-arrow-right-line"></i></span>
-        </a>
-
-        <a href="circuit.html?d=bali" class="place__card">
-          <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="" class="place__img">
-          <div class="place__content">
-            <span class="place__rating">
-              <i class="ri-star-fill place__rating-icon"></i>
-              <span class="place__rating-number">4,9</span>
-            </span>
-            <div class="place__data">
-              <h3 class="place__title">Bali</h3>
-              <span class="place__subtitle">Juillet – Août</span>
-              <span class="place__price">dès 2 190 €</span>
-            </div>
-          </div>
-          <span class="button button--flex place__button"><i class="ri-arrow-right-line"></i></span>
-        </a>
-
-        <a href="circuit.html?d=kenya" class="place__card">
-          <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80" alt="" class="place__img">
-          <div class="place__content">
-            <span class="place__rating">
-              <i class="ri-star-fill place__rating-icon"></i>
-              <span class="place__rating-number">5,0</span>
-            </span>
-            <div class="place__data">
-              <h3 class="place__title">Safari Kenya</h3>
-              <span class="place__subtitle">Septembre – Octobre</span>
-              <span class="place__price">dès 2 890 €</span>
-            </div>
-          </div>
-          <span class="button button--flex place__button"><i class="ri-arrow-right-line"></i></span>
-        </a>
-
-        <a href="circuit.html?d=maldives" class="place__card">
-          <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="" class="place__img">
-          <div class="place__content">
-            <span class="place__rating">
-              <i class="ri-star-fill place__rating-icon"></i>
-              <span class="place__rating-number">4,9</span>
-            </span>
-            <div class="place__data">
-              <h3 class="place__title">Maldives</h3>
-              <span class="place__subtitle">Novembre – Décembre</span>
-              <span class="place__price">dès 2 690 €</span>
-            </div>
-          </div>
-          <span class="button button--flex place__button"><i class="ri-arrow-right-line"></i></span>
-        </a>
-      </div>
-    </section>
-
-    <!--==================== SUBSCRIBE / NEWSLETTER ====================-->
-    <section class="subscribe section">
-      <div class="subscribe__bg">
-        <div class="subscribe__container container">
-          <h2 class="section__title subscribe__title">Recevez nos <br> prochains départs</h2>
-          <p class="subscribe__description">Inscrivez-vous : vous êtes prévenu·e en avant-première dès l'ouverture des réservations.</p>
-
-          <form action="" class="subscribe__form">
-            <input type="email" placeholder="Votre e-mail" class="subscribe__input">
-            <button class="button">S'inscrire</button>
-          </form>
-        </div>
-      </div>
-    </section>
-
-    <!--==================== SPONSORS / PARTENAIRES ====================-->
-    <section class="sponsor section">
-      <div class="sponsor__container container grid">
-        <div class="sponsor__content"><img src="assets/partenaires/atout-france.png" alt="Atout France" class="sponsor__img"></div>
-        <div class="sponsor__content"><img src="assets/partenaires/apst.png" alt="APST" class="sponsor__img"></div>
-        <div class="sponsor__content"><img src="assets/partenaires/iata.png" alt="IATA" class="sponsor__img"></div>
-        <div class="sponsor__content"><img src="assets/partenaires/entreprises-du-voyage.png" alt="Les Entreprises du Voyage" class="sponsor__img"></div>
-        <div class="sponsor__content"><img src="assets/partenaires/virtuoso.png" alt="Virtuoso" class="sponsor__img"></div>
-      </div>
-    </section>
-  </main>
-
-  <!--==================== FOOTER ====================-->
-  <footer class="footer section">
-    <div class="footer__container container grid">
-      <div class="footer__content grid">
-        <div class="footer__data">
-          <h3 class="footer__title">Voyages Loisirs</h3>
-          <p class="footer__description">Six destinations d'exception <br> chaque année, pour voyager <br> l'esprit léger.</p>
-          <div>
-            <a href="#" target="_blank" class="footer__social"><i class="ri-facebook-box-fill"></i></a>
-            <a href="#" target="_blank" class="footer__social"><i class="ri-instagram-fill"></i></a>
-            <a href="#" target="_blank" class="footer__social"><i class="ri-youtube-fill"></i></a>
-          </div>
+        <div class="header-btn-group">
+          <button class="search-btn" aria-label="Rechercher">
+            <ion-icon name="search"></ion-icon>
+          </button>
+          <button class="nav-open-btn" aria-label="Ouvrir le menu" data-nav-open-btn>
+            <ion-icon name="menu-outline"></ion-icon>
+          </button>
         </div>
 
-        <div class="footer__data">
-          <h3 class="footer__subtitle">Découvrir</h3>
-          <ul>
-            <li class="footer__item"><a href="#discover" class="footer__link">Nos 6 destinations</a></li>
-            <li class="footer__item"><a href="#place" class="footer__link">Réserver</a></li>
-            <li class="footer__item"><a href="#about" class="footer__link">Nos garanties</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__data">
-          <h3 class="footer__subtitle">L'agence</h3>
-          <ul>
-            <li class="footer__item"><a href="#about" class="footer__link">Qui sommes-nous</a></li>
-            <li class="footer__item"><a href="mentions-legales.html" class="footer__link">Mentions légales</a></li>
-            <li class="footer__item"><a href="cookies.html" class="footer__link">Cookies</a></li>
-          </ul>
-        </div>
-
-        <div class="footer__data">
-          <h3 class="footer__subtitle">Contact</h3>
-          <ul>
-            <li class="footer__item"><a href="tel:+33158366669" class="footer__link">01 58 36 66 69</a></li>
-            <li class="footer__item"><span class="footer__link">Du lundi au samedi, 9h – 19h</span></li>
-            <li class="footer__item"><span class="footer__link">47 rue des Mathurins, 75008 Paris</span></li>
-            <li class="footer__item"><a href="mailto:voyagesloisirs@ayavoyages.fr" class="footer__link">voyagesloisirs@ayavoyages.fr</a></li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="footer__rights">
-        <p class="footer__copy">© 2026 Voyages Loisirs — Une marque du groupe KTS · IM075240012 · Voyages garantis APST</p>
-        <div class="footer__terms">
-          <a href="mentions-legales.html" class="footer__terms-link">Mentions légales</a>
-          <a href="cookies.html" class="footer__terms-link">Cookies</a>
-        </div>
       </div>
     </div>
+
+    <div class="header-bottom">
+      <div class="container">
+
+        <ul class="social-list">
+          <li><a href="#" class="social-link"><ion-icon name="logo-facebook"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-instagram"></ion-icon></a></li>
+          <li><a href="#" class="social-link"><ion-icon name="logo-youtube"></ion-icon></a></li>
+        </ul>
+
+        <nav class="navbar" data-navbar>
+
+          <div class="navbar-top">
+            <a href="#top" class="logo">
+              <img src="assets/logo-marine.png" alt="Voyages Loisirs">
+            </a>
+            <button class="nav-close-btn" aria-label="Fermer le menu" data-nav-close-btn>
+              <ion-icon name="close-outline"></ion-icon>
+            </button>
+          </div>
+
+          <ul class="navbar-list">
+            <li><a href="#home" class="navbar-link" data-nav-link>accueil</a></li>
+            <li><a href="#about" class="navbar-link" data-nav-link>l'agence</a></li>
+            <li><a href="#destination" class="navbar-link" data-nav-link>destinations</a></li>
+            <li><a href="#package" class="navbar-link" data-nav-link>circuits</a></li>
+            <li><a href="#gallery" class="navbar-link" data-nav-link>galerie</a></li>
+            <li><a href="#contact" class="navbar-link" data-nav-link>contact</a></li>
+          </ul>
+
+        </nav>
+
+        <a href="#package" class="btn btn-primary">Réserver</a>
+
+      </div>
+    </div>
+
+  </header>
+
+
+  <main>
+    <article>
+
+      <!-- #HERO -->
+      <section class="hero" id="home">
+        <div class="container">
+
+          <h2 class="h1 hero-title">Le monde vous attend, partez le vivre</h2>
+
+          <p class="hero-text">
+            Six destinations d'exception chaque année, entièrement organisées et accompagnées de bout en bout.
+            Vous n'avez qu'à profiter — nous nous occupons de tout.
+          </p>
+
+          <div class="btn-group">
+            <a href="#destination" class="btn btn-primary">Nos destinations</a>
+            <a href="tel:+33158366669" class="btn btn-secondary">Être rappelé</a>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- #TOUR SEARCH -->
+      <section class="tour-search">
+        <div class="container">
+
+          <form action="#destination" class="tour-search-form">
+
+            <div class="input-wrapper">
+              <label for="destination" class="input-label">Destination*</label>
+              <input type="text" name="destination" id="destination" placeholder="Marrakech, Tokyo…" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="people" class="input-label">Voyageurs*</label>
+              <input type="number" name="people" id="people" placeholder="Nombre de personnes" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="checkin" class="input-label">Date de départ*</label>
+              <input type="date" name="checkin" id="checkin" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="checkout" class="input-label">Date de retour*</label>
+              <input type="date" name="checkout" id="checkout" class="input-field">
+            </div>
+
+            <button type="submit" class="btn btn-secondary">Rechercher</button>
+
+          </form>
+
+        </div>
+      </section>
+
+
+      <!-- #POPULAR / DESTINATIONS -->
+      <section class="popular" id="destination">
+        <div class="container">
+
+          <p class="section-subtitle">La sélection 2026</p>
+          <h2 class="h2 section-title">Nos destinations phares</h2>
+          <p class="section-text">
+            Une seule sélection par an, six départs garantis. Quand c'est complet, c'est complet —
+            réservez votre place pour voyager l'esprit léger.
+          </p>
+
+          <ul class="popular-list">
+
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=800&q=80" alt="Marrakech" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                  </div>
+                  <p class="card-subtitle"><a href="circuit.html?d=marrakech">Maroc · Janv. – Févr.</a></p>
+                  <h3 class="h3 card-title"><a href="circuit.html?d=marrakech">Marrakech</a></h3>
+                  <p class="card-text">La ville rouge, ses souks, ses palais et le désert à portée de main. Dès 1 290 €.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=800&q=80" alt="Tokyo" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                  </div>
+                  <p class="card-subtitle"><a href="circuit.html?d=tokyo">Japon · Mars – Avril</a></p>
+                  <h3 class="h3 card-title"><a href="circuit.html?d=tokyo">Tokyo</a></h3>
+                  <p class="card-text">Entre tradition et modernité, temples paisibles et néons électriques. Dès 2 490 €.</p>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                  <img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=800&q=80" alt="Santorin" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                  </div>
+                  <p class="card-subtitle"><a href="circuit.html?d=santorin">Grèce · Mai – Juin</a></p>
+                  <h3 class="h3 card-title"><a href="circuit.html?d=santorin">Santorin</a></h3>
+                  <p class="card-text">Maisons blanches, dômes bleus et couchers de soleil sur la Méditerranée. Dès 1 690 €.</p>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <a href="#package" class="btn btn-primary">Voir tous les circuits</a>
+
+        </div>
+      </section>
+
+
+      <!-- #PACKAGE / CIRCUITS -->
+      <section class="package" id="package">
+        <div class="container">
+
+          <p class="section-subtitle">Nos circuits accompagnés</p>
+          <h2 class="h2 section-title">Choisissez votre voyage</h2>
+          <p class="section-text">
+            Vols au départ de Paris inclus, hôtels de charme, accompagnateur francophone et assistance 24h/24.
+            Payez en 4×, 6× ou 10× sans frais.
+          </p>
+
+          <ul class="package-list">
+
+            <li>
+              <div class="package-card">
+                <figure class="card-banner">
+                  <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?auto=format&fit=crop&w=800&q=80" alt="Bali" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <h3 class="h3 card-title">Bali, l'île des dieux — juillet / août</h3>
+                  <p class="card-text">
+                    Rizières en terrasses, temples et plages de rêve. Un circuit tout compris, du départ au retour.
+                  </p>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item"><div class="meta-box"><ion-icon name="time"></ion-icon><p class="text">9J/7N</p></div></li>
+                    <li class="card-meta-item"><div class="meta-box"><ion-icon name="people"></ion-icon><p class="text">18 pers. max</p></div></li>
+                    <li class="card-meta-item"><div class="meta-box"><ion-icon name="location"></ion-icon><p class="text">Indonésie</p></div></li>
+                  </ul>
+                </div>
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews">(48 avis)</p>
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                  </div>
+                  <p class="price">2 190 €<span>/ pers.</span></p>
+                  <a href="circuit.html?d=bali" class="btn btn-secondary">Réserver</a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="package-card">
+                <figure class="card-banner">
+                  <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=800&q=80" alt="Safari Kenya" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <h3 class="h3 card-title">Safari au Kenya — septembre / octobre</h3>
+                  <p class="card-text">
+                    À la rencontre des Big Five dans les grandes réserves. Lodges de charme et guides experts.
+                  </p>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item"><div class="meta-box"><ion-icon name="time"></ion-icon><p class="text">8J/6N</p></div></li>
+                    <li class="card-meta-item"><div class="meta-box"><ion-icon name="people"></ion-icon><p class="text">14 pers. max</p></div></li>
+                    <li class="card-meta-item"><div class="meta-box"><ion-icon name="location"></ion-icon><p class="text">Kenya</p></div></li>
+                  </ul>
+                </div>
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews">(36 avis)</p>
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                  </div>
+                  <p class="price">2 890 €<span>/ pers.</span></p>
+                  <a href="circuit.html?d=kenya" class="btn btn-secondary">Réserver</a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="package-card">
+                <figure class="card-banner">
+                  <img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=800&q=80" alt="Maldives" loading="lazy">
+                </figure>
+                <div class="card-content">
+                  <h3 class="h3 card-title">Maldives, séjour paradisiaque — nov. / déc.</h3>
+                  <p class="card-text">
+                    Lagons turquoise, bungalows sur pilotis et farniente absolu pour clôturer l'année en beauté.
+                  </p>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item"><div class="meta-box"><ion-icon name="time"></ion-icon><p class="text">8J/6N</p></div></li>
+                    <li class="card-meta-item"><div class="meta-box"><ion-icon name="people"></ion-icon><p class="text">16 pers. max</p></div></li>
+                    <li class="card-meta-item"><div class="meta-box"><ion-icon name="location"></ion-icon><p class="text">Maldives</p></div></li>
+                  </ul>
+                </div>
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews">(52 avis)</p>
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon><ion-icon name="star"></ion-icon>
+                    </div>
+                  </div>
+                  <p class="price">2 690 €<span>/ pers.</span></p>
+                  <a href="circuit.html?d=maldives" class="btn btn-secondary">Réserver</a>
+                </div>
+              </div>
+            </li>
+
+          </ul>
+
+          <a href="#destination" class="btn btn-primary">Voir toutes les destinations</a>
+
+        </div>
+      </section>
+
+
+      <!-- #GALLERY -->
+      <section class="gallery" id="gallery">
+        <div class="container">
+
+          <p class="section-subtitle">Galerie photos</p>
+          <h2 class="h2 section-title">Souvenirs de nos voyageurs</h2>
+          <p class="section-text">
+            Quelques instants rapportés de nos derniers départs. Et si le prochain était le vôtre ?
+          </p>
+
+          <ul class="gallery-list">
+            <li class="gallery-item"><figure class="gallery-image"><img src="https://images.unsplash.com/photo-1597212618440-806262de4f6b?auto=format&fit=crop&w=600&q=80" alt="Marrakech"></figure></li>
+            <li class="gallery-item"><figure class="gallery-image"><img src="https://images.unsplash.com/photo-1570077188670-e3a8d69ac5ff?auto=format&fit=crop&w=600&q=80" alt="Santorin"></figure></li>
+            <li class="gallery-item"><figure class="gallery-image"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=600&h=900&q=80" alt="Tokyo"></figure></li>
+            <li class="gallery-item"><figure class="gallery-image"><img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?auto=format&fit=crop&w=600&q=80" alt="Kenya"></figure></li>
+            <li class="gallery-item"><figure class="gallery-image"><img src="https://images.unsplash.com/photo-1514282401047-d79a71a590e8?auto=format&fit=crop&w=600&q=80" alt="Maldives"></figure></li>
+          </ul>
+
+        </div>
+      </section>
+
+
+      <!-- #CTA -->
+      <section class="cta" id="contact">
+        <div class="container">
+
+          <div class="cta-content">
+            <p class="section-subtitle">Une question ?</p>
+            <h2 class="h2 section-title">Prêt·e pour un voyage inoubliable ? Parlons-en !</h2>
+            <p class="section-text">
+              Nos conseillers sont à votre écoute du lundi au samedi, de 9h à 19h.
+              Une vraie personne au téléphone, à chaque étape de votre projet.
+            </p>
+          </div>
+
+          <a href="tel:+33158366669" class="btn btn-secondary">Nous contacter</a>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+
+  <!-- #FOOTER -->
+  <footer class="footer">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+          <a href="#top" class="logo">
+            <img src="assets/logo-blanc.png" alt="Voyages Loisirs">
+          </a>
+          <p class="footer-text">
+            Une marque du groupe KTS. Six destinations d'exception chaque année, entièrement organisées
+            et accompagnées, pour voyager l'esprit léger.
+          </p>
+        </div>
+
+        <div class="footer-contact">
+          <h4 class="contact-title">Nous contacter</h4>
+          <p class="contact-text">Du lundi au samedi, de 9h à 19h.</p>
+          <ul>
+            <li class="contact-item">
+              <ion-icon name="call-outline"></ion-icon>
+              <a href="tel:+33158366669" class="contact-link">01 58 36 66 69</a>
+            </li>
+            <li class="contact-item">
+              <ion-icon name="mail-outline"></ion-icon>
+              <a href="mailto:voyagesloisirs@ayavoyages.fr" class="contact-link">voyagesloisirs@ayavoyages.fr</a>
+            </li>
+            <li class="contact-item">
+              <ion-icon name="location-outline"></ion-icon>
+              <address>47 rue des Mathurins, 75008 Paris</address>
+            </li>
+          </ul>
+        </div>
+
+        <div class="footer-form">
+          <p class="form-text">
+            Inscrivez-vous : soyez prévenu·e en avant-première dès l'ouverture des réservations.
+          </p>
+          <form action="" class="form-wrapper">
+            <input type="email" name="email" class="input-field" placeholder="Votre e-mail" required>
+            <button type="submit" class="btn btn-secondary">S'inscrire</button>
+          </form>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          © 2026 Voyages Loisirs — Tous droits réservés · IM075240012 · Voyages garantis APST
+        </p>
+        <ul class="footer-bottom-list">
+          <li><a href="mentions-legales.html" class="footer-bottom-link">Mentions légales</a></li>
+          <li><a href="cookies.html" class="footer-bottom-link">Cookies</a></li>
+        </ul>
+      </div>
+    </div>
+
   </footer>
 
-  <!--========== SCROLL UP ==========-->
-  <a href="#" class="scrollup" id="scroll-up">
-    <i class="ri-arrow-up-line scrollup__icon"></i>
+
+  <!-- #GO TO TOP -->
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="chevron-up-outline"></ion-icon>
   </a>
 
-  <!--=============== SCROLL REVEAL ===============-->
-  <script src="assets/js/scrollreveal.min.js"></script>
-  <!--=============== SWIPER JS ===============-->
-  <script src="assets/js/swiper-bundle.min.js"></script>
-  <!--=============== MAIN JS ===============-->
-  <script src="js/home-bedim.js?v=1"></script>
+
+  <!-- custom js -->
+  <script src="assets/js/tourly.js?v=1"></script>
+
+  <!-- ionicons -->
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
 </body>
+
 </html>
