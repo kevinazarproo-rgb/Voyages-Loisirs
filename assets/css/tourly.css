@@ -1615,8 +1615,8 @@ address {
 }
 
 .circuit-main__intro {
-  font-size: var(--fs-3);
-  line-height: 1.75;
+  font-size: 16px;
+  line-height: 1.8;
   color: var(--black-coral);
   margin-bottom: 35px;
 }
