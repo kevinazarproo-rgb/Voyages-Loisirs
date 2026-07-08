@@ -2144,6 +2144,61 @@ address {
 
 
 /*-----------------------------------*\
+ * #FAQ
+\*-----------------------------------*/
+
+.faq { padding-block: var(--section-padding); }
+
+.faq-list {
+  max-width: 760px;
+  margin: 40px auto 0;
+  display: grid;
+  gap: 14px;
+}
+
+.faq-item {
+  background: var(--cultured);
+  border: 1px solid var(--gainsboro);
+  border-radius: var(--radius-15);
+  overflow: hidden;
+}
+
+.faq-item summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 20px 24px;
+  font-family: var(--ff-montserrat);
+  font-weight: var(--fw-600);
+  color: var(--gunmetal);
+  font-size: var(--fs-4);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.faq-item summary::-webkit-details-marker { display: none; }
+
+.faq-item summary::after {
+  content: "+";
+  font-size: 24px;
+  line-height: 1;
+  color: var(--bright-navy-blue);
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.faq-item[open] summary::after { transform: rotate(45deg); }
+
+.faq-answer {
+  padding: 0 24px 20px;
+  color: var(--black-coral);
+  font-size: var(--fs-4);
+  line-height: 1.7;
+}
+
+
+/*-----------------------------------*\
  * #NOTE DE FILTRE (page destinations)
 \*-----------------------------------*/
 
