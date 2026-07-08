@@ -2146,6 +2146,81 @@ address {
   text-transform: none;
 }
 
+/* Nos services (image + panneau atouts) */
+.services { padding-block: var(--section-padding); }
+
+.services-inner { display: grid; }
+
+@media (min-width: 900px) {
+  .services-inner {
+    grid-template-columns: 0.9fr 1.2fr;
+    align-items: center;
+  }
+}
+
+.services-media { position: relative; z-index: 2; }
+
+.services-media img {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  border-radius: var(--radius-15);
+  display: block;
+  box-shadow: 0 12px 40px hsla(220, 40%, 20%, 0.18);
+}
+
+.services-panel {
+  background: hsl(28, 62%, 96%);
+  border-radius: var(--radius-15);
+  padding: 42px 36px;
+  margin-top: -30px;
+}
+
+@media (min-width: 900px) {
+  .services-panel {
+    margin-top: 0;
+    margin-left: -55px;
+    padding: 50px 45px 50px 85px;
+  }
+}
+
+.services-panel .services-title {
+  font-family: var(--ff-montserrat);
+  font-weight: var(--fw-500);
+  color: var(--gunmetal);
+  font-size: var(--fs-3);
+  margin-bottom: 30px;
+}
+
+.services-panel .services-title strong { font-weight: var(--fw-800); }
+
+.services-features {
+  display: grid;
+  gap: 28px 30px;
+  margin-bottom: 32px;
+}
+
+@media (min-width: 560px) {
+  .services-features { grid-template-columns: 1fr 1fr; }
+}
+
+.service-feat ion-icon {
+  font-size: 34px;
+  color: var(--bright-navy-blue);
+  margin-bottom: 10px;
+}
+
+.service-feat p {
+  color: var(--black-coral);
+  font-size: var(--fs-5);
+  line-height: 1.6;
+}
+
+.service-feat strong { color: var(--gunmetal); }
+
+.services-panel .btn { width: 100%; }
+
 
 /*-----------------------------------*\
  * #BANDEAU PAIEMENT 10x
