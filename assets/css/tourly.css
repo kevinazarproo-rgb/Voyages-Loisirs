@@ -1309,12 +1309,13 @@ address {
    pour qu'il reste net dans la barre du haut au lieu de s'afficher géant. */
 .header-top .logo img {
   max-width: none;
-  height: 42px;
+  height: 52px;
   width: auto;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.5));
 }
 
 @media (min-width: 580px) {
-  .header-top .logo img { height: 50px; }
+  .header-top .logo img { height: 64px; }
 }
 
 /* Logo dans le menu mobile */
