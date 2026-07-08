@@ -1381,3 +1381,33 @@ address {
   display: inline-block;
   margin-inline: auto;
 }
+
+/* Partenaires & garanties */
+.partners {
+  padding-block: var(--section-padding);
+  background: var(--cultured);
+}
+
+.partners-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px 45px;
+  margin-top: 40px;
+}
+
+.partners-list img {
+  max-height: 55px;
+  max-width: 130px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.65;
+  filter: grayscale(1);
+  transition: var(--transition);
+}
+
+.partners-list img:is(:hover, :focus) {
+  opacity: 1;
+  filter: grayscale(0);
+}
