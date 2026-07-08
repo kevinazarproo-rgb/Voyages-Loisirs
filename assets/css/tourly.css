@@ -1328,3 +1328,48 @@ address {
   width: auto;
   height: 90px;
 }
+
+/* Bloc présentation / rachat AYA */
+.about {
+  padding-block: var(--section-padding);
+  background: var(--cultured);
+}
+
+.about-features {
+  display: grid;
+  gap: 25px;
+  margin-top: 45px;
+}
+
+.about-features li {
+  text-align: center;
+  padding: 35px 25px;
+  background: var(--white);
+  border-radius: var(--radius-15);
+  box-shadow: 0 6px 24px hsla(0, 0%, 0%, 0.06);
+}
+
+.about-features ion-icon {
+  font-size: 42px;
+  color: var(--bright-navy-blue);
+  margin-inline: auto;
+  margin-bottom: 15px;
+}
+
+.about-features h3 {
+  font-family: var(--ff-montserrat);
+  font-weight: var(--fw-700);
+  color: var(--gunmetal);
+  font-size: var(--fs-3);
+  margin-bottom: 10px;
+}
+
+.about-features p {
+  color: var(--black-coral);
+  font-size: var(--fs-5);
+  line-height: 1.6;
+}
+
+@media (min-width: 768px) {
+  .about-features { grid-template-columns: repeat(3, 1fr); }
+}
