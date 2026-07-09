@@ -2442,3 +2442,10 @@ address {
 
 @media (max-width: 768px) { .aya-grid { grid-template-columns: 1fr 1fr; } }
 @media (max-width: 480px) { .aya-grid { grid-template-columns: 1fr; } }
+
+/* Lien « aya voyages » dans le menu + pied de page */
+.navbar-link--aya { color: var(--bright-navy-blue); font-weight: 700; }
+.navbar-link--aya:is(:hover, :focus) { color: var(--yale-blue); }
+.footer-aya { margin-top: 14px; }
+.footer-aya a { color: var(--bright-navy-blue); text-decoration: underline; }
+.footer-aya a:is(:hover, :focus) { color: #fff; }
