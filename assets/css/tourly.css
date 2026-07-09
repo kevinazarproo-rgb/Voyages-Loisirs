@@ -2525,6 +2525,52 @@ address {
 @media (max-width: 480px) {
   .cb-float { left: 12px; bottom: 12px; padding: 12px 16px; font-size: .85rem; }
 }
+.js-reveal li.reveal:nth-child(4) { transition-delay: 360ms; }
+
+
+/*-----------------------------------*\
+ * #COMMENT ÇA MARCHE
+\*-----------------------------------*/
+
+.hiw { padding: 80px 0; }
+.hiw-list {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  margin-top: 46px;
+}
+.hiw-step {
+  position: relative;
+  text-align: center;
+  padding: 36px 20px 28px;
+  background: var(--cultured);
+  border: 1px solid var(--gainsboro);
+  border-radius: 16px;
+}
+.hiw-num {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  background: var(--bright-navy-blue);
+  color: #fff;
+  font-family: var(--ff-montserrat);
+  font-weight: 800;
+  font-size: 1.15rem;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 8px 18px -6px rgba(251, 139, 31, .6);
+}
+.hiw-step ion-icon { font-size: 42px; color: var(--gunmetal); margin: 8px 0 14px; }
+.hiw-step h3 { font-family: var(--ff-montserrat); font-size: 1.05rem; color: var(--gunmetal); margin-bottom: 8px; }
+.hiw-step p { font-size: .9rem; color: var(--black-coral); line-height: 1.55; }
+
+@media (max-width: 768px) { .hiw-list { grid-template-columns: 1fr 1fr; gap: 34px 18px; } }
+@media (max-width: 480px) { .hiw-list { grid-template-columns: 1fr; } }
 .stat-label { font-size: .9rem; color: var(--black-coral); font-weight: 500; line-height: 1.35; }
 
 @media (min-width: 768px) {
