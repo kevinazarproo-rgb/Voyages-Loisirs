@@ -2449,3 +2449,38 @@ address {
 .footer-aya { margin-top: 14px; }
 .footer-aya a { color: var(--bright-navy-blue); text-decoration: underline; }
 .footer-aya a:is(:hover, :focus) { color: #fff; }
+
+
+/*-----------------------------------*\
+ * #BLOC CHIFFRES / REASSURANCE
+\*-----------------------------------*/
+
+.stats-band { background: var(--cultured); padding: 50px 0; }
+.stats-list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  list-style: none;
+  text-align: center;
+}
+.stat { display: flex; flex-direction: column; gap: 8px; padding: 6px 10px; }
+.stat-num {
+  font-family: var(--ff-montserrat);
+  font-weight: 800;
+  font-size: clamp(2rem, 4.5vw, 2.9rem);
+  color: var(--gunmetal);
+  line-height: 1;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 6px;
+}
+.stat-num .stat-unit { font-size: 1rem; font-weight: 700; color: var(--bright-navy-blue); }
+.stat-label { font-size: .9rem; color: var(--black-coral); font-weight: 500; line-height: 1.35; }
+
+@media (min-width: 768px) {
+  .stat:not(:first-child) { border-inline-start: 1px solid var(--gainsboro); }
+}
+@media (max-width: 767px) {
+  .stats-list { grid-template-columns: 1fr 1fr; gap: 34px 12px; }
+}
