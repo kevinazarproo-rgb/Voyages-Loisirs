@@ -2478,6 +2478,53 @@ address {
 .stat-num .stat-unit { font-size: 1rem; font-weight: 700; color: var(--bright-navy-blue); }
 .stat-value { font-variant-numeric: tabular-nums; }
 .stat-num .stat-suffix { color: var(--bright-navy-blue); }
+
+
+/*-----------------------------------*\
+ * #ANIMATIONS (apparition scroll, zoom, bouton flottant)
+\*-----------------------------------*/
+
+/* Apparition au scroll — n'agit que si JS actif (classe js-reveal) */
+.js-reveal .reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity .6s ease, transform .6s ease;
+}
+.js-reveal .reveal.is-visible { opacity: 1; transform: none; }
+.js-reveal li.reveal:nth-child(2) { transition-delay: 120ms; }
+.js-reveal li.reveal:nth-child(3) { transition-delay: 240ms; }
+
+/* Zoom lent au survol des photos de circuits */
+.package-card .card-banner { overflow: hidden; }
+.package-card .card-banner img { transition: transform .6s ease; }
+.package-card:hover .card-banner img { transform: scale(1.06); }
+
+/* Bouton flottant « Être rappelé » */
+.cb-float {
+  position: fixed;
+  left: 18px;
+  bottom: 18px;
+  z-index: 20;
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  background: var(--bright-navy-blue);
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  font-family: var(--ff-montserrat);
+  font-weight: 700;
+  font-size: .92rem;
+  padding: 13px 20px;
+  border-radius: 100px;
+  box-shadow: 0 10px 26px -8px rgba(0, 0, 0, .45);
+  transition: transform .15s ease, background .15s ease;
+}
+.cb-float:is(:hover, :focus) { background: var(--yale-blue); transform: translateY(-2px); }
+.cb-float ion-icon { font-size: 20px; }
+@media (max-width: 480px) {
+  .cb-float { left: 12px; bottom: 12px; padding: 12px 16px; font-size: .85rem; }
+}
 .stat-label { font-size: .9rem; color: var(--black-coral); font-weight: 500; line-height: 1.35; }
 
 @media (min-width: 768px) {

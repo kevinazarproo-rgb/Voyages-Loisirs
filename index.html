@@ -23,7 +23,7 @@
 
   <link rel="shortcut icon" href="assets/logo-marine.png" type="image/png">
 
-  <link rel="stylesheet" href="assets/css/tourly.css?v=25">
+  <link rel="stylesheet" href="assets/css/tourly.css?v=26">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -127,11 +127,11 @@
         <div class="container">
           <ul class="stats-list">
             <li class="stat">
-              <span class="stat-num"><span class="stat-value" data-count="20">0</span><span class="stat-unit">ans</span></span>
+              <span class="stat-num"><span class="stat-value" data-count="15">0</span><span class="stat-unit">ans</span></span>
               <span class="stat-label">d'expérience du voyage</span>
             </li>
             <li class="stat">
-              <span class="stat-num"><span class="stat-value" data-count="15000" data-prefix="+" data-group="1">0</span></span>
+              <span class="stat-num"><span class="stat-value" data-count="2000" data-prefix="+" data-group="1">0</span></span>
               <span class="stat-label">voyageurs accompagnés</span>
             </li>
             <li class="stat">
@@ -160,17 +160,17 @@
           </p>
 
           <ul class="about-features">
-            <li>
+            <li class="reveal">
               <ion-icon name="people-outline"></ion-icon>
               <h3>Guides francophones</h3>
               <p>Des accompagnateurs experts et passionnés, du départ au retour.</p>
             </li>
-            <li>
+            <li class="reveal">
               <ion-icon name="pricetags-outline"></ion-icon>
               <h3>Prix abordables</h3>
               <p>Des circuits culturels d'exception, accessibles à tous les budgets.</p>
             </li>
-            <li>
+            <li class="reveal">
               <ion-icon name="card-outline"></ion-icon>
               <h3>Paiement en 10× sans frais</h3>
               <p>Réglez votre voyage à votre rythme, sans intérêt ni frais cachés.</p>
@@ -194,7 +194,7 @@
 
           <ul class="package-list">
 
-            <li>
+            <li class="reveal">
               <div class="package-card">
                 <figure class="card-banner">
                   <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80" alt="Bali" loading="lazy">
@@ -217,7 +217,7 @@
               </div>
             </li>
 
-            <li>
+            <li class="reveal">
               <div class="package-card">
                 <figure class="card-banner">
                   <img src="https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?auto=format&fit=crop&w=800&q=80" alt="Safari Kenya" loading="lazy">
@@ -240,7 +240,7 @@
               </div>
             </li>
 
-            <li>
+            <li class="reveal">
               <div class="package-card">
                 <figure class="card-banner">
                   <img src="https://images.unsplash.com/photo-1573843981267-be1999ff37cd?auto=format&fit=crop&w=800&q=80" alt="Maldives" loading="lazy">
@@ -528,6 +528,11 @@
 
 
   <!-- #FENÊTRE « ÊTRE RAPPELÉ » -->
+  <button type="button" class="cb-float" data-callback-open aria-label="Être rappelé gratuitement">
+    <ion-icon name="call-outline"></ion-icon>
+    <span>Être rappelé</span>
+  </button>
+
   <div class="cb-modal" id="callback-modal" aria-hidden="true">
     <div class="cb-modal__overlay" data-callback-close></div>
     <div class="cb-modal__panel" role="dialog" aria-modal="true" aria-labelledby="cb-title">
@@ -550,7 +555,7 @@
   <!-- #GO TO TOP -->
 
   <!-- custom js -->
-  <script src="assets/js/tourly.js?v=2"></script>
+  <script src="assets/js/tourly.js?v=3"></script>
   <script>
     (function () {
       var modal = document.getElementById('callback-modal');

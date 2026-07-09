@@ -92,3 +92,27 @@ window.addEventListener("scroll", function () {
 
   counters.forEach(function (el) { obs.observe(el); });
 })();
+
+
+/* Apparition au scroll (fade-in / slide-up) */
+(function () {
+  const items = document.querySelectorAll(".reveal");
+  if (!items.length) return;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // Si animations réduites ou pas d'IntersectionObserver : on laisse tout visible.
+  if (reduce || !("IntersectionObserver" in window)) return;
+
+  document.documentElement.classList.add("js-reveal");
+
+  const obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add("is-visible");
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: "0px 0px -40px 0px" });
+
+  items.forEach(function (el) { obs.observe(el); });
+})();
