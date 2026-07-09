@@ -2476,6 +2476,8 @@ address {
   gap: 6px;
 }
 .stat-num .stat-unit { font-size: 1rem; font-weight: 700; color: var(--bright-navy-blue); }
+.stat-value { font-variant-numeric: tabular-nums; }
+.stat-num .stat-suffix { color: var(--bright-navy-blue); }
 .stat-label { font-size: .9rem; color: var(--black-coral); font-weight: 500; line-height: 1.35; }
 
 @media (min-width: 768px) {

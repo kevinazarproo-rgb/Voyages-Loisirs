@@ -44,3 +44,51 @@ window.addEventListener("scroll", function () {
   }
 
 });
+
+
+/* Compteurs animés (bloc chiffres) */
+(function () {
+  const counters = document.querySelectorAll(".stat-value[data-count]");
+  if (!counters.length) return;
+
+  const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const format = function (n, group) {
+    const v = Math.round(n);
+    return group ? v.toLocaleString("fr-FR") : String(v);
+  };
+
+  const run = function (el) {
+    const target = parseInt(el.dataset.count, 10) || 0;
+    const prefix = el.dataset.prefix || "";
+    const group = el.dataset.group === "1";
+    if (reduce) { el.textContent = prefix + format(target, group); return; }
+    const duration = 1600;
+    let start = null;
+    const step = function (ts) {
+      if (start === null) start = ts;
+      const p = Math.min((ts - start) / duration, 1);
+      const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+      el.textContent = prefix + format(target * eased, group);
+      if (p < 1) requestAnimationFrame(step);
+      else el.textContent = prefix + format(target, group);
+    };
+    requestAnimationFrame(step);
+  };
+
+  if (!("IntersectionObserver" in window)) {
+    counters.forEach(run);
+    return;
+  }
+
+  const obs = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        run(entry.target);
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.4 });
+
+  counters.forEach(function (el) { obs.observe(el); });
+})();
