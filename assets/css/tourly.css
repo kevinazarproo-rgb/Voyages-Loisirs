@@ -2370,3 +2370,75 @@ address {
 }
 
 .filter-note strong { color: var(--bright-navy-blue); }
+
+
+/*-----------------------------------*\
+ * #BLOC AYA VOYAGES (cross-promo « by Aya »)
+\*-----------------------------------*/
+
+.aya-promo {
+  background: linear-gradient(160deg, #0a2f6b 0%, #031E5A 55%, #02163f 100%);
+  color: #fff;
+  padding: 80px 0;
+  position: relative;
+  overflow: hidden;
+}
+.aya-promo::before {
+  content: "";
+  position: absolute;
+  top: -130px;
+  right: -110px;
+  width: 380px;
+  height: 380px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(251, 139, 31, .28), transparent 70%);
+  pointer-events: none;
+}
+.aya-promo .container { position: relative; z-index: 1; text-align: center; }
+.aya-promo .section-subtitle { color: #FB8B1F; }
+.aya-promo .section-title { color: #fff; }
+.aya-promo .section-text { color: rgba(255, 255, 255, .82); margin-inline: auto; max-width: 640px; }
+
+.aya-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 18px;
+  margin: 44px 0;
+  list-style: none;
+}
+.aya-card {
+  background: rgba(255, 255, 255, .06);
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 16px;
+  padding: 28px 22px;
+  text-align: left;
+  transition: transform .2s ease, border-color .2s ease, background .2s ease;
+}
+.aya-card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(251, 139, 31, .6);
+  background: rgba(255, 255, 255, .09);
+}
+.aya-card ion-icon { font-size: 34px; color: #FB8B1F; margin-bottom: 14px; }
+.aya-card h3 { font-family: var(--ff-montserrat); font-size: 1.05rem; color: #fff; margin-bottom: 6px; }
+.aya-card p { font-size: .9rem; color: rgba(255, 255, 255, .7); line-height: 1.5; }
+
+.btn-aya {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #FB8B1F;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-family: var(--ff-montserrat);
+  padding: 15px 34px;
+  border-radius: 100px;
+  box-shadow: 0 12px 26px -10px rgba(251, 139, 31, .7);
+  transition: transform .15s ease, background .15s ease;
+}
+.btn-aya:hover { background: #e8760a; transform: translateY(-2px); }
+.btn-aya ion-icon { font-size: 18px; margin: 0; color: #fff; }
+
+@media (max-width: 768px) { .aya-grid { grid-template-columns: 1fr 1fr; } }
+@media (max-width: 480px) { .aya-grid { grid-template-columns: 1fr; } }
