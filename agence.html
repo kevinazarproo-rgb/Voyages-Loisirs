@@ -14,15 +14,16 @@
 
   <link rel="shortcut icon" href="assets/logo-marine.png" type="image/png">
   <link rel="stylesheet" href="assets/css/tourly.css?v=26">
+  <link rel="stylesheet" href="assets/css/agence.css?v=1">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Poppins:wght@400;500;600;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Poppins:wght@400;500;600;700&display=swap"
     rel="stylesheet">
 </head>
 
-<body id="top">
+<body id="top" class="agence-v2">
 
   <!-- #HEADER -->
   <header class="header" data-header>
@@ -67,153 +68,128 @@
   </header>
 
 
-  <main>
+  <main class="ag-main">
 
-    <!-- #BANNIÈRE -->
-    <section class="page-banner">
-      <div class="container">
-        <h1 class="h1">L'agence</h1>
-        <p class="page-banner__text">Voyages Loisirs, une histoire de passion du voyage — désormais portée par AYA.</p>
+    <!-- #HERO -->
+    <section class="ag-hero">
+      <img class="ag-hero__img" src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1600&q=80" alt="Paris, siège de Voyages Loisirs">
+      <div class="ag-hero__inner">
+        <p class="ag-eyebrow">Voyages Loisirs · by Aya</p>
+        <h1>L'agence</h1>
+        <p>Une histoire de passion du voyage — désormais portée par AYA, au cœur de Paris.</p>
       </div>
     </section>
 
-    <!-- #NOTRE HISTOIRE -->
-    <section class="agence-intro">
-      <div class="container">
-        <p class="section-subtitle">Qui sommes-nous</p>
-        <h2 class="h2 section-title">Le voyage culturel, rendu accessible</h2>
-        <p class="lead">
+    <!-- #QUI SOMMES-NOUS -->
+    <section class="ag-section ag-intro">
+      <div class="ag-wrap">
+        <p class="ag-eyebrow">Qui sommes-nous</p>
+        <h2 class="ag-h2">Le voyage culturel, rendu accessible</h2>
+        <p class="ag-lead">
           Marque historique du groupe KTS, Voyages Loisirs a récemment été reprise par <strong>AYA</strong>
           pour donner un nouvel élan à sa vocation : faire découvrir le monde à travers des circuits
           culturels accompagnés, à prix abordable. Chaque année, nous sélectionnons six destinations
           d'exception, entièrement organisées et guidées par des accompagnateurs francophones
           hautement qualifiés — pour que vous n'ayez qu'à profiter.
         </p>
+      </div>
+    </section>
 
-        <div class="agence-stats">
-          <div>
-            <div class="num">15 ans</div>
-            <div class="lbl">d'expérience du voyage</div>
-          </div>
-          <div>
-            <div class="num">06</div>
-            <div class="lbl">départs garantis par an</div>
-          </div>
-          <div>
-            <div class="num">1200+</div>
-            <div class="lbl">voyageurs comblés</div>
-          </div>
+    <!-- #CHIFFRES -->
+    <section class="ag-section ag-stats">
+      <div class="ag-stats__grid">
+        <div class="ag-stat reveal">
+          <div class="ag-stat-num"><span class="stat-value" data-count="15">0</span><span class="ag-stat-unit">ans</span></div>
+          <div class="ag-stat-lbl">d'expérience du voyage</div>
+        </div>
+        <div class="ag-stat reveal">
+          <div class="ag-stat-num"><span class="stat-value" data-count="6" data-pad="2">0</span></div>
+          <div class="ag-stat-lbl">départs garantis par an</div>
+        </div>
+        <div class="ag-stat reveal">
+          <div class="ag-stat-num"><span class="stat-value" data-count="1200">0</span><span class="ag-stat-suffix">+</span></div>
+          <div class="ag-stat-lbl">voyageurs comblés</div>
         </div>
       </div>
     </section>
 
     <!-- #VISION DE LA DIRIGEANTE -->
-    <section class="vision">
-      <div class="container">
-        <p class="section-subtitle">Notre agence</p>
-        <h2 class="h2 section-title">La vision de notre dirigeante</h2>
-
-        <div class="vision-grid">
-          <div class="vision-media">
-            <img src="https://images.unsplash.com/photo-1488646953014-85cb44e25828?auto=format&fit=crop&w=800&q=80" alt="Notre dirigeante">
-            <button class="vision-play" aria-label="Lire la vidéo"><ion-icon name="play"></ion-icon></button>
-          </div>
-          <div class="vision-quote">
-            <blockquote>
-              « Le voyage est ma passion, et depuis plus de 25 ans, je la partage avec vous et avec mes
-              collaborateurs. Nous sommes à votre écoute pour élaborer ensemble le voyage qui vous ressemble.
-              Un voyage est unique : il crée des souvenirs, il se transmet et se partage. Que ce soit par les
-              images, les saveurs, les sons ou les odeurs, tout cet univers merveilleux vous est accessible
-              chez nous, en rencontrant nos conseillers experts de la destination. Alors, dès demain,
-              faisons le voyage ensemble. »
-            </blockquote>
-            <p class="vision-author">Adeline Kurban Fiani<span>Dirigeante — Voyages Loisirs by Aya</span></p>
-          </div>
+    <section class="ag-section ag-vision">
+      <div class="ag-vision__inner">
+        <img class="ag-vision__photo" src="https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=600&q=80" alt="Adeline Kurban Fiani, dirigeante">
+        <div class="ag-vision__body">
+          <span class="ag-vision__mark" aria-hidden="true">&ldquo;</span>
+          <blockquote>
+            Le voyage est ma passion, et depuis plus de 25 ans, je la partage avec vous et avec mes
+            collaborateurs. Un voyage est unique : il crée des souvenirs, il se transmet et se partage.
+            Que ce soit par les images, les saveurs, les sons ou les odeurs, tout cet univers merveilleux
+            vous est accessible chez nous. Alors, dès demain, faisons le voyage ensemble.
+          </blockquote>
+          <p class="ag-vision__author">Adeline Kurban Fiani<span>Dirigeante — Voyages Loisirs by Aya</span></p>
         </div>
       </div>
     </section>
 
-    <!-- #NOS VALEURS -->
-    <section class="about">
-      <div class="container">
-        <p class="section-subtitle">Nos engagements</p>
-        <h2 class="h2 section-title">Ce qui nous distingue</h2>
-
-        <ul class="about-features">
-          <li>
-            <ion-icon name="people-outline"></ion-icon>
-            <h3>Guides francophones</h3>
-            <p>Des accompagnateurs experts et passionnés, présents du départ au retour.</p>
-          </li>
-          <li>
-            <ion-icon name="pricetags-outline"></ion-icon>
-            <h3>Prix abordables</h3>
-            <p>Des circuits culturels d'exception, pensés pour tous les budgets.</p>
-          </li>
-          <li>
-            <ion-icon name="shield-checkmark-outline"></ion-icon>
-            <h3>Voyages garantis</h3>
-            <p>Immatriculation IM075240012 et garantie financière APST — vous partez l'esprit tranquille.</p>
-          </li>
-        </ul>
+    <!-- #NOS ENGAGEMENTS -->
+    <section class="ag-section ag-values">
+      <div class="ag-wrap">
+        <p class="ag-eyebrow">Nos engagements</p>
+        <h2 class="ag-h2">Ce qui nous distingue</h2>
+      </div>
+      <div class="ag-values__grid">
+        <div class="ag-card reveal">
+          <div class="ag-card__ic"><ion-icon name="people-outline"></ion-icon></div>
+          <h3>Guides francophones</h3>
+          <p>Des accompagnateurs experts et passionnés, présents du départ au retour.</p>
+        </div>
+        <div class="ag-card reveal">
+          <div class="ag-card__ic"><ion-icon name="pricetags-outline"></ion-icon></div>
+          <h3>Prix abordables</h3>
+          <p>Des circuits culturels d'exception, pensés pour tous les budgets.</p>
+        </div>
+        <div class="ag-card reveal">
+          <div class="ag-card__ic"><ion-icon name="shield-checkmark-outline"></ion-icon></div>
+          <h3>Voyages garantis</h3>
+          <p>Immatriculation IM075240012 et garantie financière APST — vous partez l'esprit tranquille.</p>
+        </div>
       </div>
     </section>
 
     <!-- #NOS SERVICES -->
-    <section class="services">
-      <div class="container">
-        <div class="services-inner">
-
-          <div class="services-media">
-            <img src="https://images.unsplash.com/photo-1518548419970-58e3b4079ab2?auto=format&fit=crop&w=800&q=80" alt="Voyager avec Voyages Loisirs">
-          </div>
-
-          <div class="services-panel">
-            <p class="services-title">Nos services <strong>avant, pendant</strong> et <strong>après</strong> le voyage</p>
-
-            <div class="services-features">
-              <div class="service-feat">
-                <ion-icon name="business-outline"></ion-icon>
-                <p>Une <strong>agence de voyage française</strong>, située en plein cœur de Paris</p>
-              </div>
-              <div class="service-feat">
-                <ion-icon name="headset-outline"></ion-icon>
-                <p>Des <strong>conseillers experts</strong> de la destination, disponibles par téléphone, mail, vidéo ou en agence</p>
-              </div>
-              <div class="service-feat">
-                <ion-icon name="notifications-outline"></ion-icon>
-                <p>Un <strong>service conciergerie</strong> francophone sur-mesure, à votre service 7j/7 et 24h/24</p>
-              </div>
-              <div class="service-feat">
-                <ion-icon name="sparkles-outline"></ion-icon>
-                <p>Des <strong>services sur-mesure</strong> qui s'adaptent à vos envies</p>
-              </div>
-            </div>
-
-            <a href="contact.html" class="btn btn-primary">Échanger avec un conseiller-expert</a>
-          </div>
-
+    <section class="ag-section ag-services">
+      <div class="ag-services__inner">
+        <div class="ag-services__media">
+          <img src="https://images.unsplash.com/photo-1527631746610-bca00a040d60?auto=format&fit=crop&w=900&q=80" alt="Voyager avec Voyages Loisirs">
+        </div>
+        <div class="ag-services__panel">
+          <p class="ag-eyebrow">Nos services</p>
+          <h2>Nos services <strong>avant, pendant</strong> et <strong>après</strong> le voyage</h2>
+          <div class="ag-feat"><ion-icon name="business-outline"></ion-icon><p>Une <strong>agence de voyage française</strong>, en plein cœur de Paris.</p></div>
+          <div class="ag-feat"><ion-icon name="headset-outline"></ion-icon><p>Des <strong>conseillers experts</strong> de la destination, par téléphone, mail, vidéo ou en agence.</p></div>
+          <div class="ag-feat"><ion-icon name="notifications-outline"></ion-icon><p>Un <strong>service conciergerie</strong> francophone sur-mesure, 7j/7 et 24h/24.</p></div>
+          <div class="ag-feat"><ion-icon name="sparkles-outline"></ion-icon><p>Des <strong>services sur-mesure</strong> qui s'adaptent à vos envies.</p></div>
+          <a href="contact.html" class="btn btn-primary">Échanger avec un conseiller-expert</a>
         </div>
       </div>
     </section>
 
     <!-- #NOS CERTIFICATIONS -->
-    <section class="partners">
-      <div class="container">
-        <p class="section-subtitle">Ils nous font confiance</p>
-        <h2 class="h2 section-title">Nos certifications</h2>
-        <ul class="partners-list">
-          <li><img src="assets/partenaires/atout-france.png" alt="Atout France"></li>
-          <li><img src="assets/partenaires/apst.png" alt="APST"></li>
-          <li><img src="assets/partenaires/iata.png" alt="IATA"></li>
-          <li><img src="assets/partenaires/entreprises-du-voyage.png" alt="Les Entreprises du Voyage"></li>
-          <li><img src="assets/partenaires/virtuoso.png" alt="Membre Virtuoso"></li>
-          <li><img src="assets/partenaires/tourcom.png" alt="TourCom"></li>
-          <li><img src="assets/partenaires/manor.png" alt="Manor"></li>
-          <li><img src="assets/partenaires/fsc-pefc.png" alt="FSC / PEFC"></li>
-          <li><img src="assets/partenaires/greenly.png" alt="Greenly"></li>
-        </ul>
+    <section class="ag-section ag-certs">
+      <div class="ag-wrap">
+        <p class="ag-eyebrow">Ils nous font confiance</p>
+        <h2 class="ag-h2">Nos certifications</h2>
       </div>
+      <ul class="partners-list ag-certs__list">
+        <li><img src="assets/partenaires/atout-france.png" alt="Atout France"></li>
+        <li><img src="assets/partenaires/apst.png" alt="APST"></li>
+        <li><img src="assets/partenaires/iata.png" alt="IATA"></li>
+        <li><img src="assets/partenaires/entreprises-du-voyage.png" alt="Les Entreprises du Voyage"></li>
+        <li><img src="assets/partenaires/virtuoso.png" alt="Membre Virtuoso"></li>
+        <li><img src="assets/partenaires/tourcom.png" alt="TourCom"></li>
+        <li><img src="assets/partenaires/manor.png" alt="Manor"></li>
+        <li><img src="assets/partenaires/fsc-pefc.png" alt="FSC / PEFC"></li>
+        <li><img src="assets/partenaires/greenly.png" alt="Greenly"></li>
+      </ul>
     </section>
 
   </main>
@@ -261,7 +237,7 @@
 
   <a href="#top" class="go-top" data-go-top><ion-icon name="chevron-up-outline"></ion-icon></a>
 
-  <script src="assets/js/tourly.js?v=6"></script>
+  <script src="assets/js/tourly.js?v=7"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
   <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 

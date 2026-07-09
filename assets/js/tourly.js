@@ -53,25 +53,28 @@ window.addEventListener("scroll", function () {
 
   const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  const format = function (n, group) {
+  const format = function (n, group, pad) {
     const v = Math.round(n);
-    return group ? v.toLocaleString("fr-FR") : String(v);
+    let s = group ? v.toLocaleString("fr-FR") : String(v);
+    if (pad) s = s.padStart(pad, "0");
+    return s;
   };
 
   const run = function (el) {
     const target = parseInt(el.dataset.count, 10) || 0;
     const prefix = el.dataset.prefix || "";
     const group = el.dataset.group === "1";
-    if (reduce) { el.textContent = prefix + format(target, group); return; }
+    const pad = parseInt(el.dataset.pad || "0", 10);
+    if (reduce) { el.textContent = prefix + format(target, group, pad); return; }
     const duration = 1600;
     let start = null;
     const step = function (ts) {
       if (start === null) start = ts;
       const p = Math.min((ts - start) / duration, 1);
       const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
-      el.textContent = prefix + format(target * eased, group);
+      el.textContent = prefix + format(target * eased, group, pad);
       if (p < 1) requestAnimationFrame(step);
-      else el.textContent = prefix + format(target, group);
+      else el.textContent = prefix + format(target, group, pad);
     };
     requestAnimationFrame(step);
   };
