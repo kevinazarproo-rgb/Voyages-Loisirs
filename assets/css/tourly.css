@@ -42,6 +42,7 @@
 
   --ff-poppins: "Poppins", sans-serif;
   --ff-montserrat: "Montserrat", sans-serif;
+  --ff-display: "Playfair Display", Georgia, "Times New Roman", serif;
 
   --fs-1: calc(20px + 3.5vw);
   --fs-2: calc(18px + 1.6vw);
@@ -161,9 +162,9 @@ body { background: var(--white); }
 .h1,
 .h2,
 .h3 {
-  font-weight: var(--fw-800);
-  font-family: var(--ff-montserrat);
-  text-transform: uppercase;
+  font-weight: 700;
+  font-family: var(--ff-display);
+  letter-spacing: -0.01em;
 }
 
 .h1 {
